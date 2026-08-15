@@ -183,21 +183,21 @@ export default function Home() {
             <p>Different paths into the same mission: build technology that reduces friction and leaves people better supported.</p>
           </div>
           <div className="founder__pair">
-            <article className="founder-card founder-card--olga">
-              <div className="founder-card__image-wrap">
-                <span className="founder-card__tag">FOUNDER / PRODUCT QUALITY</span>
-                <img src="/manus-storage/maybei-founder-olga-office_172602dd.png" alt="Olga Kruglova, founder of maybei" className="founder-card__image" />
-              </div>
-              <div className="founder-card__meta"><span>01 / OLGA KRUGLOVA</span><b>Founder</b></div>
-              <p>Building the standard for products that feel clearer, kinder and more useful in everyday life.</p>
-            </article>
             <article className="founder-card founder-card--danil">
               <div className="founder-card__image-wrap">
                 <span className="founder-card__tag">FOUNDER / LEAD DEVELOPER</span>
                 <img src="/manus-storage/maybei-founder-danil_6952f69e.jpg" alt="Danil Lobanov, founder and lead developer of maybei" className="founder-card__image" />
               </div>
-              <div className="founder-card__meta"><span>02 / DANIL LOBANOV</span><b>Founder · Lead developer</b></div>
+              <div className="founder-card__meta"><span>01 / DANIL LOBANOV</span><b>Founder · Lead developer</b></div>
               <p>For five years, my life was about connecting with people through music in China. Today, I use code to do the same. My mission is to build tech products that actually serve humanity.</p>
+            </article>
+            <article className="founder-card founder-card--olga">
+              <div className="founder-card__image-wrap">
+                <span className="founder-card__tag">FOUNDER / PRODUCT QUALITY</span>
+                <img src="/manus-storage/maybei-founder-olga-final_3523ac68.png" alt="Olga Kruglova, founder of maybei" className="founder-card__image" />
+              </div>
+              <div className="founder-card__meta"><span>02 / OLGA KRUGLOVA</span><b>Founder · Product quality</b></div>
+              <p>After 15+ years of mastering software quality and upholding rigorous international ISO 9001 standards, I realized something: discipline is only as good as the impact it creates. Now, I’m channeling that core execution power into building my own AI products at the founder level. My focus is entirely on ethical tech and startups with a deep social impact. Technology is scaling faster than ever, and my goal is to ensure it scales responsibly.</p>
             </article>
           </div>
           <div className="founder__footer"><div className="founder__note"><Sparkles size={18} /><span>Quality is not a finish line. It is a way of deciding what to build next.</span></div><Link className="text-link" href="/careers">Meet the way we work <ChevronRight size={17} /></Link></div>

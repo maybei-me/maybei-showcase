@@ -18,9 +18,11 @@ import "./home.css";
 const products = [
   {
     number: "01",
-    name: "talio",
-    type: "Direct opportunity platform",
-    description: "Making professional opportunities more direct, transparent and human.",
+    name: "Talio",
+    type: "AI HIRING PLATFORM",
+    description: "Talio unifies job postings, AI-driven candidate matching, recruiter messaging, interview scheduling and video interviews into one workflow — replacing six disconnected tools and cutting time-to-hire from weeks to days.",
+    status: "MVP IN DEVELOPMENT",
+    tags: ["AI Matching", "HR Tech", "Recruiting"],
     accent: "blue",
     artifact: "interface",
     image: "/manus-storage/talio-product-preview_5849214d.png",
@@ -28,27 +30,33 @@ const products = [
   },
   {
     number: "02",
-    name: "majlis",
-    type: "Better relationships",
-    description: "Helping the right collaborators, partners and opportunities find each other.",
+    name: "Majlis",
+    type: "AI RELATIONSHIP OS",
+    description: "Majlis is an AI relationship operating system connecting people, projects, ideas and capital. It learns what each member is building, then proactively surfaces the right collaborators, partners and investors.",
+    status: "SYSTEM DESIGN",
+    tags: ["Capital", "AI Networking", "Community"],
     accent: "lime",
     artifact: "orbit",
   },
   {
     number: "03",
-    name: "strawpod AI",
-    type: "Better everyday growing",
-    description: "Using AI, sensors and automation to make growing simpler and more predictable.",
+    name: "Smart Boots",
+    type: "AI SPORTS TECH",
+    description: "Football boots with embedded sensors capturing speed, acceleration, distance and impact load during a match. The app turns this into stats, heatmaps and AI recommendations for players and coaches — Match → Performance → Recovery — starting with academies and amateur clubs.",
+    status: "CONCEPT READY",
+    tags: ["Wearable Sensors", "Sports Analytics", "AI Coaching"],
     accent: "violet",
-    artifact: "sprout",
+    artifact: "stride",
   },
   {
     number: "04",
-    name: "smart boots",
-    type: "Better training feedback",
-    description: "Turning movement into insight that helps athletes train and perform better.",
+    name: "STRAWPOD",
+    type: "AI HYDROPONICS",
+    description: "Grow smarter. Even at home. StrawPod AI is a compact smart hydroponic system that monitors plants, controls the growing environment and alerts you when something needs attention. AI and sensor data turn everyday plant care into a simple, measurable process — from growing to harvest.",
+    status: "MVP IN DEVELOPMENT",
+    tags: ["AI AGRICULTURE", "SMART GROWING", "IOT"],
     accent: "blue",
-    artifact: "stride",
+    artifact: "sprout",
   },
 ];
 
@@ -153,9 +161,11 @@ export default function Home() {
                   </div>
                 )}
                 <div className="product-card__body">
+                  <span className="product-card__status">{product.status}</span>
                   <span className="product-card__type">{product.type}</span>
                   <h3>{product.name}</h3>
                   <p>{product.description}</p>
+                  <div className="product-card__tags">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                 </div>
                 <span className="product-card__action" aria-hidden="true">
                   <ArrowUpRight size={19} />

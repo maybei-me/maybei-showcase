@@ -30,3 +30,10 @@
 - [ ] Заменить текущий портрет Olga на предоставленный новый офисный портрет.
 - [ ] Проверить, что новый crop и цветовой тон работают рядом с фото Danil.
 - [ ] Перепроверить founders-блок на desktop и mobile после замены.
+
+## Projects content update
+
+- [x] Заменить карточки Talio, Majlis, Smart Boots и StrawPod AI на предоставленные описания.
+- [x] Добавить статусы MVP IN DEVELOPMENT, SYSTEM DESIGN и CONCEPT READY.
+- [x] Добавить точные категории и сохранить разную визуальную подачу product worlds.
+- [x] Проверить читаемость длинных описаний на desktop и mobile.

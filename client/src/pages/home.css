@@ -186,3 +186,41 @@
   .hero__content > *:nth-child(3) { animation-delay: .16s; }
 }
 @keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Talio-first founder-led layer: proof before portfolio, and one CTA per audience. */
+.hero h1 { max-width: 1030px; }
+.hero__bottom { align-items: flex-start; max-width: 850px; }
+.hero__bottom p { max-width: 360px; }
+.hero__actions { display: flex; align-items: center; gap: 24px; padding-top: 2px; }
+.hero__actions .text-link { color: var(--mist); }
+.hero__actions .text-link:hover { color: var(--lime); }
+.product-card__proof { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; padding: 15px 0; border-top: 1px solid rgba(197,200,230,.18); border-bottom: 1px solid rgba(197,200,230,.18); color: var(--mist); font-size: 11px; line-height: 1.35; }
+.product-card__proof b { display: block; margin-bottom: 4px; color: var(--white); font-family: "Manrope", sans-serif; font-size: 18px; letter-spacing: -.04em; }
+.audience-cta { padding-top: clamp(96px, 11vw, 160px); }
+.audience-cta__header { display: grid; grid-template-columns: 1fr .9fr; gap: clamp(42px, 9vw, 160px); align-items: end; }
+.audience-cta__header .section-index { grid-column: 1 / -1; margin-bottom: -2px; }
+.audience-cta__header h2 { margin: 0; font-family: "Manrope", sans-serif; font-size: clamp(2.8rem, 5.4vw, 5.6rem); line-height: .9; letter-spacing: -.075em; }
+.audience-cta__header h2 span { color: transparent; background: linear-gradient(98deg, var(--blue), var(--violet)); background-clip: text; -webkit-background-clip: text; }
+.audience-cta__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: 58px; background: var(--line); }
+.audience-card { position: relative; display: flex; min-height: 310px; flex-direction: column; padding: 24px; background: var(--midnight); color: var(--white); transition: background 180ms ease, transform 180ms cubic-bezier(.23,1,.32,1); }
+.audience-card:hover { background: #0d1230; transform: translateY(-4px); }
+.audience-card svg { color: var(--lime); }
+.audience-card--partner svg { color: #bba8ff; }
+.audience-card--team svg { color: #7f9bff; }
+.audience-card__label { margin-top: auto; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.audience-card h3 { max-width: 260px; margin: 12px 0 28px; font-family: "Manrope", sans-serif; font-size: clamp(1.6rem, 2.4vw, 2.5rem); line-height: .98; letter-spacing: -.06em; }
+.audience-card__link { display: inline-flex; align-items: center; gap: 6px; color: var(--mist); font-size: 13px; font-weight: 700; }
+.audience-card:hover .audience-card__link { color: var(--lime); }
+@media (max-width: 900px) {
+  .audience-cta__header { grid-template-columns: 1fr; gap: 28px; }
+  .audience-cta__header .section-index { margin-bottom: 0; }
+  .audience-cta__grid { grid-template-columns: 1fr; }
+  .audience-card { min-height: 220px; }
+}
+@media (max-width: 650px) {
+  .hero__bottom { display: block; }
+  .hero__actions { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .product-card__proof { grid-template-columns: 1fr 1fr; }
+  .audience-cta { padding-top: 88px; }
+  .audience-cta__header h2 { font-size: clamp(2.8rem, 14vw, 4.6rem); }
+}

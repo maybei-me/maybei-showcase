@@ -6,10 +6,13 @@ import { Link } from "wouter";
 import {
   ArrowDown,
   ArrowUpRight,
+  BriefcaseBusiness,
   ChevronRight,
   CircleDot,
+  Handshake,
   MoveUpRight,
   Sparkles,
+  Users,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { LogoMark } from "@/components/LogoMark";
@@ -79,19 +82,20 @@ export default function Home() {
           <div className="hero__content">
             <div className="hero__intro">
               <span className="section-index">01 / MAYBEI</span>
-              <p className="hero__eyebrow"><CircleDot size={14} /> An AI product company</p>
+              <p className="hero__eyebrow"><CircleDot size={14} /> A founder-led AI product company</p>
             </div>
 
             <h1 id="hero-title">
-              Familiar systems<br />
-              should work <span>better.</span>
+              We build the AI layer<br />
+              for systems people <span>depend on.</span>
             </h1>
 
             <div className="hero__bottom">
-              <p>We make AI products that remove friction from the systems people use every day.</p>
-              <a className="button-primary" href="#products">
-                Explore what we’re building <ArrowDown size={17} />
-              </a>
+              <p>We turn everyday friction into products with a measurable outcome. Talio is our first proof: one hiring workflow replacing six disconnected tools.</p>
+              <div className="hero__actions">
+                <a className="button-primary" href="#talio">See the Talio proof <ArrowDown size={17} /></a>
+                <a className="text-link" href="#products">View all products <ArrowUpRight size={17} /></a>
+              </div>
             </div>
           </div>
 
@@ -108,12 +112,12 @@ export default function Home() {
         <section id="idea" className="idea section-shell">
           <div className="section-rail"><span>THE IDEA</span><b>01</b></div>
           <div className="idea__copy">
-            <span className="section-index">The idea</span>
-            <h2>We don’t build what’s already working.<br /><em>We build what should work better.</em></h2>
+            <span className="section-index">The thesis</span>
+            <h2>We don’t chase trends.<br /><em>We make important systems work better.</em></h2>
             <div className="idea__statement">
-              <p>maybei looks at familiar systems people have learned to tolerate — then finds the friction nobody fixed.</p>
+              <p>Founder-led and product-obsessed, maybei builds the missing AI layer between people and the systems they already rely on — starting with hiring.</p>
               <div className="idea__signals" aria-label="What better means">
-                <span>Speed</span><span>Clarity</span><span>Trust</span><span>Control</span><span>Results</span>
+                <span>Less handoff</span><span>More signal</span><span>Human control</span><span>Measurable outcome</span>
               </div>
             </div>
           </div>
@@ -140,15 +144,15 @@ export default function Home() {
           <div className="section-rail"><span>PROJECTS</span><b>03</b></div>
           <div className="products__header">
             <div>
-              <span className="section-index">The portfolio</span>
-              <h2>One standard.<br /><span>Multiple worlds.</span></h2>
+              <span className="section-index">The flagship first</span>
+              <h2>Talio proves it.<br /><span>Multiple worlds follow.</span></h2>
             </div>
-            <p>Different categories. One belief: technology should serve people.</p>
+            <p>One flagship product gives the thesis a job to do. The rest extend the same standard into new systems.</p>
           </div>
 
           <div className="products__grid">
             {products.map((product) => (
-              <article key={product.name} className={`product-card product-card--${product.accent} ${product.featured ? "product-card--featured" : ""}`}>
+              <article id={product.featured ? "talio" : undefined} key={product.name} className={`product-card product-card--${product.accent} ${product.featured ? "product-card--featured" : ""}`}>
                 <div className="product-card__top"><span>{product.number}</span><span>a maybei product</span></div>
                 {product.featured && (
                   <div className="product-card__preview">
@@ -165,6 +169,7 @@ export default function Home() {
                   <span className="product-card__type">{product.type}</span>
                   <h3>{product.name}</h3>
                   <p>{product.description}</p>
+                  {product.featured && <div className="product-card__proof"><span><b>6 → 1</b> tools into one workflow</span><span><b>Weeks → days</b> time-to-hire</span></div>}
                   <div className="product-card__tags">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                 </div>
                 <span className="product-card__action" aria-hidden="true">
@@ -175,8 +180,21 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="audience-cta section-shell" aria-labelledby="audience-title">
+          <div className="section-rail"><span>THE NEXT MOVE</span><b>04</b></div>
+          <div className="audience-cta__header">
+            <span className="section-index">Choose your door</span>
+            <h2 id="audience-title">One thesis.<br /><span>Three ways in.</span></h2>
+          </div>
+          <div className="audience-cta__grid">
+            <a className="audience-card audience-card--user" href="#talio"><Users size={22} /><span className="audience-card__label">For people teams</span><h3>Make hiring feel like one workflow.</h3><span className="audience-card__link">See Talio <ArrowUpRight size={16} /></span></a>
+            <a className="audience-card audience-card--partner" href="mailto:hello@maybei.com?subject=Partner%20with%20maybei"><Handshake size={22} /><span className="audience-card__label">For partners & capital</span><h3>Back products that remove real friction.</h3><span className="audience-card__link">Talk to the founders <ArrowUpRight size={16} /></span></a>
+            <Link className="audience-card audience-card--team" href="/careers"><BriefcaseBusiness size={22} /><span className="audience-card__label">For builders</span><h3>Help build the next proof.</h3><span className="audience-card__link">Join the team <ArrowUpRight size={16} /></span></Link>
+          </div>
+        </section>
+
         <section id="founder" className="founder section-shell">
-          <div className="section-rail"><span>PEOPLE</span><b>04</b></div>
+          <div className="section-rail"><span>PEOPLE</span><b>05</b></div>
           <div className="founder__intro">
             <span className="section-index">The people behind the standard</span>
             <h2>Two founders.<br /><span>One better standard.</span></h2>

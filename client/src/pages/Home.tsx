@@ -167,19 +167,30 @@ export default function Home() {
 
         <section id="founder" className="founder section-shell">
           <div className="section-rail"><span>PEOPLE</span><b>04</b></div>
-          <div className="founder__grid">
-            <div className="founder__content">
-              <span className="section-index">The people behind the standard</span>
-              <h2>Small team.<br /><span>Big ownership.</span></h2>
-              <p>We work directly across product, engineering and design — from the first question to the real-world result.</p>
-              <div className="founder__note"><Sparkles size={18} /><span>Quality is not a finish line. It is a way of deciding what to build next.</span></div>
-              <Link className="text-link" href="/careers">Meet the way we work <ChevronRight size={17} /></Link>
-            </div>
-            <div className="founder__image-wrap">
-              <span className="founder__tag">FOUNDER / QUALITY / AI PRODUCTS</span>
-              <img src="/manus-storage/maybei-founder-olga_a9262691.png" alt="Olga Kruglova, founder of maybei" className="founder__image" />
-            </div>
+          <div className="founder__intro">
+            <span className="section-index">The people behind the standard</span>
+            <h2>Two founders.<br /><span>One better standard.</span></h2>
+            <p>Different paths into the same mission: build technology that reduces friction and leaves people better supported.</p>
           </div>
+          <div className="founder__pair">
+            <article className="founder-card founder-card--olga">
+              <div className="founder-card__image-wrap">
+                <span className="founder-card__tag">FOUNDER / PRODUCT QUALITY</span>
+                <img src="/manus-storage/maybei-founder-olga-office_172602dd.png" alt="Olga Kruglova, founder of maybei" className="founder-card__image" />
+              </div>
+              <div className="founder-card__meta"><span>01 / OLGA KRUGLOVA</span><b>Founder</b></div>
+              <p>Building the standard for products that feel clearer, kinder and more useful in everyday life.</p>
+            </article>
+            <article className="founder-card founder-card--danil">
+              <div className="founder-card__image-wrap">
+                <span className="founder-card__tag">FOUNDER / LEAD DEVELOPER</span>
+                <img src="/manus-storage/maybei-founder-danil_6952f69e.jpg" alt="Danil Lobanov, founder and lead developer of maybei" className="founder-card__image" />
+              </div>
+              <div className="founder-card__meta"><span>02 / DANIL LOBANOV</span><b>Founder · Lead developer</b></div>
+              <p>For five years, my life was about connecting with people through music in China. Today, I use code to do the same. My mission is to build tech products that actually serve humanity.</p>
+            </article>
+          </div>
+          <div className="founder__footer"><div className="founder__note"><Sparkles size={18} /><span>Quality is not a finish line. It is a way of deciding what to build next.</span></div><Link className="text-link" href="/careers">Meet the way we work <ChevronRight size={17} /></Link></div>
         </section>
 
         <section className="careers-cta">

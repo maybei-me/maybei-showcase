@@ -45,7 +45,7 @@ export function BrandLockup({ inverse = true, compact = false }: BrandLockupProp
   return (
     <div className={`brand-lockup ${inverse ? "brand-lockup--inverse" : ""} ${compact ? "brand-lockup--compact" : ""}`}>
       <LogoMark className="brand-lockup__mark" />
-      <span className="brand-lockup__word">maybei<span className="brand-lockup__i-dot">i</span></span>
+      <span className="brand-lockup__word">maybe<span className="brand-lockup__i-dot">i</span></span>
       {!compact && <span className="brand-lockup__line">MAKE IT BETTER.</span>}
     </div>
   );

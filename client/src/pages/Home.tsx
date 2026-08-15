@@ -157,9 +157,9 @@ export default function Home() {
                   <h3>{product.name}</h3>
                   <p>{product.description}</p>
                 </div>
-                <button type="button" className="product-card__action" aria-label={`Read about ${product.name}`}>
+                <span className="product-card__action" aria-hidden="true">
                   <ArrowUpRight size={19} />
-                </button>
+                </span>
               </article>
             ))}
           </div>

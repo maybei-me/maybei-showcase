@@ -1,0 +1,13 @@
+/* Midnight Signal Matrix: a dark recovery screen with an obvious, branded escape route. */
+.not-found-shell { position: relative; display: grid; min-height: 100svh; padding: 30px max(24px, calc((100vw - 1380px) / 2)); overflow: hidden; background: radial-gradient(circle at 80% 25%, rgba(82,99,255,.25), transparent 30rem), var(--midnight); }
+.not-found-shell__grid { position: absolute; inset: 0; opacity: .28; background-image: linear-gradient(rgba(197,200,230,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(197,200,230,.08) 1px, transparent 1px); background-size: 86px 86px; mask-image: linear-gradient(135deg, black, transparent 80%); }
+.not-found-shell__brand { position: relative; align-self: start; justify-self: start; z-index: 1; }
+.not-found-shell__content { position: relative; z-index: 1; align-self: center; max-width: 700px; }
+.not-found-shell__content h1 { margin: 25px 0; font-family: "Manrope", sans-serif; font-size: clamp(4rem, 10vw, 9.5rem); font-weight: 700; line-height: .85; letter-spacing: -.08em; }
+.not-found-shell__content h1 span { color: transparent; background: linear-gradient(98deg, var(--blue), var(--violet)); background-clip: text; -webkit-background-clip: text; }
+.not-found-shell__content p { max-width: 370px; margin: 0 0 32px; color: var(--mist); font-size: 16px; line-height: 1.6; }
+.not-found-shell__mark { position: absolute; right: 12%; top: 44%; display: grid; width: min(30vw, 350px); place-items: center; }
+.not-found-shell__mark svg:first-child { width: 100%; height: auto; filter: drop-shadow(0 25px 36px rgba(82,99,255,.3)); }
+.not-found-shell__mark svg:last-child { position: absolute; right: 1%; top: -4%; color: var(--lime); }
+.not-found-shell__signal { position: relative; z-index: 1; align-self: end; justify-self: end; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .17em; }
+@media (max-width: 650px) { .not-found-shell__mark { right: -20%; top: 17%; width: 70vw; opacity: .32; } .not-found-shell__signal { justify-self: start; } }

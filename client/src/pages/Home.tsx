@@ -199,10 +199,10 @@ export default function Home() {
           <div className="founder__pair">
             <article className="founder-card founder-card--danil">
               <div className="founder-card__image-wrap">
-                <span className="founder-card__tag">FOUNDER / LEAD DEVELOPER</span>
+                <span className="founder-card__tag">FOUNDER / DEVELOPER</span>
                 <img src="/manus-storage/maybei-founder-danil_6952f69e.jpg" alt="Danil Lobanov, founder and lead developer of maybei" className="founder-card__image" />
               </div>
-              <div className="founder-card__meta"><span>01 / DANIL LOBANOV</span><b>Founder · Lead Developer</b></div>
+              <div className="founder-card__meta"><span>01 / DANIL LOBANOV</span><b>Founder · Developer</b></div>
               <div className="founder-card__bio">
                 <p>5 years in commercial software development, including backend and full-stack. Founder &amp; Lead Developer, building AI products across HRTech, consumer tech and IoT.</p>
                 <p>From music in China to technology — I’m driven by the same idea: connect people, solve real problems, make life simpler.</p>
@@ -211,10 +211,10 @@ export default function Home() {
             </article>
             <article className="founder-card founder-card--olga">
               <div className="founder-card__image-wrap">
-                <span className="founder-card__tag">FOUNDER / AI PRODUCTS / QUALITY</span>
+                <span className="founder-card__tag">FOUNDER / AI &amp; QUALITY</span>
                 <img src="/manus-storage/maybei-founder-olga-approved-2026_06743f21.png" alt="Olga Kruglova, founder of maybei" className="founder-card__image" />
               </div>
-              <div className="founder-card__meta"><span>02 / OLGA KRUGLOVA</span><b>Founder · AI Products · Quality</b></div>
+              <div className="founder-card__meta"><span>02 / OLGA KRUGLOVA</span><b>Founder · AI &amp; Quality</b></div>
               <div className="founder-card__bio">
                 <p>15+ years in software quality and international ISO 9001 standards. Founder building AI products focused on people, ethics and social impact.</p>
                 <p>I believe technology matters most when it solves meaningful problems and creates a better everyday life.</p>

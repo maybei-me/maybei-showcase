@@ -141,3 +141,9 @@
 - [x] Заменить длинные bio Danil и Olga на предоставленные короткие версии.
 - [x] Повторно использовать приложенный портрет Olga в founders-карточке.
 - [x] Проверить desktop/mobile и production-сборку.
+
+## Founder role labels and Olga mobile crop
+
+- [x] Укоротить подписи ролей в founders-карточках.
+- [x] Проверить и скорректировать crop Olga на mobile.
+- [x] Повторно проверить сборку и mobile founders section.

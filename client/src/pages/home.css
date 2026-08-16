@@ -187,6 +187,7 @@
   .founder__intro h2 { font-size: clamp(2.8rem, 14vw, 4.6rem); }
   .founder__pair { grid-template-columns: 1fr; margin-top: 42px; }
   .founder-card__image-wrap { height: 390px; }
+  .founder-card--olga .founder-card__image { object-position: 58% center; }
   .founder-card__meta { display: block; line-height: 1.6; }
   .founder-card__meta b { display: block; margin-top: 4px; }
   .founder-card__bio p { font-size: 14px; line-height: 1.58; }

@@ -49,7 +49,3 @@ The current published home route loaded after the latest markup fix with no brow
 ## Header full lockup
 
 Утверждённый full lockup установлен в header через project storage asset. Desktop-проверка подтверждает читаемость gradient M, wordmark, tagline, навигации и CTA без коллизий. На 375 px мобильная версия использует уменьшенную, но всё ещё полную композицию и не конфликтует с CTA `Build with us`.
-
-## Unified M and footer SVG pass
-
-Hero M заменена на ту же широкую, плавную геометрию с blue-violet градиентом и lime-точкой, что и в утверждённом lockup. Full lockup и standalone M подготовлены в SVG; header и footer используют полный SVG lockup. Desktop и 375 px mobile full-page проверки подтверждают единую композицию бренда и отсутствие переполнения footer.

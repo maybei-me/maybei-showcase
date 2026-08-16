@@ -228,11 +228,7 @@ export default function Home() {
         </section>
       </main>
       <footer className="site-footer">
-        <img
-          className="site-footer__lockup"
-          src="/manus-storage/maybei-full-lockup_ec086e67.svg"
-          alt="maybei — Make It Better"
-        />
+        <div className="site-footer__brand"><LogoMark /> <span>maybei</span></div>
         <p>© 2026 maybei. Make it better.</p>
         <a href="mailto:hello@maybei.com">hello@maybei.com</a>
       </footer>

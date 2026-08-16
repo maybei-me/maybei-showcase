@@ -14,24 +14,24 @@ export function LogoMark({ className = "", mono = false }: LogoMarkProps) {
     <svg
       aria-hidden="true"
       className={className}
-      viewBox="0 0 920 320"
+      viewBox="0 0 108 68"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <linearGradient id={gradientId} x1="100" y1="80" x2="820" y2="250" gradientUnits="userSpaceOnUse">
+        <linearGradient id={gradientId} x1="6" y1="14" x2="96" y2="60" gradientUnits="userSpaceOnUse">
           <stop stopColor={mono ? "currentColor" : "#5263FF"} />
           <stop offset="1" stopColor={mono ? "currentColor" : "#9C50FF"} />
         </linearGradient>
       </defs>
       <path
-        d="M126 226L280 82Q295 67 310 82L465 226Q479 240 493 225L649 82Q664 67 679 82L834 226"
+        d="M10 53L34 20L53 47L75 20L94 53"
         stroke={`url(#${gradientId})`}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth="68"
+        strokeWidth="13"
       />
-      <circle cx="700" cy="43" fill="#C6F34D" r="26" />
+      <circle cx="88.5" cy="9.5" fill="#C6F34D" r="5.5" />
     </svg>
   );
 }

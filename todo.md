@@ -171,3 +171,21 @@
 - [x] Применить тот же lockup в Talio footer без тёмной подложки-тайла.
 - [x] Заменить абстрактную Talio-иконку в карточке проекта на релевантный product visual.
 - [x] Проверить Talio hero, project card, header и footer на desktop/mobile.
+
+## Talio abstract project icon
+
+- [x] Заменить Talio lockup в project card на аккуратную абстрактную иконку.
+- [x] Сохранить единый visual language с Majlis, Smart Boots и STRAWPOD.
+- [x] Проверить баланс project-grid на desktop/mobile.
+
+## Talio hero people visual
+
+- [x] Заменить storefront-визуал в Talio hero на предоставленную фотографию с людьми.
+- [x] Подобрать desktop/mobile crop, сохраняющий лица и фирменный зелёно-лаймовый контекст.
+- [ ] Проверить Talio hero и опубликовать обновление.
+
+## Talio footer logo parity
+
+- [x] Сопоставить Talio footer asset и размер с основной страницей.
+- [x] Применить тот же lockup и размеры в Talio footer.
+- [x] Проверить Talio footer на desktop/mobile.

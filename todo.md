@@ -309,3 +309,7 @@
 - [x] Upload the HTML Playwright report after every UI test run, not only on failure.
 - [x] Add a readable UI-test result summary to the GitHub Actions job summary.
 - [x] Document report access and verify the updated workflow on the open pull request.
+
+## Careers location cleanup
+- [x] Find and remove the Astana location from vacancies and related careers copy.
+- [x] Verify the Careers route and publish the corrected content.

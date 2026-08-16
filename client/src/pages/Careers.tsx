@@ -18,10 +18,10 @@ const disciplines = [
 ];
 
 const roles = [
-  ["AI / ML Engineer", "Remote / Astana / Flexible", "Full-time"],
-  ["Full-stack Engineer", "Remote / Astana / Flexible", "Full-time"],
+  ["AI / ML Engineer", "Remote / Flexible", "Full-time"],
+  ["Full-stack Engineer", "Remote / Flexible", "Full-time"],
   ["Product Designer", "Remote", "Full-time"],
-  ["Product Manager — Talio", "Astana / Remote", "Full-time"],
+  ["Product Manager — Talio", "Remote / Flexible", "Full-time"],
 ];
 
 const values = [
@@ -129,7 +129,7 @@ export default function Careers() {
 
         <section id="roles" className="career-section career-roles">
           <div className="career-rail"><span>05 / OPEN POSITIONS</span><b>JOIN US</b></div>
-          <div className="career-roles__header"><h2>Find your<br /><span>place.</span></h2><p>Roles can be remote, in Astana, or flexible. We care most about the work you want to make better.</p></div>
+          <div className="career-roles__header"><h2>Find your<br /><span>place.</span></h2><p>Roles can be remote or flexible. We care most about the work you want to make better.</p></div>
           <div className="career-roles__list">
             {roles.map(([title, location, type]) => (
               <a key={title} href="mailto:careers@maybei.ai?subject=Interest%20in%20a%20role%20at%20maybei" className="career-role">

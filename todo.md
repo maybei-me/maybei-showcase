@@ -270,3 +270,12 @@
 - [x] Reproduce the footer issue at the user's browser-window proportions and measure document/client overflow.
 - [x] Constrain footer and page content to the actual viewport width without clipping the right link.
 - [x] Verify the final result in the same scenario and publish only after visual confirmation.
+
+
+## Product and engineering improvements
+- [x] Add accessible cookie/privacy consent block with persisted choice.
+- [x] Add an in-page Talio company pilot application form with validation and success state.
+- [x] Document Playwright package, commands, report locations, CI artifacts and failure debugging in README.md.
+- [x] Extend UI automation tests for consent and Talio form flows.
+- [x] Require at least one approving pull request review on main in addition to the CI status check.
+- [x] Run full QA and publish the completed update.

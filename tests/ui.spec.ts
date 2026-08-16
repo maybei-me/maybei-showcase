@@ -27,7 +27,7 @@ test.describe('maybei showcase core journeys', () => {
     await expect(page.getByRole('heading', { name: /We build the AI layer/i })).toBeVisible();
   });
 
-  test('Talio exposes workflow anchor and company-pilot CTA', async ({ page }) => {
+  test('Talio exposes workflow anchor and company-pilot form', async ({ page }) => {
     await page.goto('/talio');
 
     await expect(page.getByText('LIVE PRODUCT', { exact: true })).toBeVisible();
@@ -36,6 +36,19 @@ test.describe('maybei showcase core journeys', () => {
     await page.getByRole('link', { name: /See how it works/i }).click();
     await expect(page).toHaveURL(/\/talio#product$/);
     await expect(page.getByRole('heading', { name: /Every candidate deserves an answer/i })).toBeVisible();
+    await page.getByLabel('Company email').fill('pilot@example.com');
+    await page.getByLabel('What are you hiring for?').fill('Engineering and product');
+    await page.getByRole('button', { name: /Request a pilot conversation/i }).click();
+    await expect(page.getByRole('status')).toContainText(/not connected to a live inbox/i);
+  });
+
+  test('privacy consent can be dismissed and persists after reload', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.getByRole('dialog', { name: /Privacy preferences/i })).toBeVisible();
+    await page.getByRole('button', { name: /Essential only/i }).click();
+    await expect(page.getByRole('dialog', { name: /Privacy preferences/i })).toHaveCount(0);
+    await page.reload();
+    await expect(page.getByRole('dialog', { name: /Privacy preferences/i })).toHaveCount(0);
   });
 
   test('unknown routes offer a clear way back to the company site', async ({ page }) => {

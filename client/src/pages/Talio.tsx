@@ -2,6 +2,7 @@
  * Talio product page: cream-led product storytelling with real UI evidence,
  * candidate/employer parity, and a clear invitation for early company partners.
  */
+import { useState, type FormEvent } from "react";
 import { ArrowLeft, ArrowUpRight, Check, Clock3, MessageCircle, Search, Users } from "lucide-react";
 import { Link } from "wouter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -30,6 +31,13 @@ const employerFeatures: Array<[string, string, FeatureIcon]> = [
 ];
 
 export default function Talio() {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handlePilotSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
     <div className="talio-page">
       <SiteHeader />
@@ -93,7 +101,16 @@ export default function Talio() {
           <span className="talio-eyebrow">For companies ready to hire differently</span>
           <h2>Be part of the<br /><em>first cohort.</em></h2>
           <p>Talio is onboarding its first candidates and employers now. We are looking for companies willing to shape a more transparent hiring process with us.</p>
-          <a className="talio-button talio-button--lime" href="https://talio.tech" target="_blank" rel="noreferrer">Talk about a company pilot <ArrowUpRight size={17} /></a>
+          {submitted ? (
+            <p className="talio-form-success" role="status">Thanks — your pilot brief is ready. This preview form is not connected to a live inbox yet.</p>
+          ) : (
+            <form id="company-pilot-form" className="talio-pilot-form" onSubmit={handlePilotSubmit}>
+              <label><span>Company email</span><input name="email" type="email" required placeholder="you@company.com" /></label>
+              <label><span>What are you hiring for?</span><input name="need" required placeholder="e.g. engineering, sales, product" /></label>
+              <button className="talio-button talio-button--lime" type="submit">Request a pilot conversation <ArrowUpRight size={17} /></button>
+              <small>We only use these details to shape the pilot conversation. Live delivery will be connected before launch.</small>
+            </form>
+          )}
         </section>
       </main>
       <footer className="site-footer talio-footer"><img className="site-footer__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" /><p>© 2026 maybei. Talio — transparent hiring for everyone.</p><Link href="/">Back to maybei</Link></footer>

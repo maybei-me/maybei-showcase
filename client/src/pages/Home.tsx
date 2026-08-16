@@ -204,11 +204,8 @@ export default function Home() {
               </div>
               <div className="founder-card__meta"><span>01 / DANIL LOBANOV</span><b>Founder · Lead Developer</b></div>
               <div className="founder-card__bio">
-                <p>For 5 years, I built my life around music and people in China. Today, I build technology.</p>
-                <p>As a founder and lead developer, I create AI-powered products designed around real human problems — making complex things simpler, removing friction, and helping people move forward.</p>
-                <p>I bring 5 years of commercial backend experience, including 2 years of full-stack development. I’ve owned backend features end to end — from product requirements, API and data-model design to implementation, testing, deployment, observability, and production support.</p>
-                <p>I’ve built production systems across distributed consumer products, HRTech, and IoT.</p>
-                <p>I don’t build technology for technology’s sake. I believe the best products are the ones that quietly make everyday life better.</p>
+                <p>5 years in commercial software development, including backend and full-stack. Founder &amp; Lead Developer, building AI products across HRTech, consumer tech and IoT.</p>
+                <p>From music in China to technology — I’m driven by the same idea: connect people, solve real problems, make life simpler.</p>
               </div>
               <span className="founder-card__linkedin">LinkedIn →</span>
             </article>
@@ -219,10 +216,8 @@ export default function Home() {
               </div>
               <div className="founder-card__meta"><span>02 / OLGA KRUGLOVA</span><b>Founder · AI Products · Quality</b></div>
               <div className="founder-card__bio">
-                <p>For 15+ years, I built my career around software quality and international ISO 9001 standards. Today, I build AI products.</p>
-                <p>As a founder, I focus on creating technology that is not only powerful, but responsible — products designed around real human needs and meaningful social impact.</p>
-                <p>My experience in software quality taught me that great products require more than good ideas. They require discipline, thoughtful execution, and a deep understanding of the people they are built for.</p>
-                <p>I believe that as technology becomes more powerful, building it responsibly matters even more. My goal is to create AI that helps people, solves meaningful problems, and makes a positive difference.</p>
+                <p>15+ years in software quality and international ISO 9001 standards. Founder building AI products focused on people, ethics and social impact.</p>
+                <p>I believe technology matters most when it solves meaningful problems and creates a better everyday life.</p>
               </div>
               <span className="founder-card__linkedin">LinkedIn →</span>
             </article>

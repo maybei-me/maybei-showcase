@@ -258,3 +258,9 @@
 - [x] Reproduce the clipping against the user's supplied screenshot and inspect the actual bottom-edge geometry.
 - [x] Fix the footer container, width, overflow and safe-area spacing for desktop and mobile.
 - [x] Run final QA, save a new checkpoint and publish the corrected version.
+
+
+## Published Talio footer recheck
+- [ ] Inspect the exact published URL and capture the footer's visible clipping state.
+- [ ] Compare published CSS/DOM geometry with local source and identify the real cause.
+- [ ] Apply an addressable fix, verify the published page, and save a checkpoint only after confirmation.

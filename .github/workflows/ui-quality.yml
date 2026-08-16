@@ -44,15 +44,35 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
 
       - name: Run UI automation suite
+        id: ui-tests
         run: pnpm test:ui
 
-      - name: Upload Playwright artifacts on failure
-        if: failure()
+      - name: Upload Playwright report and failure artifacts
+        id: playwright-report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-artifacts
+          name: playwright-report
           path: |
             playwright-report/
             test-results/
-          if-no-files-found: ignore
-          retention-days: 7
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Publish UI test summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## Playwright UI automation"
+            if [ "${{ steps.ui-tests.outcome }}" = "success" ]; then
+              echo "✅ **UI test suite passed.**"
+            elif [ "${{ steps.ui-tests.outcome }}" = "failure" ]; then
+              echo "❌ **UI test suite failed.**"
+            else
+              echo "⚠️ **UI test suite did not complete.**"
+            fi
+            echo
+            echo "Download the **playwright-report** artifact from this workflow run to open the HTML report."
+            echo "Failure-only screenshots, videos and traces are included in the same artifact when generated."
+          } >> "$GITHUB_STEP_SUMMARY"

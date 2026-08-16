@@ -56,6 +56,8 @@ When a local test fails, start with the focused test using `--headed` or `--debu
 | HTML report | `playwright-report/index.html` | Open via `pnpm exec playwright show-report playwright-report`. |
 | Screenshot, video and trace | `test-results/` | Locate the failing test folder; open the image/video or pass the trace ZIP to `show-trace`. |
 | CI job output | GitHub → **Actions** → failed **UI quality gate** run | Expand the `quality` job and identify the failing command and test. |
-| CI artifact bundle | `playwright-artifacts` on the failed workflow run | Download within seven days; it contains `playwright-report/` and `test-results/`. |
+| CI job summary | GitHub → **Actions** → any **UI quality gate** run | Shows whether the UI suite passed, failed or did not complete, plus where to find the report. |
+| CI HTML report | `playwright-report` artifact on every workflow run | Download within fourteen days and open `playwright-report/index.html`. |
+| Failure screenshots, video and trace | Inside the same `playwright-report` artifact when a test fails | Inspect the failing test folder under `test-results/`; open trace ZIP files with `show-trace`. |
 
-The GitHub Actions workflow runs `pnpm check`, `pnpm build`, installs Playwright Chromium, runs `pnpm test:ui`, and uploads the artifacts only if a step fails. The `main` branch requires this check and one approving pull-request review before merge.
+The GitHub Actions workflow runs `pnpm check`, `pnpm build`, installs Playwright Chromium, runs `pnpm test:ui`, uploads the HTML Playwright report after every run and writes a concise UI-test result to the job summary. Failure-only screenshots, videos and traces are included in the same artifact when generated. The `main` branch requires this check and one approving pull-request review before merge.

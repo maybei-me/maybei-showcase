@@ -291,11 +291,21 @@
 - [x] Verify footer dimensions and the full Talio page in all three viewport scenarios before publication.
 
 ## Visible UI automation documentation
-- [ ] Compare local README.md with the README rendered on the public GitHub main branch.
-- [ ] Add a prominent standalone section for package, test scope, commands, reports, CI artifacts and debugging.
+- [x] Compare local README.md with the README rendered on the public GitHub main branch.
+- [x] Add a prominent standalone section for package, test scope, commands, reports, CI artifacts and debugging.
 - [ ] Verify the rendered GitHub README after publication and provide its exact location.
 
 ## Combined final delivery
-- [ ] Save and publish the accepted Talio footer and wide-desktop composition repair.
+- [x] Save and publish the accepted Talio footer and wide-desktop composition repair.
 - [ ] Synchronize the prominent README automation documentation to the public main branch.
 - [ ] Verify both the live Talio page and GitHub-rendered README before final delivery.
+
+## Pull request review required
+- [x] Create pull request #1 with Talio, README and CI configuration changes.
+- [x] Resolve the pnpm CI setup conflict and confirm the UI quality gate passes.
+- [ ] Obtain one independent approving review and merge the protected pull request into main.
+
+## Playwright report in CI/CD
+- [ ] Upload the HTML Playwright report after every UI test run, not only on failure.
+- [ ] Add a readable UI-test result summary to the GitHub Actions job summary.
+- [ ] Document report access and verify the updated workflow on the open pull request.

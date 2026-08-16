@@ -15,7 +15,7 @@ The project is a public-facing corporate showcase with dedicated pages for the c
 
 This repository uses **Playwright 1.62.0** through the `@playwright/test` package. Run the suite with `pnpm test:ui`; run it with a visible browser using `pnpm test:ui:headed`. The suite currently covers navigation, Talio pilot-form validation, cookie/privacy consent persistence, 404 recovery, mobile navigation and the full-bleed Talio footer regression check.
 
-After a local failure, open `playwright-report/index.html` with `pnpm exec playwright show-report playwright-report`, then inspect screenshots, videos and traces under `test-results/`. On GitHub, open the failed **UI quality gate** workflow run and download the `playwright-artifacts` artifact. It contains both folders for seven days.
+After a local failure, open `playwright-report/index.html` with `pnpm exec playwright show-report playwright-report`, then inspect screenshots, videos and traces under `test-results/`. On GitHub, every **UI quality gate** workflow run now writes a Playwright status section in its job summary and uploads the `playwright-report` artifact. Download it from the run summary to open the HTML report; any failure screenshots, videos and traces are included alongside it. Artifacts are retained for fourteen days.
 
 ## Product scope
 

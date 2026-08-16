@@ -1,7 +1,7 @@
 /* Talio product page: cream product canvas, dark-green proof blocks, lime signals, real UI evidence. */
-.talio-page { --talio-cream: #fefaf4; --talio-paper: #f8f3ea; --talio-green: #163629; --talio-green-2: #1d4737; --talio-lime: #c8d83a; --talio-muted: #6b746e; background: var(--talio-cream); color: var(--talio-green); }
+.talio-page { --talio-cream: #fefaf4; --talio-paper: #f8f3ea; --talio-green: #163629; --talio-green-2: #1d4737; --talio-lime: #c8d83a; --talio-muted: #6b746e; min-height: 100%; overflow-x: clip; background: var(--talio-cream); color: var(--talio-green); }
 .talio-page .site-header { background: var(--midnight); }
-.talio-page main { overflow: clip; }
+.talio-page main { overflow: visible; }
 .talio-hero { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr); min-height: 720px; padding: 76px max(24px, calc((100% - 1380px) / 2)); background: var(--talio-cream); overflow: hidden; }
 .talio-hero__content { position: relative; z-index: 2; align-self: center; max-width: 660px; padding: 42px 0 74px; }
 .talio-back { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 54px; color: var(--talio-muted); font-size: 12px; font-weight: 700; }
@@ -64,7 +64,7 @@
 .talio-partner-cta .talio-eyebrow { color: var(--talio-lime); }
 .talio-partner-cta h2 { max-width: 720px; color: var(--talio-cream); font-size: clamp(3.4rem, 7vw, 7.4rem); }
 .talio-partner-cta p { max-width: 430px; margin: 28px 0 32px; color: rgba(254,250,244,.72); font-size: 16px; line-height: 1.55; }
-.talio-footer { box-sizing: border-box; min-height: 122px; margin-bottom: 24px; padding: 22px 0 28px; background: #070b1f; color: rgba(247,248,255,.64); }
+.talio-footer { box-sizing: border-box; width: min(100% - 48px, 1380px); min-height: 146px; margin: 0 auto 28px; padding: 30px 0 42px; background: #070b1f; color: rgba(247,248,255,.64); }
 .talio-footer a { color: var(--white); }
 @media (max-width: 900px) { .talio-hero { grid-template-columns: 1fr; padding: 52px 24px 0; } .talio-hero__visual { min-height: 360px; } .talio-hero__people-visual { width: min(100%, 620px) !important; } .talio-hero__content { padding-bottom: 28px; } .talio-split, .talio-evidence__header { grid-template-columns: 1fr; gap: 26px; } .talio-flow__list { grid-template-columns: repeat(3, 1fr); } .talio-evidence__images { grid-template-columns: 1fr; } }
-@media (max-width: 650px) { .talio-hero h1 { font-size: clamp(4rem, 17vw, 5.8rem); } .talio-hero__actions { align-items: flex-start; flex-direction: column; gap: 18px; } .talio-trust { align-items: flex-start; flex-direction: column; gap: 8px; } .talio-section { width: min(100% - 32px, 1380px); padding: 88px 0; } .talio-stat-grid, .talio-flow__list, .talio-feature-columns { grid-template-columns: 1fr; } .talio-flow__item { min-height: 190px; } .talio-flow__item h3 { margin-top: 46px; } .talio-evidence { padding: 88px 16px; } .talio-partner-cta { width: min(100% - 32px, 1380px); padding: 52px 26px 64px; } .talio-footer { width: min(100% - 32px, 1380px); margin-bottom: 16px; padding: 24px 20px 32px; } }
+@media (max-width: 650px) { .talio-hero h1 { font-size: clamp(4rem, 17vw, 5.8rem); } .talio-hero__actions { align-items: flex-start; flex-direction: column; gap: 18px; } .talio-trust { align-items: flex-start; flex-direction: column; gap: 8px; } .talio-section { width: min(100% - 32px, 1380px); padding: 88px 0; } .talio-stat-grid, .talio-flow__list, .talio-feature-columns { grid-template-columns: 1fr; } .talio-flow__item { min-height: 190px; } .talio-flow__item h3 { margin-top: 46px; } .talio-evidence { padding: 88px 16px; } .talio-partner-cta { width: min(100% - 32px, 1380px); padding: 52px 26px 64px; } .talio-footer { width: min(100% - 32px, 1380px); min-height: 142px; margin-bottom: 22px; padding: 26px 0 38px; } }

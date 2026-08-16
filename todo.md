@@ -239,3 +239,22 @@
 - [x] Сопоставить Talio footer asset и размер с основной страницей.
 - [x] Применить тот же lockup и размеры в Talio footer.
 - [x] Проверить Talio footer на desktop/mobile.
+
+
+## GitHub repository visibility and required CI
+- [x] Enable or verify the GitHub connector with repository-management permissions.
+- [x] Change `olgakruglovam-arch/maybei-showcase` visibility to public after user confirmation.
+- [x] Configure `main` branch protection requiring `Type check, build and UI tests`.
+- [x] Verify repository visibility and required status check via GitHub API.
+- [x] Report the final GitHub configuration to the user.
+
+## Talio footer follow-up
+- [ ] Reinspect the published Talio footer against the user's screenshot.
+- [ ] Apply and verify a final footer clipping fix if still present.
+- [ ] Save a new checkpoint after the footer fix.
+
+
+## Final Talio footer acceptance — three agreed points
+- [x] Reproduce the clipping against the user's supplied screenshot and inspect the actual bottom-edge geometry.
+- [x] Fix the footer container, width, overflow and safe-area spacing for desktop and mobile.
+- [x] Run final QA, save a new checkpoint and publish the corrected version.

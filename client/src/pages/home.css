@@ -122,9 +122,8 @@
 .founder-card__image-wrap::before { position: absolute; z-index: 1; inset: 0; content: ""; opacity: .34; background-image: linear-gradient(90deg, rgba(197,200,230,.13) 1px, transparent 1px), linear-gradient(rgba(197,200,230,.1) 1px, transparent 1px); background-size: 50px 50px; mix-blend-mode: screen; pointer-events: none; }
 .founder-card__image-wrap::after { position: absolute; z-index: 2; inset: 0; content: ""; background: linear-gradient(180deg, rgba(7,11,31,.16) 18%, rgba(7,11,31,.78)); pointer-events: none; }
 .founder-card__image { width: 100%; height: 100%; object-fit: cover; filter: saturate(.62) contrast(1.11) hue-rotate(4deg); }
-.founder-card--olga .founder-card__image { filter: saturate(1.03) contrast(1.01); object-position: 65% center; }
-.founder-card--olga .founder-card__image-wrap::before { opacity: 0; }
-.founder-card--olga .founder-card__image-wrap::after { background: transparent; }
+.founder-card--olga .founder-card__image { filter: none; object-position: 65% center; }
+.founder-card--olga .founder-card__image-wrap::after { background: linear-gradient(180deg, rgba(7,11,31,.04) 18%, rgba(7,11,31,.22)); }
 .founder-card--danil .founder-card__image { object-position: 50% center; }
 .founder-card__tag { position: absolute; z-index: 2; top: 22px; left: 22px; padding: 8px 11px; border: 1px solid rgba(247,248,255,.2); border-radius: 99px; background: rgba(7,11,31,.45); backdrop-filter: blur(8px); color: var(--white); font-size: 9px; font-weight: 700; letter-spacing: .12em; }
 .founder-card__meta { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 18px; color: var(--mist); font-size: 10px; font-weight: 700; letter-spacing: .12em; }
@@ -194,7 +193,7 @@
   .founder__intro h2 { font-size: clamp(2.8rem, 14vw, 4.6rem); }
   .founder__pair { grid-template-columns: 1fr; margin-top: 42px; }
   .founder-card__image-wrap { height: 390px; }
-  .founder-card--olga .founder-card__image { filter: saturate(1.03) contrast(1.01); object-position: 58% center; }
+  .founder-card--olga .founder-card__image { filter: none; object-position: 58% center; }
   .founder-card__meta { display: block; line-height: 1.6; }
   .founder-card__meta b { display: block; margin-top: 4px; }
   .founder-card__bio p { font-size: 14px; line-height: 1.58; }

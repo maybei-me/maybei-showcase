@@ -9,6 +9,14 @@ The project is a public-facing corporate showcase with dedicated pages for the c
 | Live site | `https://maybeishowca-wn86snno.manus.space/` |
 | Local development | `http://localhost:3000` |
 
+## UI automation — run, scope and failure reports
+
+> **Full guide:** [`AUTOMATION_TESTING.md`](./AUTOMATION_TESTING.md)
+
+This repository uses **Playwright 1.62.0** through the `@playwright/test` package. Run the suite with `pnpm test:ui`; run it with a visible browser using `pnpm test:ui:headed`. The suite currently covers navigation, Talio pilot-form validation, cookie/privacy consent persistence, 404 recovery, mobile navigation and the full-bleed Talio footer regression check.
+
+After a local failure, open `playwright-report/index.html` with `pnpm exec playwright show-report playwright-report`, then inspect screenshots, videos and traces under `test-results/`. On GitHub, open the failed **UI quality gate** workflow run and download the `playwright-artifacts` artifact. It contains both folders for seven days.
+
 ## Product scope
 
 The home page introduces the maybei thesis, method, portfolio, founders, and careers direction. The portfolio currently contains Talio, Majlis, Smart Boots, and STRAWPOD. Talio has its own product page built around the promise of transparent hiring, a candidate/employer workflow, product interface evidence, and an early-company pilot call to action. The page now includes an in-page pilot brief form with required company email and hiring-need fields. It currently validates and confirms the brief in the browser; a secure delivery endpoint or connected inbox must be supplied before accepting live submissions.

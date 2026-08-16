@@ -193,9 +193,8 @@ export default function Home() {
         <section id="founder" className="founder section-shell">
           <div className="section-rail"><span>PEOPLE</span><b>05</b></div>
           <div className="founder__intro">
-            <span className="section-index">The people behind the standard</span>
-            <h2>Two founders.<br /><span>One better standard.</span></h2>
-            <p>Different paths into the same mission: build technology that reduces friction and leaves people better supported.</p>
+            <span className="section-index">Founders</span>
+            <h2>Built by people<br /><span>who care about what technology does.</span></h2>
           </div>
           <div className="founder__pair">
             <article className="founder-card founder-card--danil">
@@ -203,19 +202,32 @@ export default function Home() {
                 <span className="founder-card__tag">FOUNDER / LEAD DEVELOPER</span>
                 <img src="/manus-storage/maybei-founder-danil_6952f69e.jpg" alt="Danil Lobanov, founder and lead developer of maybei" className="founder-card__image" />
               </div>
-              <div className="founder-card__meta"><span>01 / DANIL LOBANOV</span><b>Founder · Lead developer</b></div>
-              <p>For five years, my life was about connecting with people through music in China. Today, I use code to do the same. My mission is to build tech products that actually serve humanity.</p>
+              <div className="founder-card__meta"><span>01 / DANIL LOBANOV</span><b>Founder · Lead Developer</b></div>
+              <div className="founder-card__bio">
+                <p>For 5 years, I built my life around music and people in China. Today, I build technology.</p>
+                <p>As a founder and lead developer, I create AI-powered products designed around real human problems — making complex things simpler, removing friction, and helping people move forward.</p>
+                <p>I bring 5 years of commercial backend experience, including 2 years of full-stack development. I’ve owned backend features end to end — from product requirements, API and data-model design to implementation, testing, deployment, observability, and production support.</p>
+                <p>I’ve built production systems across distributed consumer products, HRTech, and IoT.</p>
+                <p>I don’t build technology for technology’s sake. I believe the best products are the ones that quietly make everyday life better.</p>
+              </div>
+              <span className="founder-card__linkedin">LinkedIn →</span>
             </article>
             <article className="founder-card founder-card--olga">
               <div className="founder-card__image-wrap">
-                <span className="founder-card__tag">FOUNDER / PRODUCT QUALITY</span>
-                <img src="/manus-storage/maybei-founder-olga-final_3523ac68.png" alt="Olga Kruglova, founder of maybei" className="founder-card__image" />
+                <span className="founder-card__tag">FOUNDER / AI PRODUCTS / QUALITY</span>
+                <img src="/manus-storage/maybei-founder-olga-approved-2026_06743f21.png" alt="Olga Kruglova, founder of maybei" className="founder-card__image" />
               </div>
-              <div className="founder-card__meta"><span>02 / OLGA KRUGLOVA</span><b>Founder · Product quality</b></div>
-              <p>After 15+ years of mastering software quality and upholding rigorous international ISO 9001 standards, I realized something: discipline is only as good as the impact it creates. Now, I’m channeling that core execution power into building my own AI products at the founder level. My focus is entirely on ethical tech and startups with a deep social impact. Technology is scaling faster than ever, and my goal is to ensure it scales responsibly.</p>
+              <div className="founder-card__meta"><span>02 / OLGA KRUGLOVA</span><b>Founder · AI Products · Quality</b></div>
+              <div className="founder-card__bio">
+                <p>For 15+ years, I built my career around software quality and international ISO 9001 standards. Today, I build AI products.</p>
+                <p>As a founder, I focus on creating technology that is not only powerful, but responsible — products designed around real human needs and meaningful social impact.</p>
+                <p>My experience in software quality taught me that great products require more than good ideas. They require discipline, thoughtful execution, and a deep understanding of the people they are built for.</p>
+                <p>I believe that as technology becomes more powerful, building it responsibly matters even more. My goal is to create AI that helps people, solves meaningful problems, and makes a positive difference.</p>
+              </div>
+              <span className="founder-card__linkedin">LinkedIn →</span>
             </article>
           </div>
-          <div className="founder__footer"><div className="founder__note"><Sparkles size={18} /><span>Quality is not a finish line. It is a way of deciding what to build next.</span></div><Link className="text-link" href="/careers">Meet the way we work <ChevronRight size={17} /></Link></div>
+          <div className="founder__footer"><div className="founder__note"><Sparkles size={18} /><span>Different backgrounds.<br />Same belief: Technology should serve people.</span></div><Link className="text-link" href="/careers">Meet the way we work <ChevronRight size={17} /></Link></div>
         </section>
 
         <section className="careers-cta">

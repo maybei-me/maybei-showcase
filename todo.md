@@ -121,3 +121,17 @@
 - [x] Добавить предоставленный горизонтальный lockup без tagline в набор веб-asset'ов.
 - [x] Заменить header и footer на предоставленный horizontal lockup без tagline.
 - [x] Сверить отображение логотипов и favicon на desktop и mobile.
+
+## Favicon cache refresh
+
+- [ ] Найти источник старого favicon и устаревших browser metadata.
+- [ ] Заменить favicon с cache-busting URL на утверждённый квадратный знак M.
+- [ ] Проверить favicon на опубликованном сайте и сохранить checkpoint.
+
+## Founders content and Olga portrait update
+
+- [x] Заменить заголовок founders-секции и общий closing statement.
+- [x] Обновить bio Danil и Olga предоставленным текстом без изменения фактов.
+- [x] Добавить LinkedIn CTA-текст без вымышленных URL; реальные профили можно подключить после получения адресов.
+- [x] Заменить фотографию Olga предоставленным изображением.
+- [x] Проверить длинные тексты и founders layout на desktop и mobile.

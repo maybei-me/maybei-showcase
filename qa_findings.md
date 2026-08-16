@@ -33,3 +33,15 @@ Desktop screenshots confirm that the revised hero, Talio proof, audience CTA sys
 ## Runtime confirmation
 
 The current published home route loaded after the latest markup fix with no browser console output. Hero, Talio-first anchor, audience CTA links, founders order and Careers navigation remain present in the rendered page. The decorative spine now includes the fifth section marker in source.
+
+## Talio preview fix
+
+Причина дефекта подтверждена: `perspective(900px) rotateX(5deg) rotateY(-5deg)` искажал интерфейсный скриншот и создавал ощущение кривой картинки. Perspective удалена; контейнер получил фиксированное соотношение 16:9, изображение теперь показывается через `object-fit: contain` с аккуратным padding и без агрессивного crop. Desktop и mobile screenshots подтверждают ровную геометрию и читаемый preview.
+
+## Thesis section fix
+
+Причина смещения была в том, что `.section-rail` позиционируется absolute и не занимает grid-колонку, поэтому `.idea__copy` попадал в узкую первую колонку `.idea` и переносил заголовок по одному слову. Сетка заменена на block-flow с шириной copy до 1120px. Desktop и mobile screenshots подтверждают нормальную ширину заголовка, отсутствие выхода за секцию и сохранённую адаптивность.
+
+## Senior UI/UX homepage acceptance
+
+Главная проверена на desktop и 375 px mobile после системной доработки. Вертикальная coordinate axis теперь проявлена как сквозной маркер с пронумерованными ticks; каждая section rail дополнена signal-node. На фоне основных секций появилась сдержанная matrix-сетка без снижения читаемости. Product-панели стали асимметричными diagnostic panels с разными signal edges и статусной подачей, а audience CTA получила осмысленную разновысотность. Founder portraits получили общую холодную matrix-обработку, grid overlay и единые framing rules. Проверки desktop/mobile не показали переполнения или потерю главных CTA.

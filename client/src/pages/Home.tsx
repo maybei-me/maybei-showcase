@@ -153,13 +153,9 @@ export default function Home() {
             {products.map((product) => (
               <article id={product.featured ? "talio" : undefined} key={product.name} className={`product-card product-card--${product.accent} ${product.featured ? "product-card--featured" : ""}`}>
                 <div className="product-card__top"><span>{product.number}</span><span>a maybei product</span></div>
-                {product.featured ? (
-                  <div className="product-card__talio-mark" aria-hidden="true"><img src="/manus-storage/talio-mark-transparent_17c09826.png" alt="" /></div>
-                ) : (
-                  <div className={`product-card__artifact product-card__artifact--${product.artifact}`} aria-hidden="true">
-                    <i /><i /><i />
-                  </div>
-                )}
+                <div className={`product-card__artifact product-card__artifact--${product.artifact}`} aria-hidden="true">
+                  <i /><i /><i />
+                </div>
                 <div className="product-card__body">
                   <span className="product-card__status">{product.status}</span>
                   <span className="product-card__type">{product.type}</span>

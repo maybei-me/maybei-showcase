@@ -323,3 +323,8 @@
 - [ ] Publish the Playwright HTML report to an online GitHub Pages URL after a successful CI run.
 - [ ] Verify the online report URL and document how to access it from the workflow.
 - [ ] Confirm the required independent approval status for PR #1 and leave the protection rule unchanged.
+
+## Pages workflow condition repair
+- [ ] Replace the malformed publish-report if condition with a valid restricted branch expression.
+- [ ] Re-run CI and confirm Playwright plus Pages deployment status.
+- [ ] Re-check online report URL and required independent approval on main.

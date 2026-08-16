@@ -48,7 +48,7 @@ export default function Talio() {
           </div>
           <div className="talio-hero__visual">
             <div className="talio-hero__orb" />
-            <img src="/manus-storage/talio-sign_053fc204.webp" alt="Talio office sign mockup" />
+            <img src="/manus-storage/talio-storefront-clean_9847516f.webp" alt="Talio storefront sign" />
             <span>01 / TALIO PRODUCT</span>
           </div>
         </section>
@@ -97,7 +97,7 @@ export default function Talio() {
           <a className="talio-button talio-button--lime" href="https://talio.tech" target="_blank" rel="noreferrer">Talk about a company pilot <ArrowUpRight size={17} /></a>
         </section>
       </main>
-      <footer className="site-footer talio-footer"><img className="site-footer__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" /><p>© 2026 maybei. Talio — transparent hiring for everyone.</p><Link href="/">Back to maybei</Link></footer>
+      <footer className="site-footer talio-footer"><img className="site-footer__brand" src="/manus-storage/maybei-standard-lockup-dark_734629cb.png" alt="maybei" /><p>© 2026 maybei. Talio — transparent hiring for everyone.</p><Link href="/">Back to maybei</Link></footer>
     </div>
   );
 }

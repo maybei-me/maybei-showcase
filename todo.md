@@ -164,3 +164,10 @@
 - [x] Отразить текущий статус MVP / NDP и приглашение компаниям присоединяться через talio.tech.
 - [x] Проверить главную и Talio page на desktop/mobile.
 - [x] Сохранить checkpoint с новой Talio page.
+
+## Standard maybei lockup and Talio product visual
+
+- [x] Применить предоставленный стандартный lockup maybei в header без искажения формы.
+- [x] Применить тот же lockup в Talio footer без тёмной подложки-тайла.
+- [x] Заменить абстрактную Talio-иконку в карточке проекта на релевантный product visual.
+- [x] Проверить Talio hero, project card, header и footer на desktop/mobile.

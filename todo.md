@@ -318,3 +318,8 @@
 - [x] Replace role and open-application email links with an accessible in-page candidate form.
 - [x] Add required validation, accessible labels and a transparent client-side confirmation state.
 - [x] Add UI automation coverage and verify the form on desktop and mobile before publishing.
+
+## Online Playwright report and PR approval
+- [ ] Publish the Playwright HTML report to an online GitHub Pages URL after a successful CI run.
+- [ ] Verify the online report URL and document how to access it from the workflow.
+- [ ] Confirm the required independent approval status for PR #1 and leave the protection rule unchanged.

@@ -61,3 +61,7 @@ When a local test fails, start with the focused test using `--headed` or `--debu
 | Failure screenshots, video and trace | Inside the same `playwright-report` artifact when a test fails | Inspect the failing test folder under `test-results/`; open trace ZIP files with `show-trace`. |
 
 The GitHub Actions workflow runs `pnpm check`, `pnpm build`, installs Playwright Chromium, runs `pnpm test:ui`, uploads the HTML Playwright report after every run and writes a concise UI-test result to the job summary. Failure-only screenshots, videos and traces are included in the same artifact when generated. The `main` branch requires this check and one approving pull-request review before merge.
+
+## Online HTML view
+
+After a successful `UI quality gate`, the [online Playwright report](https://olgakruglovam-arch.github.io/maybei-showcase/) is refreshed by the `Publish Playwright report` workflow. It is a convenience view of the latest successful run; use the linked GitHub Actions run for the exact commit, job summary and downloadable `playwright-report` artifact. If the site has not refreshed yet, open the Pages workflow run and wait for its deployment job to complete.

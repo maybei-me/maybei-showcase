@@ -156,3 +156,7 @@ Keep copy factual and approved. In particular, do not invent Talio traction metr
 ## License
 
 The source code is released under the MIT license as declared in `package.json`. Brand assets, names, copy, and product materials remain subject to their respective owner rights.
+
+## Online Playwright report
+
+The latest successful UI quality gate is published as an HTML report at [the Playwright report site](https://olgakruglovam-arch.github.io/maybei-showcase/). The Pages workflow runs after a successful `UI quality gate`, downloads its `playwright-report` artifact, and replaces the online report with the latest result. The GitHub Actions run remains the source of truth for the commit, job summary, artifact archive and failure traces.

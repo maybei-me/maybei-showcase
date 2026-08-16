@@ -178,11 +178,23 @@
 - [x] Сохранить единый visual language с Majlis, Smart Boots и STRAWPOD.
 - [x] Проверить баланс project-grid на desktop/mobile.
 
+## Talio project mark
+
+- [x] Подготовить предоставленный знак Talio с прозрачным фоном.
+- [x] Заменить абстрактную орбиту в Talio card на компактный фирменный знак.
+- [x] Проверить размер, контраст и responsive-сетку проектов.
+
 ## Talio hero people visual
 
 - [x] Заменить storefront-визуал в Talio hero на предоставленную фотографию с людьми.
 - [x] Подобрать desktop/mobile crop, сохраняющий лица и фирменный зелёно-лаймовый контекст.
-- [ ] Проверить Talio hero и опубликовать обновление.
+- [x] Проверить Talio hero и опубликовать обновление.
+
+## Talio hero visual scale
+
+- [x] Увеличить фотографию с людьми в правой части Talio hero.
+- [x] Убрать случайную нижнюю подпись `01 / TALIO PRODUCT`.
+- [x] Проверить desktop/mobile композицию без наложений.
 
 ## Talio footer logo parity
 

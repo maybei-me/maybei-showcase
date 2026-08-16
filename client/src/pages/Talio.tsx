@@ -49,7 +49,6 @@ export default function Talio() {
           <div className="talio-hero__visual">
             <div className="talio-hero__orb" />
             <img className="talio-hero__people-visual" src="/manus-storage/talio-built-for-people_59ee58a8.png" alt="Talio visual featuring people and the message Built for people, powered by technology" />
-            <span>01 / TALIO PRODUCT</span>
           </div>
         </section>
 

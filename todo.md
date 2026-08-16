@@ -109,3 +109,15 @@
 - [x] Заменить компактный header-brand на утверждённый full lockup.
 - [x] Сохранить читаемость навигации, CTA и tagline на desktop.
 - [x] Использовать компактную адаптивную подачу full lockup на mobile.
+
+## Rollback to approved logo checkpoint
+
+- [x] Восстановить checkpoint 04d75735 по запросу пользователя.
+- [x] Проверить TypeScript и production-сборку после отката.
+
+## Approved square mark and logo lockup
+
+- [x] Добавить предоставленный квадратный знак M как favicon и web app icon.
+- [x] Добавить предоставленный горизонтальный lockup без tagline в набор веб-asset'ов.
+- [x] Заменить header и footer на предоставленный horizontal lockup без tagline.
+- [x] Сверить отображение логотипов и favicon на desktop и mobile.

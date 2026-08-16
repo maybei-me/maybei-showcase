@@ -29,7 +29,7 @@
 .button-primary:active { transform: scale(.97); }
 .button-primary--large { padding: 18px 22px; }
 .hero__mark-stage { position: absolute; right: max(5vw, 52px); bottom: 12%; width: min(31vw, 450px); aspect-ratio: 1.2; z-index: -1; opacity: .92; }
-.hero__mark { position: absolute; width: 82%; height: auto; right: 4%; top: 31%; filter: drop-shadow(0 26px 34px rgba(82,99,255,.24)); }
+.hero__mark { position: absolute; width: 100%; height: auto; right: 0; top: 0; filter: drop-shadow(0 26px 34px rgba(82,99,255,.24)); }
 .hero__m-line { position: absolute; height: 1px; background: linear-gradient(90deg, transparent, rgba(156,80,255,.75), transparent); transform-origin: left center; }
 .hero__m-line--one { top: 18%; left: -12%; width: 96%; transform: rotate(-28deg); }
 .hero__m-line--two { bottom: 12%; right: -15%; width: 84%; transform: rotate(28deg); }
@@ -138,8 +138,7 @@
 .careers-cta__mark { position: absolute !important; right: 9%; bottom: 13%; width: min(30vw, 340px); height: auto; opacity: .9; filter: drop-shadow(0 24px 32px rgba(82,99,255,.24)); }
 
 .site-footer { display: flex; align-items: center; justify-content: space-between; width: min(100% - 48px, 1380px); min-height: 106px; margin: 0 auto; color: var(--muted); font-size: 12px; }
-.site-footer__brand { display: inline-flex; align-items: center; gap: 8px; color: var(--white); font-family: "Manrope", sans-serif; font-size: 20px; font-weight: 800; letter-spacing: -.07em; }
-.site-footer__brand svg { width: 33px; height: 22px; }
+.site-footer__brand { display: block; width: clamp(146px, 12vw, 182px); height: auto; }
 .site-footer a:hover { color: var(--lime); }
 
 @media (max-width: 900px) {
@@ -169,6 +168,7 @@
   .hero__bottom { display: block; margin-top: 36px; }
   .hero__bottom p { margin-bottom: 25px; font-size: 15px; }
   .hero__mark-stage { right: -28vw; bottom: 7%; width: 79vw; opacity: .3; }
+  .hero__signal { display: none; }
   .hero__scroll { display: none; }
   .section-shell { padding: 88px 0; }
   .idea__statement { grid-template-columns: 1fr; gap: 24px; margin-top: 36px; }

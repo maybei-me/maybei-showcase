@@ -22,8 +22,8 @@ export function SiteHeader() {
         <Link href="/" className="site-header__brand" aria-label="maybei home">
           <img
             className="site-header__full-lockup"
-            src="/manus-storage/maybei-header-full-lockup_9cfe5a7a.png"
-            alt="maybei — Make It Better"
+            src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp"
+            alt="maybei"
           />
         </Link>
 

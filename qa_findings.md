@@ -49,3 +49,9 @@ The current published home route loaded after the latest markup fix with no brow
 ## Header full lockup
 
 Утверждённый full lockup установлен в header через project storage asset. Desktop-проверка подтверждает читаемость gradient M, wordmark, tagline, навигации и CTA без коллизий. На 375 px мобильная версия использует уменьшенную, но всё ещё полную композицию и не конфликтует с CTA `Build with us`.
+
+## Approved square mark and horizontal lockup — 2026-08-16
+
+Предоставленный квадратный знак M стал источником favicon-набора и применяется как точный прозрачный знак в hero-размещениях. Предоставленный horizontal lockup без tagline установлен в header, footer и 404. Desktop-проверка `/` и `/careers` подтверждает совпадение формы M с предоставленным макетом, читаемость wordmark и отсутствие тёмного квадратного фона вокруг крупных M.
+
+Mobile-проверка на 375 px подтверждает читаемость header-lockup и CTA на `/` и `/careers`; декоративная подпись hero скрыта на этом breakpoint, чтобы не пересекаться с основным текстом. Favicon подключён через `favicon.ico`, PNG icon и Apple Touch Icon из предоставленного квадратного знака.

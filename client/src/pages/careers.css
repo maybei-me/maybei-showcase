@@ -15,7 +15,7 @@
 .careers-hero__tail strong { color: var(--lime); font-size: 16px; line-height: 1.4; }
 .careers-hero__monogram { position: absolute; right: 8%; top: 50%; width: min(31vw, 430px); transform: translateY(-42%); }
 .careers-hero__monogram::after { position: absolute; inset: 20% 7% 2%; border: 1px solid rgba(198,243,77,.25); border-radius: 50%; content: ""; }
-.careers-hero__monogram svg { position: relative; z-index: 1; width: 100%; height: auto; filter: drop-shadow(0 26px 44px rgba(82,99,255,.32)); }
+.careers-hero__monogram img { position: relative; z-index: 1; display: block; width: 100%; height: auto; filter: drop-shadow(0 26px 44px rgba(82,99,255,.32)); }
 .careers-hero__corner { position: absolute; right: max(24px, calc((100% - 1380px) / 2)); bottom: 30px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .16em; }
 
 .career-section { position: relative; width: min(100% - 48px, 1380px); margin: 0 auto; padding: clamp(100px, 12vw, 166px) 0; }

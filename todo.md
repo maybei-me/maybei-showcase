@@ -209,6 +209,13 @@
 - [x] Запустить UI automation suite и задокументировать команду.
 - [x] Сохранить тестовую инфраструктуру в GitHub-синхронизированную версию.
 
+## GitHub Actions UI quality gate
+
+- [x] Добавить workflow на push и pull request.
+- [x] Запускать TypeScript check, production build и Playwright UI suite.
+- [x] Сохранять Playwright report/artifacts при ошибке.
+- [x] Задокументировать GitHub Actions quality gate в README.
+
 ## Talio hero people visual
 
 - [x] Заменить storefront-визуал в Talio hero на предоставленную фотографию с людьми.

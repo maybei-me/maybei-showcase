@@ -106,6 +106,8 @@ Talio uses its own cream, dark-green, and lime product palette. The Talio projec
 
 Create a checkpoint after a tested change. This project is configured to publish automatically whenever a checkpoint is created. The connected GitHub repository is shown in the project management panel under **Settings → GitHub**.
 
+The repository includes `.github/workflows/ui-quality.yml`. GitHub Actions runs `pnpm check`, `pnpm build`, and `pnpm test:ui` on every push, pull request, and manually dispatched run. If the UI suite fails, the workflow uploads the Playwright report and test results as artifacts for seven days.
+
 Before a checkpoint, confirm the following:
 
 - `pnpm check` passes.

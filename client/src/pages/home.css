@@ -138,8 +138,7 @@
 .careers-cta__mark { position: absolute !important; right: 9%; bottom: 13%; width: min(30vw, 340px); height: auto; opacity: .9; filter: drop-shadow(0 24px 32px rgba(82,99,255,.24)); }
 
 .site-footer { display: flex; align-items: center; justify-content: space-between; width: min(100% - 48px, 1380px); min-height: 106px; margin: 0 auto; color: var(--muted); font-size: 12px; }
-.site-footer__brand { display: inline-flex; align-items: center; gap: 8px; color: var(--white); font-family: "Manrope", sans-serif; font-size: 20px; font-weight: 800; letter-spacing: -.07em; }
-.site-footer__brand svg { width: 33px; height: 22px; }
+.site-footer__lockup { display: block; width: 152px; height: auto; }
 .site-footer a:hover { color: var(--lime); }
 
 @media (max-width: 900px) {
@@ -189,6 +188,7 @@
   .careers-cta { min-height: 560px; margin-bottom: 14px; }
   .careers-cta__mark { right: -7%; width: 58vw; bottom: 9%; opacity: .45; }
   .site-footer { flex-wrap: wrap; gap: 12px; padding: 28px 0; }
+  .site-footer__lockup { width: 138px; }
 }
 
 @media (prefers-reduced-motion: no-preference) {

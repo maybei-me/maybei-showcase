@@ -109,3 +109,15 @@
 - [x] Заменить компактный header-brand на утверждённый full lockup.
 - [x] Сохранить читаемость навигации, CTA и tagline на desktop.
 - [x] Использовать компактную адаптивную подачу full lockup на mobile.
+
+## Unified hero M and SVG system
+
+- [x] Заменить hero M на утверждённую широкую плавную геометрию.
+- [x] Синхронизировать gradient, lime-точку и пропорции hero, header и SVG.
+- [x] Подготовить full lockup и standalone M в чистом SVG.
+- [x] Проверить hero на desktop/mobile после замены знака.
+
+## Footer SVG lockup
+
+- [x] Заменить footer-brand на утверждённый SVG lockup.
+- [x] Проверить footer на desktop и mobile без переполнения.

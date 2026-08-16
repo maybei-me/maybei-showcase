@@ -216,6 +216,12 @@
 - [x] Сохранять Playwright report/artifacts при ошибке.
 - [x] Задокументировать GitHub Actions quality gate в README.
 
+## Talio footer clipping
+
+- [ ] Воспроизвести обрезание футтера на опубликованной странице Talio.
+- [ ] Исправить container/footer layout без изменения фирменного lockup.
+- [ ] Проверить desktop и mobile, затем опубликовать исправление.
+
 ## Talio hero people visual
 
 - [x] Заменить storefront-визуал в Talio hero на предоставленную фотографию с людьми.

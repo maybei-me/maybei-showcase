@@ -4,7 +4,6 @@
  */
 import { Link, useLocation } from "wouter";
 import { ArrowUpRight } from "lucide-react";
-import { BrandLockup } from "./LogoMark";
 
 const navItems = [
   { label: "Idea", href: "/#idea" },
@@ -21,7 +20,11 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="site-header__inner">
         <Link href="/" className="site-header__brand" aria-label="maybei home">
-          <BrandLockup compact />
+          <img
+            className="site-header__full-lockup"
+            src="/manus-storage/maybei-header-full-lockup_9cfe5a7a.png"
+            alt="maybei — Make It Better"
+          />
         </Link>
 
         <nav className="site-header__nav" aria-label="Primary navigation">

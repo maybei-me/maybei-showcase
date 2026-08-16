@@ -45,3 +45,7 @@ The current published home route loaded after the latest markup fix with no brow
 ## Senior UI/UX homepage acceptance
 
 Главная проверена на desktop и 375 px mobile после системной доработки. Вертикальная coordinate axis теперь проявлена как сквозной маркер с пронумерованными ticks; каждая section rail дополнена signal-node. На фоне основных секций появилась сдержанная matrix-сетка без снижения читаемости. Product-панели стали асимметричными diagnostic panels с разными signal edges и статусной подачей, а audience CTA получила осмысленную разновысотность. Founder portraits получили общую холодную matrix-обработку, grid overlay и единые framing rules. Проверки desktop/mobile не показали переполнения или потерю главных CTA.
+
+## Header full lockup
+
+Утверждённый full lockup установлен в header через project storage asset. Desktop-проверка подтверждает читаемость gradient M, wordmark, tagline, навигации и CTA без коллизий. На 375 px мобильная версия использует уменьшенную, но всё ещё полную композицию и не конфликтует с CTA `Build with us`.

@@ -103,3 +103,9 @@
 - [x] Проверить типографическую иерархию, contrast и плотность текста на desktop/mobile.
 - [x] Проверить touch targets, keyboard flow и anchor navigation.
 - [x] Исправить подтверждённые UI/UX проблемы и провести повторный visual pass.
+
+## Header full lockup
+
+- [x] Заменить компактный header-brand на утверждённый full lockup.
+- [x] Сохранить читаемость навигации, CTA и tagline на desktop.
+- [x] Использовать компактную адаптивную подачу full lockup на mobile.

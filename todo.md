@@ -150,9 +150,15 @@
 
 ## Natural Olga photo colors
 
-- [ ] Убрать desaturation, hue-rotate и искусственное затемнение с фото Olga.
-- [ ] Проверить естественные цвета на desktop и mobile.
+- [x] Убрать desaturation, hue-rotate и искусственное затемнение с фото Olga.
+- [x] Проверить естественные цвета на desktop и mobile.
 - [ ] Сохранить исправление и опубликовать.
+
+## Talio closing block and footer identity
+
+- [x] Добавить предоставленную Talio-картинку в нижний conversion-блок перед footer.
+- [x] Заменить logo в Talio footer на чистый белый lockup maybei без тёмной плашки.
+- [x] Проверить footer и closing block на desktop/mobile.
 
 ## Talio product direction and product page
 

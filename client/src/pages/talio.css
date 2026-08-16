@@ -56,14 +56,17 @@
 .talio-feature-columns article > svg { flex: 0 0 auto; color: var(--talio-lime); }
 .talio-feature-columns h3 { margin: 0 0 7px; font-family: "Manrope", sans-serif; font-size: 18px; letter-spacing: -.04em; }
 .talio-feature-columns p { max-width: 320px; margin: 0; color: var(--talio-muted); font-size: 14px; line-height: 1.5; }
-.talio-partner-cta { position: relative; width: min(100% - 48px, 1380px); margin: 0 auto 24px; padding: clamp(60px, 9vw, 120px); overflow: hidden; border-radius: 24px; background: var(--talio-green-2); color: var(--talio-cream); }
+.talio-partner-cta { position: relative; display: grid; grid-template-columns: minmax(0, .9fr) minmax(340px, .75fr); gap: clamp(40px, 7vw, 110px); width: min(100% - 48px, 1380px); margin: 0 auto 24px; padding: clamp(60px, 9vw, 120px); overflow: hidden; border-radius: 24px; background: var(--talio-green-2); color: var(--talio-cream); }
 .talio-partner-cta::after { position: absolute; right: -12%; bottom: -32%; width: 46vw; aspect-ratio: 1; border: 1px solid rgba(200,216,58,.32); border-radius: 50%; content: ""; }
 .talio-partner-cta > * { position: relative; z-index: 1; }
-.talio-partner-cta img { width: 150px; margin-bottom: 60px; }
+.talio-partner-cta__logo { width: 150px; margin-bottom: 60px; }
 .talio-partner-cta .talio-eyebrow { color: var(--talio-lime); }
 .talio-partner-cta h2 { max-width: 720px; color: var(--talio-cream); font-size: clamp(3.4rem, 7vw, 7.4rem); }
 .talio-partner-cta p { max-width: 430px; margin: 28px 0 32px; color: rgba(254,250,244,.72); font-size: 16px; line-height: 1.55; }
-.talio-footer { background: var(--talio-cream); color: var(--talio-muted); }
-.talio-footer a { color: var(--talio-green); }
-@media (max-width: 900px) { .talio-hero { grid-template-columns: 1fr; padding: 52px 24px 0; } .talio-hero__visual { min-height: 360px; } .talio-hero__content { padding-bottom: 28px; } .talio-hero__visual > span { bottom: 8%; } .talio-split, .talio-evidence__header { grid-template-columns: 1fr; gap: 26px; } .talio-flow__list { grid-template-columns: repeat(3, 1fr); } .talio-evidence__images { grid-template-columns: 1fr; } }
-@media (max-width: 650px) { .talio-hero h1 { font-size: clamp(4rem, 17vw, 5.8rem); } .talio-hero__actions { align-items: flex-start; flex-direction: column; gap: 18px; } .talio-trust { align-items: flex-start; flex-direction: column; gap: 8px; } .talio-section { width: min(100% - 32px, 1380px); padding: 88px 0; } .talio-stat-grid, .talio-flow__list, .talio-feature-columns { grid-template-columns: 1fr; } .talio-flow__item { min-height: 190px; } .talio-flow__item h3 { margin-top: 46px; } .talio-evidence { padding: 88px 16px; } .talio-partner-cta { width: min(100% - 32px, 1380px); padding: 52px 26px 64px; } .talio-footer { width: min(100% - 32px, 1380px); } }
+.talio-partner-cta__visual { display: grid; place-items: center; align-self: center; }
+.talio-partner-cta__visual img { width: min(100%, 520px); border-radius: 16px; box-shadow: 0 26px 56px rgba(0,0,0,.22); transform: rotate(2.5deg); }
+.talio-footer { margin-top: 0; background: #070b1f; color: rgba(247,248,255,.64); }
+.talio-footer .site-footer__brand { width: 158px; }
+.talio-footer a { color: var(--white); }
+@media (max-width: 900px) { .talio-hero { grid-template-columns: 1fr; padding: 52px 24px 0; } .talio-hero__visual { min-height: 360px; } .talio-hero__content { padding-bottom: 28px; } .talio-hero__visual > span { bottom: 8%; } .talio-split, .talio-evidence__header, .talio-partner-cta { grid-template-columns: 1fr; gap: 26px; } .talio-flow__list { grid-template-columns: repeat(3, 1fr); } .talio-evidence__images { grid-template-columns: 1fr; } .talio-partner-cta__visual { max-width: 520px; justify-self: center; } }
+@media (max-width: 650px) { .talio-hero h1 { font-size: clamp(4rem, 17vw, 5.8rem); } .talio-hero__actions { align-items: flex-start; flex-direction: column; gap: 18px; } .talio-trust { align-items: flex-start; flex-direction: column; gap: 8px; } .talio-section { width: min(100% - 32px, 1380px); padding: 88px 0; } .talio-stat-grid, .talio-flow__list, .talio-feature-columns { grid-template-columns: 1fr; } .talio-flow__item { min-height: 190px; } .talio-flow__item h3 { margin-top: 46px; } .talio-evidence { padding: 88px 16px; } .talio-partner-cta { width: min(100% - 32px, 1380px); padding: 52px 26px 64px; } .talio-partner-cta__logo { margin-bottom: 36px; } .talio-partner-cta__visual img { transform: none; } .talio-footer { width: 100%; } }

@@ -90,14 +90,19 @@ export default function Talio() {
         </section>
 
         <section className="talio-partner-cta">
-          <img src="/manus-storage/talio-logo-light_2b15328e.webp" alt="talio" />
-          <span className="talio-eyebrow">For companies ready to hire differently</span>
-          <h2>Be part of the<br /><em>first cohort.</em></h2>
-          <p>Talio is onboarding its first candidates and employers now. We are looking for companies willing to shape a more transparent hiring process with us.</p>
-          <a className="talio-button talio-button--lime" href="https://talio.tech" target="_blank" rel="noreferrer">Talk about a company pilot <ArrowUpRight size={17} /></a>
+          <div className="talio-partner-cta__copy">
+            <img className="talio-partner-cta__logo" src="/manus-storage/talio-logo-light_2b15328e.webp" alt="talio" />
+            <span className="talio-eyebrow">For companies ready to hire differently</span>
+            <h2>Be part of the<br /><em>first cohort.</em></h2>
+            <p>Talio is onboarding its first candidates and employers now. We are looking for companies willing to shape a more transparent hiring process with us.</p>
+            <a className="talio-button talio-button--lime" href="https://talio.tech" target="_blank" rel="noreferrer">Talk about a company pilot <ArrowUpRight size={17} /></a>
+          </div>
+          <div className="talio-partner-cta__visual">
+            <img src="/manus-storage/talio-built-for-people_59ee58a8.png" alt="Talio visual: Built for people, powered by technology" />
+          </div>
         </section>
       </main>
-      <footer className="site-footer talio-footer"><img className="site-footer__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" /><p>© 2026 maybei. Talio — transparent hiring for everyone.</p><Link href="/">Back to maybei</Link></footer>
+      <footer className="site-footer talio-footer"><img className="site-footer__brand" src="/manus-storage/maybei-logo-white-no-tagline_16003ee9.png" alt="maybei" /><p>© 2026 maybei. Talio — transparent hiring for everyone.</p><Link href="/">Back to maybei</Link></footer>
     </div>
   );
 }

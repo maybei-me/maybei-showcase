@@ -1,5 +1,5 @@
 /* Talio product page: cream product canvas, dark-green proof blocks, lime signals, real UI evidence. */
-.talio-page { --talio-cream: #fefaf4; --talio-paper: #f8f3ea; --talio-green: #163629; --talio-green-2: #1d4737; --talio-lime: #c8d83a; --talio-muted: #6b746e; min-height: 100%; padding-bottom: 112px; overflow-x: clip; background: var(--talio-cream); color: var(--talio-green); }
+.talio-page { --talio-cream: #fefaf4; --talio-paper: #f8f3ea; --talio-green: #163629; --talio-green-2: #1d4737; --talio-lime: #c8d83a; --talio-muted: #6b746e; min-height: 100%; overflow-x: clip; background: var(--talio-cream); color: var(--talio-green); }
 .talio-page .site-header { background: var(--midnight); }
 .talio-page main { overflow: visible; }
 .talio-hero { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr); min-height: 720px; padding: 76px max(24px, calc((100% - 1380px) / 2)); background: var(--talio-cream); overflow: hidden; }
@@ -64,10 +64,10 @@
 .talio-partner-cta .talio-eyebrow { color: var(--talio-lime); }
 .talio-partner-cta h2 { max-width: 720px; color: var(--talio-cream); font-size: clamp(3.4rem, 7vw, 7.4rem); }
 .talio-partner-cta p { max-width: 430px; margin: 28px 0 32px; color: rgba(254,250,244,.72); font-size: 16px; line-height: 1.55; }
-.talio-footer { box-sizing: border-box; width: min(100% - 48px, 1380px); min-height: 146px; margin: 0 auto 28px; padding: 30px 24px 42px; background: #070b1f; color: rgba(247,248,255,.64); } .talio-footer > * { min-width: 0; } .talio-footer > a { flex: 0 0 auto; white-space: nowrap; }
+.talio-footer { box-sizing: border-box; width: 100%; min-height: 154px; margin: 0; padding: 32px max(48px, calc((100% - 1380px) / 2)); background: #070b1f; color: rgba(247,248,255,.64); } .talio-footer > * { min-width: 0; } .talio-footer > p { text-align: center; } .talio-footer > a { flex: 0 0 auto; white-space: nowrap; }
 .talio-footer a { color: var(--white); }
 @media (max-width: 900px) { .talio-hero { grid-template-columns: 1fr; padding: 52px 24px 0; } .talio-hero__visual { min-height: 360px; } .talio-hero__people-visual { width: min(100%, 620px) !important; } .talio-hero__content { padding-bottom: 28px; } .talio-split, .talio-evidence__header { grid-template-columns: 1fr; gap: 26px; } .talio-flow__list { grid-template-columns: repeat(3, 1fr); } .talio-evidence__images { grid-template-columns: 1fr; } }
-@media (max-width: 650px) { .talio-page { padding-bottom: 88px; } .talio-hero h1 { font-size: clamp(4rem, 17vw, 5.8rem); } .talio-hero__actions { align-items: flex-start; flex-direction: column; gap: 18px; } .talio-trust { align-items: flex-start; flex-direction: column; gap: 8px; } .talio-section { width: min(100% - 32px, 1380px); padding: 88px 0; } .talio-stat-grid, .talio-flow__list, .talio-feature-columns { grid-template-columns: 1fr; } .talio-flow__item { min-height: 190px; } .talio-flow__item h3 { margin-top: 46px; } .talio-evidence { padding: 88px 16px; } .talio-partner-cta { width: min(100% - 32px, 1380px); padding: 52px 26px 64px; } .talio-footer { width: min(100% - 32px, 1380px); min-height: 142px; margin-bottom: 22px; padding: 26px 16px 38px; } }
+@media (max-width: 650px) { .talio-hero h1 { font-size: clamp(4rem, 17vw, 5.8rem); } .talio-hero__actions { align-items: flex-start; flex-direction: column; gap: 18px; } .talio-trust { align-items: flex-start; flex-direction: column; gap: 8px; } .talio-section { width: min(100% - 32px, 1380px); padding: 88px 0; } .talio-stat-grid, .talio-flow__list, .talio-feature-columns { grid-template-columns: 1fr; } .talio-flow__item { min-height: 190px; } .talio-flow__item h3 { margin-top: 46px; } .talio-evidence { padding: 88px 16px; } .talio-partner-cta { width: min(100% - 32px, 1380px); padding: 52px 26px 64px; } .talio-footer { width: 100%; min-height: 150px; margin: 0; padding: 28px 16px 34px; } }
 
 
 /* Talio pilot form: compact editorial fields, lime action signal, no fake submission promise. */
@@ -81,3 +81,32 @@
 .talio-pilot-form small { align-self: center; color: rgba(254,250,244,.58); font-size: 11px; line-height: 1.4; }
 .talio-form-success { max-width: 520px; margin-top: 22px; border-left: 3px solid var(--talio-lime); padding: 12px 16px; color: var(--talio-cream); font-size: 15px; line-height: 1.5; }
 @media (max-width: 650px) { .talio-pilot-form { grid-template-columns: 1fr; } .talio-pilot-form label:nth-child(2) { grid-column: auto; } .talio-pilot-form .talio-button { justify-self: start; } }
+
+/* Wide desktop acceptance: Talio becomes a confident product world, not a narrow card on an empty canvas. */
+@media (min-width: 1600px) {
+  .talio-hero { grid-template-columns: minmax(0, 1fr) minmax(620px, 1fr); min-height: 820px; padding-right: max(48px, calc((100% - 1600px) / 2)); padding-left: max(48px, calc((100% - 1600px) / 2)); }
+  .talio-hero__content { max-width: 760px; }
+  .talio-hero h1 { font-size: clamp(6.5rem, 8vw, 9.4rem); }
+  .talio-hero__people-visual { max-width: 760px; }
+  .talio-section { width: min(100% - 96px, 1600px); padding-top: clamp(128px, 8vw, 172px); padding-bottom: clamp(128px, 8vw, 172px); }
+  .talio-section h2, .talio-evidence h2 { max-width: 960px; font-size: clamp(4.6rem, 5.8vw, 7.7rem); }
+  .talio-split > p, .talio-evidence__header > p { max-width: 470px; font-size: 18px; }
+  .talio-stat-grid div { min-height: 220px; padding: 34px; }
+  .talio-stat-grid strong { font-size: 52px; }
+  .talio-flow__item { min-height: 300px; padding: 30px; }
+  .talio-flow__item h3 { margin-top: 98px; font-size: 27px; }
+  .talio-evidence { padding-right: max(48px, calc((100% - 1600px) / 2)); padding-left: max(48px, calc((100% - 1600px) / 2)); }
+  .talio-evidence__images { gap: 28px; }
+  .talio-feature-columns > div { padding: 52px; }
+  .talio-feature-columns h2 { font-size: clamp(3.2rem, 4vw, 5.3rem); }
+  .talio-feature-columns article { padding: 30px 0; }
+  .talio-feature-columns h3 { font-size: 21px; }
+  .talio-feature-columns p { max-width: 380px; font-size: 15px; }
+  .talio-partner-cta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .72fr); width: min(100% - 96px, 1600px); min-height: 620px; margin-bottom: 0; padding: 104px clamp(64px, 8vw, 156px); }
+  .talio-partner-cta img, .talio-partner-cta .talio-eyebrow, .talio-partner-cta h2, .talio-partner-cta p, .talio-partner-cta .talio-pilot-form, .talio-partner-cta .talio-form-success { grid-column: 1; }
+  .talio-partner-cta h2 { max-width: 840px; font-size: clamp(5rem, 6vw, 8.6rem); }
+  .talio-partner-cta p { max-width: 520px; font-size: 18px; }
+  .talio-pilot-form { max-width: 760px; }
+  .talio-footer { min-height: 172px; padding-right: max(48px, calc((100% - 1600px) / 2)); padding-left: max(48px, calc((100% - 1600px) / 2)); font-size: 13px; }
+  .talio-footer__brand { width: 192px; }
+}

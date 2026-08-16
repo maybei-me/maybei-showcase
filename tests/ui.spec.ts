@@ -42,6 +42,21 @@ test.describe('maybei showcase core journeys', () => {
     await expect(page.getByRole('status')).toContainText(/not connected to a live inbox/i);
   });
 
+  test('Talio closes with a full-bleed footer on the page grid', async ({ page }) => {
+    await page.goto('/talio');
+    const footer = page.locator('footer.talio-footer');
+    await footer.scrollIntoViewIfNeeded();
+    await expect(footer).toBeVisible();
+
+    const geometry = await footer.evaluate((element) => {
+      const rect = element.getBoundingClientRect();
+      return { left: Math.round(rect.left), width: Math.round(rect.width), height: Math.round(rect.height), clientWidth: document.documentElement.clientWidth };
+    });
+    expect(geometry.left).toBe(0);
+    expect(geometry.width).toBe(geometry.clientWidth);
+    expect(geometry.height).toBeGreaterThanOrEqual(150);
+  });
+
   test('privacy consent can be dismissed and persists after reload', async ({ page }) => {
     await page.goto('/');
     await expect(page.getByRole('dialog', { name: /Privacy preferences/i })).toBeVisible();

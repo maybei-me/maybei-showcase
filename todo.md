@@ -279,3 +279,23 @@
 - [x] Extend UI automation tests for consent and Talio form flows.
 - [x] Require at least one approving pull request review on main in addition to the CI status check.
 - [x] Run full QA and publish the completed update.
+
+## Urgent Talio footer size repair
+- [x] Reproduce the published footer size issue in the user's browser-window proportions.
+- [x] Restore a stable footer height and internal alignment without scaling its content down.
+- [x] Validate the published footer on wide desktop, standard desktop and mobile before saving.
+
+## Comprehensive Talio designer acceptance
+- [x] Audit the Talio page at wide desktop, standard desktop and mobile for scale, empty space and section rhythm.
+- [x] Rebuild the desktop content scale so product evidence, feature panels, pilot CTA and footer occupy intentional editorial space.
+- [x] Verify footer dimensions and the full Talio page in all three viewport scenarios before publication.
+
+## Visible UI automation documentation
+- [ ] Compare local README.md with the README rendered on the public GitHub main branch.
+- [ ] Add a prominent standalone section for package, test scope, commands, reports, CI artifacts and debugging.
+- [ ] Verify the rendered GitHub README after publication and provide its exact location.
+
+## Combined final delivery
+- [ ] Save and publish the accepted Talio footer and wide-desktop composition repair.
+- [ ] Synchronize the prominent README automation documentation to the public main branch.
+- [ ] Verify both the live Talio page and GitHub-rendered README before final delivery.

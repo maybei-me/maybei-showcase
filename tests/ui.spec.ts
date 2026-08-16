@@ -57,6 +57,21 @@ test.describe('maybei showcase core journeys', () => {
     expect(geometry.height).toBeGreaterThanOrEqual(150);
   });
 
+  test('Careers replaces direct email with an in-page candidate application form', async ({ page }) => {
+    await page.goto('/careers');
+
+    await page.getByRole('button', { name: /AI \/ ML Engineer/i }).click();
+    await expect(page.getByRole('heading', { name: /Tell us where/i })).toBeVisible();
+    await expect(page.getByLabel('Role')).toHaveValue('AI / ML Engineer');
+
+    await page.getByLabel('Full name').fill('Alex Morgan');
+    await page.getByLabel('Email address').fill('alex@example.com');
+    await page.getByLabel('What would you like to make better?').fill('I want to help make hiring workflows more transparent.');
+    await page.getByRole('button', { name: /Send application/i }).click();
+
+    await expect(page.getByRole('status')).toContainText(/interest is noted/i);
+  });
+
   test('privacy consent can be dismissed and persists after reload', async ({ page }) => {
     await page.goto('/');
     await expect(page.getByRole('dialog', { name: /Privacy preferences/i })).toBeVisible();

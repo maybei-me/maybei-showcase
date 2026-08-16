@@ -313,3 +313,8 @@
 ## Careers location cleanup
 - [x] Find and remove the Astana location from vacancies and related careers copy.
 - [x] Verify the Careers route and publish the corrected content.
+
+## Candidate application form
+- [x] Replace role and open-application email links with an accessible in-page candidate form.
+- [x] Add required validation, accessible labels and a transparent client-side confirmation state.
+- [x] Add UI automation coverage and verify the form on desktop and mobile before publishing.

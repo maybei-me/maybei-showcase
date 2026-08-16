@@ -264,3 +264,9 @@
 - [ ] Inspect the exact published URL and capture the footer's visible clipping state.
 - [ ] Compare published CSS/DOM geometry with local source and identify the real cause.
 - [ ] Apply an addressable fix, verify the published page, and save a checkpoint only after confirmation.
+
+
+## User viewport Talio footer clipping
+- [x] Reproduce the footer issue at the user's browser-window proportions and measure document/client overflow.
+- [x] Constrain footer and page content to the actual viewport width without clipping the right link.
+- [x] Verify the final result in the same scenario and publish only after visual confirmation.

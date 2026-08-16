@@ -15,3 +15,21 @@
 | QA-11 | Низкий | Production-сборка и TypeScript после исправлений | Пройден | `pnpm check` и `pnpm build` завершились успешно. Сборка сообщает только некритическое предупреждение о размере клиентского bundle. |
 | QA-12 | Низкий | Мобильные версии `/`, `/careers` и 404 на ширине 375 px | Пройден | Все три экрана отрисованы без заметного переполнения и сохраняют читаемую иерархию. |
 | QA-13 | Низкий | Финальная загрузка главной страницы и console errors | Пройден | Wordmark отображается корректно, а в консоли браузера ошибок нет. |
+
+## Senior QA / Design / PO pass — 2026-08-16
+
+Первый проход подтвердил рабочие маршруты `/`, `/careers` и fallback 404, а также наличие Talio-first CTA и audience-путей. На Careers обнаружена контентная несогласованность в названии роли `Product Manager — talio`, исправленная на `Product Manager — Talio`. Project-карточки на главной содержали визуальный arrow action без ссылки и без действия; это создавало ложное affordance и было удалено. Карьерные mailto используют единый адрес `careers@maybei.ai`, а footer main-site `hello@maybei.com` оставлен как общий контакт.
+
+Дизайн-проверка подтверждает устойчивость midnight editorial direction: hero имеет один тезис, Talio proof и три audience CTA. В следующем проходе нужно подтвердить mobile wrapping длинных био и описаний, keyboard focus, console/network logs, contrast, reduced-motion и production build.
+
+## Final browser pass observations
+
+Published `/` loads with the Talio-first headline, proof metrics, audience CTAs, ordered founders, and all referenced images. Browser console is clean after load. Careers and 404 routes rendered with valid recovery paths. The main product UX now avoids false clickable arrows on non-linked cards; Talio is the only direct product anchor until product detail routes exist.
+
+## Visual acceptance pass
+
+Desktop screenshots confirm that the revised hero, Talio proof, audience CTA system, founder pair and Careers page hold their hierarchy without visible layout collapse. Mobile screenshots confirm vertical stacking and readable CTA/product content at 375 px. The 404 screen remains visually consistent and recoverable. One design issue was found in the decorative editorial spine: it still had four markers after the new fifth section was introduced; a fifth marker was added.
+
+## Runtime confirmation
+
+The current published home route loaded after the latest markup fix with no browser console output. Hero, Talio-first anchor, audience CTA links, founders order and Careers navigation remain present in the rendered page. The decorative spine now includes the fifth section marker in source.

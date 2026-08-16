@@ -74,7 +74,7 @@ export default function Home() {
     <div className="site-shell home-shell">
       <SiteHeader />
       <main>
-        <div className="home-spine" aria-hidden="true"><span>01</span><span>02</span><span>03</span><span>04</span></div>
+        <div className="home-spine" aria-hidden="true"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span></div>
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero__grid" aria-hidden="true" />
           <div className="hero__glow hero__glow--violet" aria-hidden="true" />
@@ -172,9 +172,6 @@ export default function Home() {
                   {product.featured && <div className="product-card__proof"><span><b>6 → 1</b> tools into one workflow</span><span><b>Weeks → days</b> time-to-hire</span></div>}
                   <div className="product-card__tags">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                 </div>
-                <span className="product-card__action" aria-hidden="true">
-                  <ArrowUpRight size={19} />
-                </span>
               </article>
             ))}
           </div>

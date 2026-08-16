@@ -57,3 +57,13 @@
 - [x] Сформулировать отдельные CTA для пользователей, партнёров и команды.
 - [x] Добавить доказательный блок про workflow, заменяемые инструменты и time-to-hire.
 - [x] Проверить desktop/mobile, навигацию, контраст и production-сборку.
+
+## Senior QA / Design / PO acceptance
+
+- [x] Проверить все маршруты, CTA, якоря, mailto и fallback 404.
+- [x] Проверить горизонтальное переполнение, responsive layout и визуальные дефекты на desktop/tablet/mobile.
+- [x] Проверить консоль, сетевые запросы, статические assets, TypeScript и production build.
+- [x] Проверить landmarks, heading hierarchy, alt-тексты, keyboard focus, contrast и reduced motion.
+- [x] Проверить продуктовый путь: hero → Talio proof → projects → audience CTA → founders/careers.
+- [x] Проверить контентные ошибки, дубли, неработающие обещания и соответствие CTA целевым аудиториям.
+- [x] Исправить подтверждённые дефекты и повторить приемочные сценарии.

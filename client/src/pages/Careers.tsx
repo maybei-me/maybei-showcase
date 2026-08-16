@@ -21,7 +21,7 @@ const roles = [
   ["AI / ML Engineer", "Remote / Astana / Flexible", "Full-time"],
   ["Full-stack Engineer", "Remote / Astana / Flexible", "Full-time"],
   ["Product Designer", "Remote", "Full-time"],
-  ["Product Manager — talio", "Astana / Remote", "Full-time"],
+  ["Product Manager — Talio", "Astana / Remote", "Full-time"],
 ];
 
 const values = [

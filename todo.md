@@ -200,7 +200,14 @@
 
 - [x] Зафиксировать команды, маршруты и структуру проекта для README.
 - [x] Добавить README.md с описанием maybei, Talio и рабочего процесса.
-- [ ] Сохранить README в GitHub-синхронизированную версию проекта.
+- [x] Сохранить README в GitHub-синхронизированную версию проекта.
+
+## UI automation tests
+
+- [x] Проверить доступный browser test runner и зависимости.
+- [x] Добавить tests для маршрутов, навигации, Talio CTA, footer и mobile viewport.
+- [x] Запустить UI automation suite и задокументировать команду.
+- [x] Сохранить тестовую инфраструктуру в GitHub-синхронизированную версию.
 
 ## Talio hero people visual
 

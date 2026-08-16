@@ -48,7 +48,17 @@ pnpm check      # TypeScript type check
 pnpm build      # Vite client build + server bundle
 pnpm start      # Run the production server after build
 pnpm preview    # Preview the Vite build locally
+pnpm test:ui    # Run Playwright UI automation tests headlessly
+pnpm test:ui:headed # Run UI tests with a visible browser
 pnpm format     # Format source with Prettier
+```
+
+The UI suite covers the home page, Talio entry path, Careers navigation, Talio pilot CTA, 404 recovery, and a 375 px mobile viewport. The Playwright configuration starts an isolated Vite server on port `4173`, avoiding a conflict with the local development server.
+
+On a new development machine, install the browser binary once before the first run:
+
+```bash
+pnpm exec playwright install chromium
 ```
 
 ## Project structure

@@ -27,8 +27,7 @@ const products = [
     status: "MVP IN DEVELOPMENT",
     tags: ["AI Matching", "HR Tech", "Recruiting"],
     accent: "blue",
-    artifact: "interface",
-    image: "/manus-storage/talio-product-preview_5849214d.png",
+    artifact: "talio",
     featured: true,
   },
   {
@@ -154,16 +153,9 @@ export default function Home() {
             {products.map((product) => (
               <article id={product.featured ? "talio" : undefined} key={product.name} className={`product-card product-card--${product.accent} ${product.featured ? "product-card--featured" : ""}`}>
                 <div className="product-card__top"><span>{product.number}</span><span>a maybei product</span></div>
-                {product.featured && (
-                  <div className="product-card__preview">
-                    <img src={product.image} alt="talio platform product preview" />
-                  </div>
-                )}
-                {!product.featured && (
-                  <div className={`product-card__artifact product-card__artifact--${product.artifact}`} aria-hidden="true">
-                    <i /><i /><i />
-                  </div>
-                )}
+                <div className={`product-card__artifact product-card__artifact--${product.artifact}`} aria-hidden="true">
+                  <i /><i /><i />
+                </div>
                 <div className="product-card__body">
                   <span className="product-card__status">{product.status}</span>
                   <span className="product-card__type">{product.type}</span>
@@ -171,6 +163,7 @@ export default function Home() {
                   <p>{product.description}</p>
                   {product.featured && <div className="product-card__proof"><span><b>6 → 1</b> tools into one workflow</span><span><b>Weeks → days</b> time-to-hire</span></div>}
                   <div className="product-card__tags">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                  {product.featured && <a className="product-card__detail-link" href="/talio">Explore Talio <ArrowUpRight size={16} /></a>}
                 </div>
               </article>
             ))}

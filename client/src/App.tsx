@@ -5,7 +5,8 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import Careers from "./pages/Careers";
+import Careers from "@/pages/Careers";
+import Talio from "@/pages/Talio";
 
 /** Midnight Signal Matrix: dark-by-default routing shell for maybei. */
 function Router() {
@@ -13,6 +14,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/careers" component={Careers} />
+      <Route path="/talio" component={Talio} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

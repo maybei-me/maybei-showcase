@@ -147,3 +147,20 @@
 - [x] Укоротить подписи ролей в founders-карточках.
 - [x] Проверить и скорректировать crop Olga на mobile.
 - [x] Повторно проверить сборку и mobile founders section.
+
+## Natural Olga photo colors
+
+- [ ] Убрать desaturation, hue-rotate и искусственное затемнение с фото Olga.
+- [ ] Проверить естественные цвета на desktop и mobile.
+- [ ] Сохранить исправление и опубликовать.
+
+## Talio product direction and product page
+
+- [x] Изучить Talio positioning document и AstanaHub pitch deck.
+- [x] Заменить фотографию Talio в project card на default icon в общем стиле.
+- [x] Выровнять четыре project cards по единой композиции и высоте.
+- [x] Добавить отдельный маршрут и страницу продукта Talio.
+- [x] Использовать предоставленные Talio logo, product screens и positioning content.
+- [x] Отразить текущий статус MVP / NDP и приглашение компаниям присоединяться через talio.tech.
+- [x] Проверить главную и Talio page на desktop/mobile.
+- [x] Сохранить checkpoint с новой Talio page.

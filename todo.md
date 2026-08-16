@@ -320,11 +320,11 @@
 - [x] Add UI automation coverage and verify the form on desktop and mobile before publishing.
 
 ## Online Playwright report and PR approval
-- [ ] Publish the Playwright HTML report to an online GitHub Pages URL after a successful CI run.
-- [ ] Verify the online report URL and document how to access it from the workflow.
-- [ ] Confirm the required independent approval status for PR #1 and leave the protection rule unchanged.
+- [x] Publish the Playwright HTML report to an online GitHub Pages URL after a successful CI run.
+- [x] Verify the online report URL and document how to access it from the workflow.
+- [x] Confirm the required independent approval status for PR #1 and leave the protection rule unchanged.
 
 ## Pages workflow condition repair
-- [ ] Replace the malformed publish-report if condition with a valid restricted branch expression.
-- [ ] Re-run CI and confirm Playwright plus Pages deployment status.
-- [ ] Re-check online report URL and required independent approval on main.
+- [x] Replace the malformed publish-report if condition with a valid restricted branch expression.
+- [x] Re-run CI and confirm Playwright plus Pages deployment status.
+- [x] Re-check online report URL and required independent approval on main.

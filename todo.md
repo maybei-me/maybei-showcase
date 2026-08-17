@@ -330,13 +330,13 @@
 - [x] Re-check online report URL and required independent approval on main.
 
 ## Majlis product page
-- [ ] Restore the stable dev-server dependency state before implementing Majlis.
-- [ ] Extract Majlis positioning, product proof and page narrative from the supplied pitch deck and UI screens.
-- [ ] Prepare the supplied Majlis visuals for site delivery and define the Majlis sub-brand treatment.
-- [ ] Build a dedicated `/majlis` page and add intentional navigation from the portfolio.
-- [ ] Add Majlis UI automation coverage and complete wide-desktop, desktop and mobile designer QA.
-- [ ] Publish the completed Majlis product page.
+- [x] Restore the stable dev-server dependency state before implementing Majlis.
+- [x] Extract Majlis positioning, product proof and page narrative from the supplied pitch deck and UI screens.
+- [x] Prepare the supplied Majlis visuals for site delivery and define the Majlis sub-brand treatment.
+- [x] Build a dedicated `/majlis` page and add intentional navigation from the portfolio.
+- [x] Add Majlis UI automation coverage and complete wide-desktop, desktop and mobile designer QA.
+- [x] Publish the completed Majlis product page.
 
 ## Organizational GitHub context
-- [ ] Verify access and project sync against maybei-me/maybei-showcase.
-- [ ] Keep future Majlis page commits and CI links pointed to the organization repository.
+- [x] Verify access and project sync against maybei-me/maybei-showcase.
+- [x] Keep future Majlis page commits and CI links pointed to the organization repository.

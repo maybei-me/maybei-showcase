@@ -340,3 +340,9 @@
 ## Organizational GitHub context
 - [x] Verify access and project sync against maybei-me/maybei-showcase.
 - [x] Keep future Majlis page commits and CI links pointed to the organization repository.
+
+## Global header repair
+- [x] Reproduce the header issue across Home, Talio, Majlis and Careers.
+- [x] Fix the shared header layout, logo lockup scale, navigation alignment and CTA.
+- [x] Verify the header on wide desktop, standard desktop and mobile viewports.
+- [x] Save and publish the corrected global header.

@@ -1,21 +1,12 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
+import { SiteHeader } from "@/components/SiteHeader";
 import "./majlis.css";
 
 export default function Majlis() {
   return (
     <div className="majlis-page">
-      <header className="site-header">
-        <Link href="/" className="site-header__brand-link">
-          <img className="site-header__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" />
-        </Link>
-        <nav className="site-header__nav">
-          <Link href="/talio">Talio</Link>
-          <Link href="/majlis" className="active">Majlis</Link>
-          <Link href="/careers">Careers</Link>
-        </nav>
-        <a className="site-header__cta" href="mailto:hello@maybei.com">Build with us <ArrowUpRight size={16} /></a>
-      </header>
+      <SiteHeader />
       <main>
         <section className="majlis-hero">
           <div className="majlis-hero__content">

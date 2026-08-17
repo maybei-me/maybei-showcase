@@ -2,7 +2,8 @@
  * Midnight Signal Matrix: careers is a high-ownership invitation built around
  * real product-making, direct responsibility, and a calm editorial rhythm.
  */
-import { ArrowDown, ArrowUpRight, Check, ChevronRight, Mail, MoveUpRight } from "lucide-react";
+import { FormEvent, useRef, useState } from "react";
+import { ArrowDown, ArrowUpRight, Check, ChevronRight, MoveUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { LogoMark } from "@/components/LogoMark";
@@ -18,10 +19,10 @@ const disciplines = [
 ];
 
 const roles = [
-  ["AI / ML Engineer", "Remote / Astana / Flexible", "Full-time"],
-  ["Full-stack Engineer", "Remote / Astana / Flexible", "Full-time"],
+  ["AI / ML Engineer", "Remote / Flexible", "Full-time"],
+  ["Full-stack Engineer", "Remote / Flexible", "Full-time"],
   ["Product Designer", "Remote", "Full-time"],
-  ["Product Manager — Talio", "Astana / Remote", "Full-time"],
+  ["Product Manager — Talio", "Remote / Flexible", "Full-time"],
 ];
 
 const values = [
@@ -33,6 +34,21 @@ const values = [
 ];
 
 export default function Careers() {
+  const applicationFormRef = useRef<HTMLDivElement>(null);
+  const [selectedRole, setSelectedRole] = useState("");
+  const [applicationSubmitted, setApplicationSubmitted] = useState(false);
+
+  const startApplication = (role: string) => {
+    setSelectedRole(role);
+    setApplicationSubmitted(false);
+    window.setTimeout(() => applicationFormRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 0);
+  };
+
+  const submitApplication = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setApplicationSubmitted(true);
+  };
+
   return (
     <div className="site-shell careers-shell">
       <SiteHeader />
@@ -129,13 +145,37 @@ export default function Careers() {
 
         <section id="roles" className="career-section career-roles">
           <div className="career-rail"><span>05 / OPEN POSITIONS</span><b>JOIN US</b></div>
-          <div className="career-roles__header"><h2>Find your<br /><span>place.</span></h2><p>Roles can be remote, in Astana, or flexible. We care most about the work you want to make better.</p></div>
+          <div className="career-roles__header"><h2>Find your<br /><span>place.</span></h2><p>Roles can be remote or flexible. We care most about the work you want to make better.</p></div>
           <div className="career-roles__list">
             {roles.map(([title, location, type]) => (
-              <a key={title} href="mailto:careers@maybei.ai?subject=Interest%20in%20a%20role%20at%20maybei" className="career-role">
+              <button key={title} type="button" onClick={() => startApplication(title)} className="career-role">
                 <h3>{title}</h3><span>{location}</span><span>{type}</span><ChevronRight size={22} />
-              </a>
+              </button>
             ))}
+          </div>
+          <div ref={applicationFormRef} id="apply" className="career-application" tabIndex={-1}>
+            <div className="career-application__intro">
+              <span className="section-index">Candidate application</span>
+              <h3>Tell us where<br /><span>you can help.</span></h3>
+              <p>Choose a role, share the essentials and tell us what you want to build. A hiring conversation should begin with context, not a cold email.</p>
+            </div>
+            {applicationSubmitted ? (
+              <div className="career-application__success" role="status">
+                <strong>Thanks — your interest is noted.</strong>
+                <p>This form currently confirms your application in the browser. Secure delivery to the hiring inbox will be connected before applications open.</p>
+                <button type="button" className="career-application__reset" onClick={() => setApplicationSubmitted(false)}>Submit another application <ArrowUpRight size={16} /></button>
+              </div>
+            ) : (
+              <form className="career-application__form" onSubmit={submitApplication}>
+                <label>Full name<input name="fullName" autoComplete="name" required placeholder="Your name" /></label>
+                <label>Email address<input name="email" autoComplete="email" type="email" required placeholder="you@example.com" /></label>
+                <label>Role<select name="role" value={selectedRole} onChange={(event) => setSelectedRole(event.target.value)} required><option value="" disabled>Select a role</option>{roles.map(([title]) => <option key={title} value={title}>{title}</option>)}<option value="Open application">Open application</option></select></label>
+                <label>LinkedIn or portfolio <span>Optional</span><input name="portfolio" type="url" placeholder="https://" /></label>
+                <label className="career-application__message">What would you like to make better?<textarea name="message" required rows={5} placeholder="A short note about your experience, craft and the work you want to do." /></label>
+                <button className="button-primary career-application__submit" type="submit">Send application <ArrowUpRight size={17} /></button>
+                <p className="career-application__note">We only use these details to understand your interest. Live delivery will be connected before applications open.</p>
+              </form>
+            )}
           </div>
         </section>
 
@@ -143,8 +183,7 @@ export default function Careers() {
           <span className="section-index">No perfect role?</span>
           <h2>Maybe there’s no job<br />with your name on it <span>yet.</span></h2>
           <p>If you’re exceptionally good at what you do and want to build products that matter, we’d still like to hear from you.</p>
-          <a href="mailto:careers@maybei.ai" className="button-primary button-primary--large"><Mail size={17} /> Introduce yourself</a>
-          <span className="careers-open__email">careers@maybei.ai</span>
+          <button type="button" onClick={() => startApplication("Open application")} className="button-primary button-primary--large">Introduce yourself <ArrowUpRight size={17} /></button>
         </section>
       </main>
       <footer className="site-footer">

@@ -80,3 +80,8 @@
 ### Signature Brand Color
 
 **Signal Lime — #C6F34D.** Он используется исключительно для подтверждения действия, статуса и аккуратного смыслового акцента.
+
+
+## Style Decisions
+
+The Talio page keeps its cream and dark-green product identity, but it must remain visibly framed by maybei’s Midnight Signal Matrix through the dark header/footer, numbered editorial rails, fine signal lines and restrained lime actions. Bright lime is reserved for actions, proof points and signal emphasis rather than broad decorative use. Product pages should carry asymmetric editorial rhythm and a clear parent-brand connection instead of reading as generic SaaS templates.

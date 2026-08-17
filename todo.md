@@ -239,3 +239,92 @@
 - [x] Сопоставить Talio footer asset и размер с основной страницей.
 - [x] Применить тот же lockup и размеры в Talio footer.
 - [x] Проверить Talio footer на desktop/mobile.
+
+
+## GitHub repository visibility and required CI
+- [x] Enable or verify the GitHub connector with repository-management permissions.
+- [x] Change `olgakruglovam-arch/maybei-showcase` visibility to public after user confirmation.
+- [x] Configure `main` branch protection requiring `Type check, build and UI tests`.
+- [x] Verify repository visibility and required status check via GitHub API.
+- [x] Report the final GitHub configuration to the user.
+
+## Talio footer follow-up
+- [ ] Reinspect the published Talio footer against the user's screenshot.
+- [ ] Apply and verify a final footer clipping fix if still present.
+- [ ] Save a new checkpoint after the footer fix.
+
+
+## Final Talio footer acceptance — three agreed points
+- [x] Reproduce the clipping against the user's supplied screenshot and inspect the actual bottom-edge geometry.
+- [x] Fix the footer container, width, overflow and safe-area spacing for desktop and mobile.
+- [x] Run final QA, save a new checkpoint and publish the corrected version.
+
+
+## Published Talio footer recheck
+- [ ] Inspect the exact published URL and capture the footer's visible clipping state.
+- [ ] Compare published CSS/DOM geometry with local source and identify the real cause.
+- [ ] Apply an addressable fix, verify the published page, and save a checkpoint only after confirmation.
+
+
+## User viewport Talio footer clipping
+- [x] Reproduce the footer issue at the user's browser-window proportions and measure document/client overflow.
+- [x] Constrain footer and page content to the actual viewport width without clipping the right link.
+- [x] Verify the final result in the same scenario and publish only after visual confirmation.
+
+
+## Product and engineering improvements
+- [x] Add accessible cookie/privacy consent block with persisted choice.
+- [x] Add an in-page Talio company pilot application form with validation and success state.
+- [x] Document Playwright package, commands, report locations, CI artifacts and failure debugging in README.md.
+- [x] Extend UI automation tests for consent and Talio form flows.
+- [x] Require at least one approving pull request review on main in addition to the CI status check.
+- [x] Run full QA and publish the completed update.
+
+## Urgent Talio footer size repair
+- [x] Reproduce the published footer size issue in the user's browser-window proportions.
+- [x] Restore a stable footer height and internal alignment without scaling its content down.
+- [x] Validate the published footer on wide desktop, standard desktop and mobile before saving.
+
+## Comprehensive Talio designer acceptance
+- [x] Audit the Talio page at wide desktop, standard desktop and mobile for scale, empty space and section rhythm.
+- [x] Rebuild the desktop content scale so product evidence, feature panels, pilot CTA and footer occupy intentional editorial space.
+- [x] Verify footer dimensions and the full Talio page in all three viewport scenarios before publication.
+
+## Visible UI automation documentation
+- [x] Compare local README.md with the README rendered on the public GitHub main branch.
+- [x] Add a prominent standalone section for package, test scope, commands, reports, CI artifacts and debugging.
+- [ ] Verify the rendered GitHub README after publication and provide its exact location.
+
+## Combined final delivery
+- [x] Save and publish the accepted Talio footer and wide-desktop composition repair.
+- [ ] Synchronize the prominent README automation documentation to the public main branch.
+- [ ] Verify both the live Talio page and GitHub-rendered README before final delivery.
+
+## Pull request review required
+- [x] Create pull request #1 with Talio, README and CI configuration changes.
+- [x] Resolve the pnpm CI setup conflict and confirm the UI quality gate passes.
+- [ ] Obtain one independent approving review and merge the protected pull request into main.
+
+## Playwright report in CI/CD
+- [x] Upload the HTML Playwright report after every UI test run, not only on failure.
+- [x] Add a readable UI-test result summary to the GitHub Actions job summary.
+- [x] Document report access and verify the updated workflow on the open pull request.
+
+## Careers location cleanup
+- [x] Find and remove the Astana location from vacancies and related careers copy.
+- [x] Verify the Careers route and publish the corrected content.
+
+## Candidate application form
+- [x] Replace role and open-application email links with an accessible in-page candidate form.
+- [x] Add required validation, accessible labels and a transparent client-side confirmation state.
+- [x] Add UI automation coverage and verify the form on desktop and mobile before publishing.
+
+## Online Playwright report and PR approval
+- [x] Publish the Playwright HTML report to an online GitHub Pages URL after a successful CI run.
+- [x] Verify the online report URL and document how to access it from the workflow.
+- [x] Confirm the required independent approval status for PR #1 and leave the protection rule unchanged.
+
+## Pages workflow condition repair
+- [x] Replace the malformed publish-report if condition with a valid restricted branch expression.
+- [x] Re-run CI and confirm Playwright plus Pages deployment status.
+- [x] Re-check online report URL and required independent approval on main.

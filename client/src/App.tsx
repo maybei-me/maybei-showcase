@@ -3,6 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
+import PrivacyBanner from "./components/PrivacyBanner";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Careers from "@/pages/Careers";
@@ -28,6 +29,7 @@ export default function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <PrivacyBanner />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

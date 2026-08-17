@@ -9,9 +9,19 @@ The project is a public-facing corporate showcase with dedicated pages for the c
 | Live site | `https://maybeishowca-wn86snno.manus.space/` |
 | Local development | `http://localhost:3000` |
 
+## UI automation — run, scope and failure reports
+
+> **Full guide:** [`AUTOMATION_TESTING.md`](./AUTOMATION_TESTING.md)
+
+This repository uses **Playwright 1.62.0** through the `@playwright/test` package. Run the suite with `pnpm test:ui`; run it with a visible browser using `pnpm test:ui:headed`. The suite currently covers navigation, Talio pilot-form validation, cookie/privacy consent persistence, 404 recovery, mobile navigation and the full-bleed Talio footer regression check.
+
+After a local failure, open `playwright-report/index.html` with `pnpm exec playwright show-report playwright-report`, then inspect screenshots, videos and traces under `test-results/`. On GitHub, every **UI quality gate** workflow run now writes a Playwright status section in its job summary and uploads the `playwright-report` artifact. Download it from the run summary to open the HTML report; any failure screenshots, videos and traces are included alongside it. Artifacts are retained for fourteen days.
+
 ## Product scope
 
-The home page introduces the maybei thesis, method, portfolio, founders, and careers direction. The portfolio currently contains Talio, Majlis, Smart Boots, and STRAWPOD. Talio has its own product page built around the promise of transparent hiring, a candidate/employer workflow, product interface evidence, and an early-company pilot call to action.
+The home page introduces the maybei thesis, method, portfolio, founders, and careers direction. The portfolio currently contains Talio, Majlis, Smart Boots, and STRAWPOD. Talio has its own product page built around the promise of transparent hiring, a candidate/employer workflow, product interface evidence, and an early-company pilot call to action. The page now includes an in-page pilot brief form with required company email and hiring-need fields. It currently validates and confirms the brief in the browser; a secure delivery endpoint or connected inbox must be supplied before accepting live submissions.
+
+The shared shell includes a privacy consent banner. It stores either `accepted` or `essential` in `localStorage` under `maybei-privacy-choice` and does not enable advertising trackers.
 
 | Route | Purpose |
 | --- | --- |
@@ -53,7 +63,29 @@ pnpm test:ui:headed # Run UI tests with a visible browser
 pnpm format     # Format source with Prettier
 ```
 
-The UI suite covers the home page, Talio entry path, Careers navigation, Talio pilot CTA, 404 recovery, and a 375 px mobile viewport. The Playwright configuration starts an isolated Vite server on port `4173`, avoiding a conflict with the local development server.
+The UI suite covers the home page, Talio entry path, Careers navigation, Talio pilot CTA, cookie/privacy consent, the company-pilot form, 404 recovery, and a 375 px mobile viewport. The Playwright configuration starts an isolated Vite server on port `4173`, avoiding a conflict with the local development server.
+
+### UI automation reference
+
+The test runner is **Playwright 1.62.0**, installed as the development dependency `@playwright/test`. Test cases live in `tests/ui.spec.ts`; browser/server settings are in `playwright.config.ts`; the Chromium browser binary is installed separately through Playwright's installer.
+
+| Need | Command or location |
+| --- | --- |
+| Run all UI tests headlessly | `pnpm test:ui` |
+| Run with a visible Chromium window | `pnpm test:ui:headed` |
+| Run one test file | `pnpm exec playwright test tests/ui.spec.ts` |
+| Run one test by title | `pnpm exec playwright test -g "privacy"` |
+| Debug in Playwright Inspector | `pnpm exec playwright test --debug` |
+| Open the last HTML report | `pnpm exec playwright show-report playwright-report` |
+| Raw failure screenshots, videos and traces | `test-results/` |
+| Local HTML report | `playwright-report/index.html` |
+| CI workflow | `.github/workflows/ui-quality.yml` |
+
+When a test fails locally, first rerun the focused test with `--headed` or `--debug`. Then inspect `test-results/` for the screenshot, video and trace captured for the failed test. The trace can be opened with `pnpm exec playwright show-trace <path-to-trace.zip>`. The HTML report is generated after the run and can be opened with `pnpm exec playwright show-report playwright-report`.
+
+On GitHub, open the failed **UI quality gate** run under the repository's **Actions** tab. Expand the failed `quality` job to see the failing step. The workflow uploads a `playwright-artifacts` artifact containing `playwright-report/` and `test-results/` whenever any step fails; download it from the run summary and inspect the same report or trace locally. The artifact retention is seven days.
+
+The current protection rule for `main` requires the check named `Type check, build and UI tests` to pass. Changes also require an approving pull request review before merging.
 
 On a new development machine, install the browser binary once before the first run:
 
@@ -85,6 +117,7 @@ The main presentation files are:
 | `client/src/pages/Talio.tsx` | Talio product page |
 | `client/src/pages/talio.css` | Talio cream / green product system |
 | `client/src/components/SiteHeader.tsx` | Global header and navigation |
+| `client/src/components/PrivacyBanner.tsx` | Persisted cookie/privacy consent UI |
 | `client/src/index.css` | Global tokens, header, footer, theme foundation |
 
 ## Visual assets
@@ -104,7 +137,7 @@ Talio uses its own cream, dark-green, and lime product palette. The Talio projec
 
 ## Publishing and GitHub
 
-Create a checkpoint after a tested change. This project is configured to publish automatically whenever a checkpoint is created. The connected GitHub repository is shown in the project management panel under **Settings → GitHub**.
+Create a checkpoint after a tested change. This project is configured to publish automatically whenever a checkpoint is created. The connected GitHub repository is shown in the project management panel under **Settings → GitHub**. The repository is public and branch `main` is protected with the UI quality check plus required pull request review.
 
 The repository includes `.github/workflows/ui-quality.yml`. GitHub Actions runs `pnpm check`, `pnpm build`, and `pnpm test:ui` on every push, pull request, and manually dispatched run. If the UI suite fails, the workflow uploads the Playwright report and test results as artifacts for seven days.
 
@@ -123,3 +156,7 @@ Keep copy factual and approved. In particular, do not invent Talio traction metr
 ## License
 
 The source code is released under the MIT license as declared in `package.json`. Brand assets, names, copy, and product materials remain subject to their respective owner rights.
+
+## Online Playwright report
+
+The latest successful UI quality gate is published as an HTML report at [the Playwright report site](https://olgakruglovam-arch.github.io/maybei-showcase/). The Pages workflow runs after a successful `UI quality gate`, downloads its `playwright-report` artifact, and replaces the online report with the latest result. The GitHub Actions run remains the source of truth for the commit, job summary, artifact archive and failure traces.

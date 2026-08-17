@@ -27,7 +27,7 @@ test.describe('maybei showcase core journeys', () => {
     await expect(page.getByRole('heading', { name: /We build the AI layer/i })).toBeVisible();
   });
 
-  test('Talio exposes workflow anchor and company-pilot CTA', async ({ page }) => {
+  test('Talio exposes workflow anchor and company-pilot form', async ({ page }) => {
     await page.goto('/talio');
 
     await expect(page.getByText('LIVE PRODUCT', { exact: true })).toBeVisible();
@@ -36,6 +36,49 @@ test.describe('maybei showcase core journeys', () => {
     await page.getByRole('link', { name: /See how it works/i }).click();
     await expect(page).toHaveURL(/\/talio#product$/);
     await expect(page.getByRole('heading', { name: /Every candidate deserves an answer/i })).toBeVisible();
+    await page.getByLabel('Company email').fill('pilot@example.com');
+    await page.getByLabel('What are you hiring for?').fill('Engineering and product');
+    await page.getByRole('button', { name: /Request a pilot conversation/i }).click();
+    await expect(page.getByRole('status')).toContainText(/not connected to a live inbox/i);
+  });
+
+  test('Talio closes with a full-bleed footer on the page grid', async ({ page }) => {
+    await page.goto('/talio');
+    const footer = page.locator('footer.talio-footer');
+    await footer.scrollIntoViewIfNeeded();
+    await expect(footer).toBeVisible();
+
+    const geometry = await footer.evaluate((element) => {
+      const rect = element.getBoundingClientRect();
+      return { left: Math.round(rect.left), width: Math.round(rect.width), height: Math.round(rect.height), clientWidth: document.documentElement.clientWidth };
+    });
+    expect(geometry.left).toBe(0);
+    expect(geometry.width).toBe(geometry.clientWidth);
+    expect(geometry.height).toBeGreaterThanOrEqual(150);
+  });
+
+  test('Careers replaces direct email with an in-page candidate application form', async ({ page }) => {
+    await page.goto('/careers');
+
+    await page.getByRole('button', { name: /AI \/ ML Engineer/i }).click();
+    await expect(page.getByRole('heading', { name: /Tell us where/i })).toBeVisible();
+    await expect(page.getByLabel('Role')).toHaveValue('AI / ML Engineer');
+
+    await page.getByLabel('Full name').fill('Alex Morgan');
+    await page.getByLabel('Email address').fill('alex@example.com');
+    await page.getByLabel('What would you like to make better?').fill('I want to help make hiring workflows more transparent.');
+    await page.getByRole('button', { name: /Send application/i }).click();
+
+    await expect(page.getByRole('status')).toContainText(/interest is noted/i);
+  });
+
+  test('privacy consent can be dismissed and persists after reload', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.getByRole('dialog', { name: /Privacy preferences/i })).toBeVisible();
+    await page.getByRole('button', { name: /Essential only/i }).click();
+    await expect(page.getByRole('dialog', { name: /Privacy preferences/i })).toHaveCount(0);
+    await page.reload();
+    await expect(page.getByRole('dialog', { name: /Privacy preferences/i })).toHaveCount(0);
   });
 
   test('unknown routes offer a clear way back to the company site', async ({ page }) => {

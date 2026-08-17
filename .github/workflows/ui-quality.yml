@@ -24,8 +24,6 @@ jobs:
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 10.4.1
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -46,15 +44,67 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
 
       - name: Run UI automation suite
+        id: ui-tests
         run: pnpm test:ui
 
-      - name: Upload Playwright artifacts on failure
-        if: failure()
+      - name: Upload Playwright report and failure artifacts
+        id: playwright-report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-artifacts
+          name: playwright-report
           path: |
             playwright-report/
             test-results/
-          if-no-files-found: ignore
-          retention-days: 7
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Publish UI test summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## Playwright UI automation"
+            if [ "${{ steps.ui-tests.outcome }}" = "success" ]; then
+              echo "✅ **UI test suite passed.**"
+            elif [ "${{ steps.ui-tests.outcome }}" = "failure" ]; then
+              echo "❌ **UI test suite failed.**"
+            else
+              echo "⚠️ **UI test suite did not complete.**"
+            fi
+            echo
+            echo "Download the **playwright-report** artifact from this workflow run to open the HTML report."
+            echo "Failure-only screenshots, videos and traces are included in the same artifact when generated."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  publish-report:
+    name: Publish Playwright report online
+    needs: quality
+    if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/docs/automation-testing-and-talio-finish') && needs.quality.result == 'success' }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Download Playwright report artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: playwright-report
+          path: report-artifact
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: report-artifact/playwright-report
+
+      - name: Deploy report to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

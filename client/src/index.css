@@ -125,3 +125,14 @@ a { color: inherit; text-decoration: none; }
   .site-header__nav { display: none; }
   .site-header__cta { margin-left: auto; font-size: 11px; }
 }
+
+
+/* Privacy banner: fixed, high-contrast consent surface with a calm mobile stack. */
+.privacy-banner { position: fixed; z-index: 80; right: 24px; bottom: 24px; left: 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; max-width: 920px; margin: 0 auto; padding: 18px 20px; border: 1px solid rgba(197, 200, 230, .2); border-radius: 18px; background: rgba(13, 18, 48, .96); box-shadow: 0 18px 50px rgba(0, 0, 0, .28); color: var(--white); }
+.privacy-banner strong { display: block; font-family: "Manrope", sans-serif; font-size: 15px; letter-spacing: -.02em; }
+.privacy-banner p { margin: 5px 0 0; color: var(--mist); font-size: 12px; line-height: 1.45; }
+.privacy-banner__actions { display: flex; flex: 0 0 auto; gap: 8px; }
+.privacy-banner__button { min-height: 36px; padding: 0 14px; border: 0; border-radius: 999px; background: var(--lime); color: var(--ink); cursor: pointer; font: inherit; font-size: 12px; font-weight: 800; }
+.privacy-banner__button--quiet { border: 1px solid rgba(197, 200, 230, .22); background: transparent; color: var(--white); }
+.privacy-banner__button:hover { transform: translateY(-1px); }
+@media (max-width: 650px) { .privacy-banner { right: 12px; bottom: 12px; left: 12px; align-items: stretch; flex-direction: column; gap: 14px; padding: 16px; } .privacy-banner__actions { width: 100%; } .privacy-banner__button { flex: 1; } }

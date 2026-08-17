@@ -163,7 +163,8 @@ export default function Home() {
                   <p>{product.description}</p>
                   {product.featured && <div className="product-card__proof"><span><b>6 → 1</b> tools into one workflow</span><span><b>Weeks → days</b> time-to-hire</span></div>}
                   <div className="product-card__tags">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                  {product.featured && <a className="product-card__detail-link" href="/talio">Explore Talio <ArrowUpRight size={16} /></a>}
+                  {product.artifact === "talio" && <Link className="product-card__detail-link" href="/talio">Explore Talio <ArrowUpRight size={16} /></Link>}
+                  {product.artifact === "orbit" && <Link className="product-card__detail-link" href="/majlis">Explore Majlis <ArrowUpRight size={16} /></Link>}
                 </div>
               </article>
             ))}

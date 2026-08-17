@@ -27,6 +27,16 @@ test.describe('maybei showcase core journeys', () => {
     await expect(page.getByRole('heading', { name: /We build the AI layer/i })).toBeVisible();
   });
 
+  test('Majlis product page opens from the portfolio and shows product proof', async ({ page }) => {
+    await page.goto('/');
+
+    await page.getByRole('link', { name: /Explore Majlis/i }).click();
+    await expect(page).toHaveURL(/\/majlis$/);
+    await expect(page.getByRole('heading', { name: /One intelligent graph of people, projects, and capital/i })).toBeVisible();
+    await expect(page.getByText('Smart Match', { exact: true })).toBeVisible();
+    await expect(page.getByAltText(/Majlis AI-personalized Dashboard/i)).toBeVisible();
+  });
+
   test('Talio exposes workflow anchor and company-pilot form', async ({ page }) => {
     await page.goto('/talio');
 

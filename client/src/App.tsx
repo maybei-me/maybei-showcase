@@ -8,6 +8,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Careers from "@/pages/Careers";
 import Talio from "@/pages/Talio";
+import Majlis from "@/pages/Majlis";
 
 /** Midnight Signal Matrix: dark-by-default routing shell for maybei. */
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/careers" component={Careers} />
       <Route path="/talio" component={Talio} />
+      <Route path="/majlis" component={Majlis} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

@@ -346,3 +346,11 @@
 - [x] Fix the shared header layout, logo lockup scale, navigation alignment and CTA.
 - [x] Verify the header on wide desktop, standard desktop and mobile viewports.
 - [x] Save and publish the corrected global header.
+
+## Majlis audience-first landing redesign
+- [x] Re-read the supplied pitch deck and PRD for English-only product facts, audiences and proof points.
+- [x] Exclude Russian-language product screens and use only English-language screen references on the landing page.
+- [x] Reframe Majlis for students, creators, specialists, teams and people looking for projects, not only investors or co-founders.
+- [x] Rebuild the landing page in an original editorial, interview-led storytelling style inspired by high-trust founder media, without copying The Diary of a CEO design.
+- [x] Add audience-first CTAs and verify desktop/mobile presentation, UI tests and publication.
+- [x] Replace currently referenced Majlis storage screenshots that contain Russian UI with the supplied English-only screenshots.

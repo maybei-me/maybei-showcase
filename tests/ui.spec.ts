@@ -32,9 +32,9 @@ test.describe('maybei showcase core journeys', () => {
 
     await page.getByRole('link', { name: /Explore Majlis/i }).click();
     await expect(page).toHaveURL(/\/majlis$/);
-    await expect(page.getByRole('heading', { name: /One intelligent graph of people, projects, and capital/i })).toBeVisible();
-    await expect(page.getByText('Smart Match', { exact: true })).toBeVisible();
-    await expect(page.getByAltText(/Majlis AI-personalized Dashboard/i)).toBeVisible();
+    await expect(page.getByRole('heading', { name: /The right people can change the direction of a life/i })).toBeVisible();
+    await expect(page.getByText('Find a project that gives your skills somewhere to go.', { exact: true })).toBeVisible();
+    await expect(page.getByAltText(/English Majlis dashboard with AI recommendations/i)).toBeVisible();
   });
 
   test('Talio exposes workflow anchor and company-pilot form', async ({ page }) => {

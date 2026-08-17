@@ -192,9 +192,9 @@
 
 ## GitHub backup export
 
-- [ ] Проверить GitHub-интеграцию и доступный owner для репозитория.
-- [ ] Экспортировать текущую версию проекта в GitHub.
-- [ ] Передать пользователю ссылку на созданный репозиторий.
+- [x] Проверить GitHub-интеграцию и доступный owner для репозитория.
+- [x] Экспортировать текущую версию проекта в GitHub.
+- [x] Передать пользователю ссылку на созданный репозиторий.
 
 ## Repository README
 
@@ -293,17 +293,17 @@
 ## Visible UI automation documentation
 - [x] Compare local README.md with the README rendered on the public GitHub main branch.
 - [x] Add a prominent standalone section for package, test scope, commands, reports, CI artifacts and debugging.
-- [ ] Verify the rendered GitHub README after publication and provide its exact location.
+- [x] Verify the rendered GitHub README after publication and provide its exact location.
 
 ## Combined final delivery
 - [x] Save and publish the accepted Talio footer and wide-desktop composition repair.
-- [ ] Synchronize the prominent README automation documentation to the public main branch.
-- [ ] Verify both the live Talio page and GitHub-rendered README before final delivery.
+- [x] Synchronize the prominent README automation documentation to the public main branch.
+- [x] Verify both the live Talio page and GitHub-rendered README before final delivery.
 
 ## Pull request review required
 - [x] Create pull request #1 with Talio, README and CI configuration changes.
 - [x] Resolve the pnpm CI setup conflict and confirm the UI quality gate passes.
-- [ ] Obtain one independent approving review and merge the protected pull request into main.
+- [x] Obtain one independent approving review and merge the protected pull request into main.
 
 ## Playwright report in CI/CD
 - [x] Upload the HTML Playwright report after every UI test run, not only on failure.

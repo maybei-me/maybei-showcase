@@ -36,17 +36,45 @@ const values = [
 export default function Careers() {
   const applicationFormRef = useRef<HTMLDivElement>(null);
   const [selectedRole, setSelectedRole] = useState("");
-  const [applicationSubmitted, setApplicationSubmitted] = useState(false);
+  const [applicationState, setApplicationState] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [applicationMessage, setApplicationMessage] = useState("");
 
   const startApplication = (role: string) => {
     setSelectedRole(role);
-    setApplicationSubmitted(false);
+    setApplicationState("idle");
+    setApplicationMessage("");
     window.setTimeout(() => applicationFormRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 0);
   };
 
-  const submitApplication = (event: FormEvent<HTMLFormElement>) => {
+  const submitApplication = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setApplicationSubmitted(true);
+    const formElement = event.currentTarget;
+    const form = new FormData(formElement);
+    setApplicationState("sending");
+    setApplicationMessage("");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.get("fullName"),
+          email: form.get("email"),
+          company: "",
+          message: `Candidate application for ${form.get("role")}. Portfolio: ${form.get("portfolio") || "not supplied"}. Message: ${form.get("message")}`,
+          sourcePage: "careers-application",
+          privacyConsent: form.get("privacyConsent") === "on",
+        }),
+      });
+      const result = await response.json() as { ok: boolean; message: string };
+      if (!response.ok || !result.ok) throw new Error(result.message);
+      setApplicationState("success");
+      setApplicationMessage("Thank you — your application has been received.");
+      formElement.reset();
+      setSelectedRole("");
+    } catch (error) {
+      setApplicationState("error");
+      setApplicationMessage(error instanceof Error ? error.message : "We could not save your application right now. Please try again shortly.");
+    }
   };
 
   return (
@@ -159,11 +187,11 @@ export default function Careers() {
               <h3>Tell us where<br /><span>you can help.</span></h3>
               <p>Choose a role, share the essentials and tell us what you want to build. A hiring conversation should begin with context, not a cold email.</p>
             </div>
-            {applicationSubmitted ? (
+            {applicationState === "success" ? (
               <div className="career-application__success" role="status">
-                <strong>Thanks — your interest is noted.</strong>
-                <p>This form currently confirms your application in the browser. Secure delivery to the hiring inbox will be connected before applications open.</p>
-                <button type="button" className="career-application__reset" onClick={() => setApplicationSubmitted(false)}>Submit another application <ArrowUpRight size={16} /></button>
+                <strong>{applicationMessage}</strong>
+                <p>We will use these details only to assess and respond to your application. Please do not send passwords, payment details or other sensitive data.</p>
+                <button type="button" className="career-application__reset" onClick={() => setApplicationState("idle")}>Submit another application <ArrowUpRight size={16} /></button>
               </div>
             ) : (
               <form className="career-application__form" onSubmit={submitApplication}>
@@ -172,8 +200,10 @@ export default function Careers() {
                 <label>Role<select name="role" value={selectedRole} onChange={(event) => setSelectedRole(event.target.value)} required><option value="" disabled>Select a role</option>{roles.map(([title]) => <option key={title} value={title}>{title}</option>)}<option value="Open application">Open application</option></select></label>
                 <label>LinkedIn or portfolio <span>Optional</span><input name="portfolio" type="url" placeholder="https://" /></label>
                 <label className="career-application__message">What would you like to make better?<textarea name="message" required rows={5} placeholder="A short note about your experience, craft and the work you want to do." /></label>
-                <button className="button-primary career-application__submit" type="submit">Send application <ArrowUpRight size={17} /></button>
-                <p className="career-application__note">We only use these details to understand your interest. Live delivery will be connected before applications open.</p>
+                <label className="career-application__message career-application__consent"><input name="privacyConsent" type="checkbox" required /> <span>I have read the <Link href="/privacy-cookies">Privacy &amp; Cookies Notice</Link> and agree that maybei may use my details to respond to this application.</span></label>
+                <button className="button-primary career-application__submit" type="submit" disabled={applicationState === "sending"}>{applicationState === "sending" ? "Sending…" : <>Send application <ArrowUpRight size={17} /></>}</button>
+                {applicationMessage && <p className="career-application__note" role="status">{applicationMessage}</p>}
+                <p className="career-application__note">We only use these details to assess and respond to your application. Please do not send passwords, payment details or other sensitive data.</p>
               </form>
             )}
           </div>
@@ -189,7 +219,7 @@ export default function Careers() {
       <footer className="site-footer">
         <img className="site-footer__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" />
         <p>© 2026 maybei. Make it better.</p>
-        <Link href="/">Back to home</Link>
+        <div className="site-footer__links"><Link href="/contact">Contact us</Link><Link href="/privacy-cookies">Privacy</Link><Link href="/terms">Terms</Link></div>
       </footer>
     </div>
   );

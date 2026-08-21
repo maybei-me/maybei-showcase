@@ -31,11 +31,37 @@ const employerFeatures: Array<[string, string, FeatureIcon]> = [
 ];
 
 export default function Talio() {
-  const [submitted, setSubmitted] = useState(false);
+  const [submissionState, setSubmissionState] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [submissionMessage, setSubmissionMessage] = useState("");
 
-  const handlePilotSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handlePilotSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    const formElement = event.currentTarget;
+    const form = new FormData(formElement);
+    setSubmissionState("sending");
+    setSubmissionMessage("");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.get("name"),
+          email: form.get("email"),
+          company: form.get("company"),
+          message: `Talio pilot enquiry. Hiring focus: ${form.get("need")}`,
+          sourcePage: "talio-company-pilot",
+          privacyConsent: form.get("privacyConsent") === "on",
+        }),
+      });
+      const result = await response.json() as { ok: boolean; message: string };
+      if (!response.ok || !result.ok) throw new Error(result.message);
+      setSubmissionState("success");
+      setSubmissionMessage(result.message);
+      formElement.reset();
+    } catch (error) {
+      setSubmissionState("error");
+      setSubmissionMessage(error instanceof Error ? error.message : "We could not save your message right now. Please try again shortly.");
+    }
   };
 
   return (
@@ -52,6 +78,7 @@ export default function Talio() {
             <div className="talio-hero__actions">
               <a className="talio-button talio-button--dark" href="https://talio.tech" target="_blank" rel="noreferrer">Join the Talio pilot <ArrowUpRight size={17} /></a>
               <a className="talio-text-link" href="#product">See how it works <ArrowUpRight size={16} /></a>
+              <Link className="talio-text-link" href="/talio-v2">View presentation edition <ArrowUpRight size={16} /></Link>
             </div>
           </div>
           <div className="talio-hero__visual">
@@ -101,19 +128,19 @@ export default function Talio() {
           <span className="talio-eyebrow">For companies ready to hire differently</span>
           <h2>Be part of the<br /><em>first cohort.</em></h2>
           <p>Talio is onboarding its first candidates and employers now. We are looking for companies willing to shape a more transparent hiring process with us.</p>
-          {submitted ? (
-            <p className="talio-form-success" role="status">Thanks — your pilot brief is ready. This preview form is not connected to a live inbox yet.</p>
-          ) : (
-            <form id="company-pilot-form" className="talio-pilot-form" onSubmit={handlePilotSubmit}>
-              <label><span>Company email</span><input name="email" type="email" required placeholder="you@company.com" /></label>
-              <label><span>What are you hiring for?</span><input name="need" required placeholder="e.g. engineering, sales, product" /></label>
-              <button className="talio-button talio-button--lime" type="submit">Request a pilot conversation <ArrowUpRight size={17} /></button>
-              <small>We only use these details to shape the pilot conversation. Live delivery will be connected before launch.</small>
-            </form>
-          )}
+          <form id="company-pilot-form" className="talio-pilot-form" onSubmit={handlePilotSubmit}>
+            <label><span>Your name</span><input name="name" autoComplete="name" required placeholder="Your name" /></label>
+            <label><span>Company email</span><input name="email" autoComplete="email" type="email" required placeholder="you@company.com" /></label>
+            <label><span>Company</span><input name="company" autoComplete="organization" placeholder="Your company" /></label>
+            <label><span>What are you hiring for?</span><input name="need" required placeholder="e.g. engineering, sales, product" /></label>
+            <label className="talio-pilot-form__consent"><input name="privacyConsent" type="checkbox" required /> <span>I have read the <Link href="/privacy-cookies">Privacy &amp; Cookies Notice</Link> and agree that maybei may use these details to respond.</span></label>
+            <button className="talio-button talio-button--lime" type="submit" disabled={submissionState === "sending"}>{submissionState === "sending" ? "Sending…" : <>Request a pilot conversation <ArrowUpRight size={17} /></>}</button>
+            {submissionMessage && <p className={`talio-form-success talio-form-success--${submissionState}`} role="status">{submissionMessage}</p>}
+            <small>We only use these details to respond to your pilot enquiry. Please do not send passwords, payment details or other sensitive data.</small>
+          </form>
         </section>
       </main>
-      <footer className="site-footer talio-footer"><img className="site-footer__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" /><p>© 2026 maybei. Talio — transparent hiring for everyone.</p><Link href="/">Back to maybei</Link></footer>
+      <footer className="site-footer talio-footer"><img className="site-footer__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" /><p>© 2026 maybei. Talio — transparent hiring for everyone.</p><div className="site-footer__links"><Link href="/contact">Contact us</Link><Link href="/privacy-cookies">Privacy</Link><Link href="/terms">Terms</Link></div></footer>
     </div>
   );
 }

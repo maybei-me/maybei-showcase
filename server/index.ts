@@ -2,6 +2,8 @@ import express from "express";
 import { createServer } from "http";
 import path from "path";
 import { fileURLToPath } from "url";
+import { createMajlisWaitlistHandler, saveMajlisWaitlistEntry } from "./majlisWaitlist";
+import { createContactMessageHandler, saveContactMessage } from "./contact";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,6 +18,9 @@ async function startServer() {
       ? path.resolve(__dirname, "public")
       : path.resolve(__dirname, "..", "dist", "public");
 
+  app.use(express.json({ limit: "16kb" }));
+  app.post("/api/majlis-waitlist", createMajlisWaitlistHandler(saveMajlisWaitlistEntry));
+  app.post("/api/contact", createContactMessageHandler(saveContactMessage));
   app.use(express.static(staticPath));
 
   // Handle client-side routing - serve index.html for all routes

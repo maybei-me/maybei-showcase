@@ -5,6 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
+import { majlisWaitlistInput, saveMajlisWaitlistEntry } from "./server/majlisWaitlist";
 
 // =============================================================================
 // Manus Debug Collector - Vite Plugin
@@ -203,7 +204,45 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+function vitePluginMajlisWaitlist(): Plugin {
+  return {
+    name: "majlis-waitlist-api",
+    configureServer(server: ViteDevServer) {
+      server.middlewares.use("/api/majlis-waitlist", (req, res, next) => {
+        if (req.method !== "POST") return next();
+
+        let body = "";
+        req.on("data", (chunk) => {
+          body += chunk.toString();
+        });
+        req.on("end", async () => {
+          try {
+            const input = majlisWaitlistInput.safeParse(JSON.parse(body));
+            if (!input.success) {
+              res.writeHead(400, { "Content-Type": "application/json" });
+              res.end(JSON.stringify({ ok: false, message: "Please provide a valid email and complete any entered fields." }));
+              return;
+            }
+
+            const result = await saveMajlisWaitlistEntry(input.data);
+            res.writeHead(result === "created" ? 201 : 200, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({
+              ok: true,
+              status: result,
+              message: result === "created" ? "You are on the Majlis waitlist." : "This email is already on the Majlis waitlist.",
+            }));
+          } catch (error) {
+            console.error("[Majlis waitlist] Development API error", error);
+            res.writeHead(500, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ ok: false, message: "We could not save your place right now. Please try again shortly." }));
+          }
+        });
+      });
+    },
+  };
+}
+
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), vitePluginMajlisWaitlist()];
 
 export default defineConfig({
   plugins,

@@ -4,17 +4,18 @@
  */
 import { Link, useLocation } from "wouter";
 import { ArrowUpRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const navItems = [
   { label: "Idea", href: "/#idea" },
   { label: "Method", href: "/#method" },
-  { label: "Products", href: "/#products" },
   { label: "Founder", href: "/#founder" },
 ];
 
 export function SiteHeader() {
   const [location] = useLocation();
   const isHome = location === "/";
+  const { language, setLanguage } = useLanguage();
 
   return (
     <header className="site-header">
@@ -35,9 +36,18 @@ export function SiteHeader() {
           <Link href="/careers">Careers</Link>
         </nav>
 
-        <Link className="site-header__cta" href="/careers">
-          Build with us <ArrowUpRight size={15} strokeWidth={2.25} />
-        </Link>
+        <div className="site-header__actions">
+          <div className="site-language" data-language-control role="group" aria-label={language === "ru" ? "Выбор языка" : "Language selection"}>
+            <button type="button" className={language === "en" ? "is-active" : ""} onClick={() => setLanguage("en")} aria-pressed={language === "en"}>EN</button>
+            <span aria-hidden="true">/</span>
+            <button type="button" className={language === "ru" ? "is-active" : ""} onClick={() => setLanguage("ru")} aria-pressed={language === "ru"}>RU</button>
+            <span aria-hidden="true">/</span>
+            <button type="button" className={language === "ar" ? "is-active" : ""} onClick={() => setLanguage("ar")} aria-pressed={language === "ar"}>AR</button>
+          </div>
+          <Link className="site-header__cta" href="/careers">
+            Build with us <ArrowUpRight size={15} strokeWidth={2.25} />
+          </Link>
+        </div>
       </div>
     </header>
   );

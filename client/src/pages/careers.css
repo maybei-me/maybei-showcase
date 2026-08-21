@@ -95,6 +95,9 @@
 .career-application__message { grid-column: 1 / -1; }
 .career-application__submit { justify-self: start; margin-top: 4px; }
 .career-application__note { grid-column: 1 / -1; max-width: 560px; margin: -3px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+.career-application__consent { display: grid !important; grid-template-columns: 16px 1fr; align-items: start; gap: 8px; color: var(--mist) !important; font-size: 12px !important; font-weight: 400 !important; line-height: 1.5; letter-spacing: 0 !important; text-transform: none !important; }
+.career-application__consent input { width: 15px; height: 15px; margin: 1px 0 0; accent-color: var(--lime); }
+.career-application__consent a { color: var(--lime); text-decoration: underline; text-underline-offset: 3px; }
 .career-application__success { align-self: start; border-left: 3px solid var(--lime); padding: 16px 0 16px 20px; }
 .career-application__success strong { color: var(--white); font-family: "Manrope", sans-serif; font-size: 24px; letter-spacing: -.04em; }
 .career-application__success p { max-width: 500px; margin: 11px 0 18px; color: var(--mist); font-size: 14px; line-height: 1.6; }

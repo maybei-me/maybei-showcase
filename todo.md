@@ -605,3 +605,6 @@
 
 ## GitHub synchronization
 - [x] Commit and push all current project changes to the connected GitHub repository.
+
+## Online Playwright report CI correction
+- [x] Ensure the online Playwright report workflow runs after successful CI instead of being skipped on the current pull-request flow.

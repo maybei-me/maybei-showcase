@@ -80,7 +80,7 @@ jobs:
   publish-report:
     name: Publish Playwright report online
     needs: quality
-    if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/docs/automation-testing-and-talio-finish') && needs.quality.result == 'success' }}
+    if: ${{ needs.quality.result == 'success' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) }}
     runs-on: ubuntu-latest
     permissions:
       actions: read

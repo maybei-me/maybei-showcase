@@ -620,3 +620,6 @@
 
 ## GitHub sync — unified navigation update
 - [x] Push the latest active-page and active-section navigation updates to the existing GitHub pull request.
+
+## Talio route-scroll CI stabilization
+- [x] Make top-of-page reset deterministic after internal route transitions and restore the failing GitHub Playwright regression.

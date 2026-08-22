@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS contact_messages (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(120) NOT NULL,
+  email VARCHAR(320) NOT NULL,
+  company VARCHAR(160) NULL,
+  message TEXT NOT NULL,
+  source_page VARCHAR(160) NOT NULL DEFAULT 'contact',
+  privacy_ack_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  INDEX idx_contact_messages_created_at (created_at)
+);

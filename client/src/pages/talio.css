@@ -80,6 +80,10 @@
 .talio-pilot-form .talio-button { border: 0; cursor: pointer; }
 .talio-pilot-form small { align-self: center; color: rgba(254,250,244,.58); font-size: 11px; line-height: 1.4; }
 .talio-form-success { max-width: 520px; margin-top: 22px; border-left: 3px solid var(--talio-lime); padding: 12px 16px; color: var(--talio-cream); font-size: 15px; line-height: 1.5; }
+.talio-pilot-form__consent { grid-column: 1 / -1; display: grid !important; grid-template-columns: 16px 1fr; align-items: start; gap: 8px; color: rgba(254,250,244,.72) !important; font-size: 11px !important; font-weight: 400 !important; line-height: 1.45; letter-spacing: 0 !important; text-transform: none !important; }
+.talio-pilot-form__consent input { width: 15px !important; min-height: 15px !important; margin: 1px 0 0; accent-color: var(--talio-lime); }
+.talio-pilot-form__consent a { color: var(--talio-lime); text-decoration: underline; text-underline-offset: 3px; }
+.talio-form-success--error { color: #ffb8c5; }
 @media (max-width: 650px) { .talio-pilot-form { grid-template-columns: 1fr; } .talio-pilot-form label:nth-child(2) { grid-column: auto; } .talio-pilot-form .talio-button { justify-self: start; } }
 
 /* Wide desktop acceptance: Talio becomes a confident product world, not a narrow card on an empty canvas. */

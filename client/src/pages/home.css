@@ -10,6 +10,15 @@
 .home-spine span:first-child { border-color: rgba(198,243,77,.68); box-shadow: 0 0 14px rgba(198,243,77,.2); color: var(--lime); }
 .home-spine span:first-child::after { border-color: var(--lime); box-shadow: 0 0 14px rgba(198,243,77,.45); }
 
+/* Mirror navigational signal rails for Arabic while leaving the editorial grid
+   and approved mark geometry intact. */
+html[data-language="ar"] .home-shell .home-spine { left: auto; right: max(14px, calc((100% - 1428px) / 2)); }
+html[data-language="ar"] .home-shell .home-spine span { left: auto; right: -36px; }
+html[data-language="ar"] .home-shell .home-spine span::after { right: auto; left: -8px; }
+html[data-language="ar"] .home-shell .section-shell::before { mask-image: linear-gradient(270deg, black, transparent 84%); }
+html[data-language="ar"] .home-shell .section-rail { direction: rtl; }
+html[data-language="ar"] .home-shell .section-rail span { flex-direction: row-reverse; }
+
 .hero { position: relative; min-height: calc(100vh - 82px); display: grid; align-items: center; overflow: hidden; isolation: isolate; }
 .hero__grid { position: absolute; inset: 0; z-index: -3; opacity: .26; background-image: linear-gradient(rgba(197,200,230,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(197,200,230,.08) 1px, transparent 1px); background-size: 88px 88px; mask-image: linear-gradient(90deg, transparent, black 33%, black 88%, transparent); }
 .hero__glow { position: absolute; z-index: -2; border-radius: 999px; filter: blur(18px); opacity: .65; }
@@ -111,6 +120,10 @@
 .product-card__detail-link:hover { color: var(--lime); }
 .product-card__action { position: absolute; right: 22px; bottom: 22px; display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--white); transition: background 150ms ease, color 150ms ease; }
 .product-card__action:hover { background: var(--lime); color: var(--ink); }
+html[data-language="ar"] .home-shell .product-card__detail-link svg,
+html[data-language="ar"] .home-shell .audience-card__link svg,
+html[data-language="ar"] .home-shell .careers-cta .button-primary svg,
+html[data-language="ar"] .home-shell .founder__footer .text-link svg { transform: scaleX(-1); }
 
 .founder__intro { display: grid; grid-template-columns: 1fr .95fr; column-gap: clamp(48px, 10vw, 170px); align-items: end; }
 .founder__intro .section-index { grid-column: 1 / -1; margin-bottom: 27px; }
@@ -118,21 +131,24 @@
 .founder__intro h2 span { color: transparent; background: linear-gradient(95deg, var(--blue), var(--violet)); background-clip: text; -webkit-background-clip: text; }
 .founder__intro > p { max-width: 360px; margin: 0 0 6px; color: var(--mist); font-size: 16px; line-height: 1.6; }
 .founder__pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 66px; }
-.founder-card { min-width: 0; }
-.founder-card__image-wrap { position: relative; height: clamp(360px, 39vw, 530px); overflow: hidden; border: 1px solid var(--line); border-radius: 9px 28px 9px 9px; background: #151930; box-shadow: inset 0 0 0 1px rgba(82,99,255,.08); }
+.founder-card { min-width: 0; outline: none; }
+.founder-card__image-wrap { position: relative; height: clamp(410px, 42vw, 570px); overflow: hidden; border: 1px solid var(--line); border-radius: 9px 28px 9px 9px; background: #151930; box-shadow: inset 0 0 0 1px rgba(82,99,255,.08); }
 .founder-card__image-wrap::before { position: absolute; z-index: 1; inset: 0; content: ""; opacity: .34; background-image: linear-gradient(90deg, rgba(197,200,230,.13) 1px, transparent 1px), linear-gradient(rgba(197,200,230,.1) 1px, transparent 1px); background-size: 50px 50px; mix-blend-mode: screen; pointer-events: none; }
 .founder-card__image-wrap::after { position: absolute; z-index: 2; inset: 0; content: ""; background: linear-gradient(180deg, rgba(7,11,31,.16) 18%, rgba(7,11,31,.78)); pointer-events: none; }
 .founder-card__image { width: 100%; height: 100%; object-fit: cover; filter: saturate(.62) contrast(1.11) hue-rotate(4deg); }
-.founder-card--olga .founder-card__image { filter: none; object-position: 65% center; }
+.founder-card--olga .founder-card__image { filter: none; object-position: 65% top; }
 .founder-card--olga .founder-card__image-wrap::after { background: linear-gradient(180deg, rgba(7,11,31,.04) 18%, rgba(7,11,31,.22)); }
 .founder-card--danil .founder-card__image { object-position: 50% center; }
-.founder-card__tag { position: absolute; z-index: 2; top: 22px; left: 22px; padding: 8px 11px; border: 1px solid rgba(247,248,255,.2); border-radius: 99px; background: rgba(7,11,31,.45); backdrop-filter: blur(8px); color: var(--white); font-size: 9px; font-weight: 700; letter-spacing: .12em; }
-.founder-card__meta { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 18px; color: var(--mist); font-size: 10px; font-weight: 700; letter-spacing: .12em; }
+.founder-card__veil { position: absolute; z-index: 3; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 22px; background: linear-gradient(180deg, transparent 32%, rgba(7,11,31,.92) 100%); transition: background 240ms cubic-bezier(.23,1,.32,1), padding 240ms cubic-bezier(.23,1,.32,1); }
+.founder-card__veil::before { position: absolute; top: 22px; right: 22px; width: 8px; height: 8px; content: ""; border: 1px solid var(--lime); border-radius: 50%; box-shadow: 0 0 0 5px rgba(198,243,77,.08); transition: background 180ms ease, box-shadow 180ms ease; }
+.founder-card__meta { display: flex; align-items: center; justify-content: space-between; gap: 18px; color: var(--mist); font-size: 10px; font-weight: 700; letter-spacing: .12em; }
 .founder-card__meta b { color: #bba8ff; font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
-.founder-card__bio { max-width: 560px; margin-top: 18px; }
-.founder-card__bio p { margin: 0 0 16px; color: var(--mist); font-size: 14px; line-height: 1.62; }
+.founder-card__reveal { display: inline-flex; align-items: center; align-self: flex-start; min-height: 36px; gap: 6px; margin-top: 13px; padding: 0; border: 0; background: transparent; color: var(--white); cursor: pointer; font: inherit; font-size: 13px; font-weight: 700; }
+.founder-card__reveal svg { transition: transform 180ms cubic-bezier(.23,1,.32,1); }
+.founder-card__bio { max-width: 560px; max-height: 0; margin-top: 0; overflow: hidden; opacity: 0; transform: translateY(10px); transition: max-height 280ms cubic-bezier(.23,1,.32,1), margin 220ms ease, opacity 180ms ease, transform 220ms cubic-bezier(.23,1,.32,1); }
+.founder-card__bio p { margin: 0 0 14px; color: var(--mist); font-size: 14px; line-height: 1.58; }
 .founder-card__bio p:last-child { margin-bottom: 0; }
-.founder-card__linkedin { display: inline-flex; margin-top: 20px; color: var(--white); font-size: 13px; font-weight: 700; transition: color 160ms ease; }
+.founder-card__linkedin { display: inline-flex; margin-top: 18px; color: var(--white); font-size: 13px; font-weight: 700; transition: color 160ms ease; }
 .founder-card__linkedin:hover { color: var(--lime); }
 .founder__footer { display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-top: 38px; }
 .founder__note { display: flex; gap: 13px; max-width: 400px; margin: 0; padding: 18px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--mist); font-size: 13px; line-height: 1.5; }
@@ -148,6 +164,11 @@
 .careers-cta p { max-width: 390px; margin: 0 0 34px; color: var(--mist); font-size: 16px; line-height: 1.5; }
 .careers-cta__mark { position: absolute !important; right: 9%; bottom: 13%; width: min(30vw, 340px); height: auto; opacity: .9; filter: drop-shadow(0 24px 32px rgba(82,99,255,.24)); }
 
+/* Keep the editorial M moving with the reading direction, without mirroring
+   the approved mark geometry or relocating the global logo lockup. */
+html[data-language="ar"] .home-shell .hero__mark-stage { right: auto; left: max(5vw, 52px); }
+html[data-language="ar"] .home-shell .careers-cta__mark { right: auto; left: 9%; }
+
 .site-footer { display: flex; align-items: center; justify-content: space-between; width: min(100% - 48px, 1380px); min-height: 106px; margin: 0 auto; color: var(--muted); font-size: 12px; }
 .site-footer__brand { display: block; width: clamp(146px, 12vw, 182px); height: auto; }
 .site-footer a:hover { color: var(--lime); }
@@ -155,6 +176,7 @@
 @media (max-width: 900px) {
   .home-spine { left: 24px; }
   .hero__mark-stage { right: -8vw; bottom: 20%; width: 42vw; opacity: .55; }
+  html[data-language="ar"] .home-shell .hero__mark-stage { right: auto; left: -8vw; }
   .idea { grid-template-columns: 1fr; }
   .idea .section-rail, .method .section-rail, .products .section-rail, .founder .section-rail { position: relative; margin-bottom: 54px; }
   .method { padding-left: 0; }
@@ -179,6 +201,7 @@
   .hero__bottom { display: block; margin-top: 36px; }
   .hero__bottom p { margin-bottom: 25px; font-size: 15px; }
   .hero__mark-stage { right: -28vw; bottom: 7%; width: 79vw; opacity: .3; }
+  html[data-language="ar"] .home-shell .hero__mark-stage { right: auto; left: -28vw; }
   .hero__signal { display: none; }
   .hero__scroll { display: none; }
   .section-shell { padding: 88px 0; }
@@ -193,11 +216,14 @@
   .product-card--featured { min-height: 430px; }
   .founder__intro h2 { font-size: clamp(2.8rem, 14vw, 4.6rem); }
   .founder__pair { grid-template-columns: 1fr; margin-top: 42px; }
-  .founder-card__image-wrap { height: 390px; }
-  .founder-card--olga .founder-card__image { filter: none; object-position: 58% center; }
+  .founder-card__image-wrap { height: 430px; }
+  .founder-card--olga .founder-card__image { filter: none; object-position: 58% top; }
   .founder-card__meta { display: block; line-height: 1.6; }
   .founder-card__meta b { display: block; margin-top: 4px; }
   .founder-card__bio p { font-size: 14px; line-height: 1.58; }
+  .founder-card__reveal { min-height: 44px; }
+  .founder-card[data-revealed="true"] .founder-card__image-wrap { height: 570px; }
+  .founder-card[data-revealed="true"] .founder-card__bio { max-height: 440px; }
   .founder__footer { gap: 22px; }
   .careers-cta { min-height: 560px; margin-bottom: 14px; }
   .careers-cta__mark { right: -7%; width: 58vw; bottom: 9%; opacity: .45; }
@@ -250,4 +276,35 @@
   .product-card__proof { grid-template-columns: 1fr 1fr; }
   .audience-cta { padding-top: 88px; }
   .audience-cta__header h2 { font-size: clamp(2.8rem, 14vw, 4.6rem); }
+}
+
+.founder-card:hover .founder-card__veil,
+.founder-card:focus-within .founder-card__veil,
+.founder-card[data-revealed="true"] .founder-card__veil { justify-content: flex-start; padding: 26px; background: linear-gradient(145deg, rgba(7,11,31,.97), rgba(13,18,48,.93)); }
+.founder-card:hover .founder-card__veil::before,
+.founder-card:focus-within .founder-card__veil::before,
+.founder-card[data-revealed="true"] .founder-card__veil::before { background: var(--lime); box-shadow: 0 0 0 6px rgba(198,243,77,.11), 0 0 18px rgba(198,243,77,.55); }
+.founder-card:hover .founder-card__bio,
+.founder-card:focus-within .founder-card__bio,
+.founder-card[data-revealed="true"] .founder-card__bio { max-height: 390px; margin-top: 18px; overflow: auto; opacity: 1; transform: translateY(0); }
+.founder-card:hover .founder-card__reveal svg,
+.founder-card:focus-within .founder-card__reveal svg,
+.founder-card[data-revealed="true"] .founder-card__reveal svg { transform: rotate(90deg); }
+.founder-card:hover .founder-card__reveal,
+.founder-card:focus-within .founder-card__reveal,
+.founder-card[data-revealed="true"] .founder-card__reveal { color: var(--lime); }
+.founder-card:hover .founder-card__image,
+.founder-card:focus-within .founder-card__image,
+.founder-card[data-revealed="true"] .founder-card__image { transform: scale(1.035); }
+.founder-card__image {
+  transition: transform 240ms cubic-bezier(.23, 1, .32, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .founder-card,
+  .founder-card__image,
+  .founder-card__veil,
+  .founder-card__bio,
+  .founder-card__reveal svg { transition: none; }
+  .founder-card:hover .founder-card__image,
+  .founder-card:focus-within .founder-card__image { transform: none; }
 }

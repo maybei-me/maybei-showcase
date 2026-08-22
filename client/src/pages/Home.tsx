@@ -3,6 +3,7 @@
  * resolves a single idea—friction, method, products, and the people who build.
  */
 import { Link } from "wouter";
+import { useState } from "react";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -69,6 +70,12 @@ const principles = [
 ];
 
 export default function Home() {
+  const [revealedFounder, setRevealedFounder] = useState<"olga" | "danil" | null>(null);
+
+  const toggleFounder = (founder: "olga" | "danil") => {
+    setRevealedFounder((current) => current === founder ? null : founder);
+  };
+
   return (
     <div className="site-shell home-shell">
       <SiteHeader />
@@ -163,7 +170,9 @@ export default function Home() {
                   <p>{product.description}</p>
                   {product.featured && <div className="product-card__proof"><span><b>6 → 1</b> tools into one workflow</span><span><b>Weeks → days</b> time-to-hire</span></div>}
                   <div className="product-card__tags">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                  {product.featured && <a className="product-card__detail-link" href="/talio">Explore Talio <ArrowUpRight size={16} /></a>}
+                  {product.artifact === "talio" && <Link className="product-card__detail-link" href="/talio">Explore Talio <ArrowUpRight size={16} /></Link>}
+                  {product.artifact === "orbit" && <Link className="product-card__detail-link" href="/majlis">Explore Majlis <ArrowUpRight size={16} /></Link>}
+                  {product.artifact === "stride" && <Link className="product-card__detail-link" href="/smart-boots">Explore Smart Boots <ArrowUpRight size={16} /></Link>}
                 </div>
               </article>
             ))}
@@ -178,7 +187,7 @@ export default function Home() {
           </div>
           <div className="audience-cta__grid">
             <a className="audience-card audience-card--user" href="#talio"><Users size={22} /><span className="audience-card__label">For people teams</span><h3>Make hiring feel like one workflow.</h3><span className="audience-card__link">See Talio <ArrowUpRight size={16} /></span></a>
-            <a className="audience-card audience-card--partner" href="mailto:hello@maybei.com?subject=Partner%20with%20maybei"><Handshake size={22} /><span className="audience-card__label">For partners & capital</span><h3>Back products that remove real friction.</h3><span className="audience-card__link">Talk to the founders <ArrowUpRight size={16} /></span></a>
+            <Link className="audience-card audience-card--partner" href="/contact"><Handshake size={22} /><span className="audience-card__label">For partners &amp; capital</span><h3>Back products that remove real friction.</h3><span className="audience-card__link">Contact us <ArrowUpRight size={16} /></span></Link>
             <Link className="audience-card audience-card--team" href="/careers"><BriefcaseBusiness size={22} /><span className="audience-card__label">For builders</span><h3>Help build the next proof.</h3><span className="audience-card__link">Join the team <ArrowUpRight size={16} /></span></Link>
           </div>
         </section>
@@ -190,29 +199,35 @@ export default function Home() {
             <h2>Built by people<br /><span>who care about what technology does.</span></h2>
           </div>
           <div className="founder__pair">
-            <article className="founder-card founder-card--danil">
+            <article className="founder-card founder-card--danil" data-revealed={revealedFounder === "danil"}>
               <div className="founder-card__image-wrap">
-                <span className="founder-card__tag">FOUNDER / DEVELOPER</span>
                 <img src="/manus-storage/maybei-founder-danil_6952f69e.jpg" alt="Danil Lobanov, founder and lead developer of maybei" className="founder-card__image" />
+                <div className="founder-card__veil">
+                  <div className="founder-card__meta"><span>01 / DANIL LOBANOV</span><b>Founder · Developer</b></div>
+                  <button type="button" className="founder-card__reveal" aria-expanded={revealedFounder === "danil"} aria-controls="founder-bio-danil" onClick={() => toggleFounder("danil")}>{revealedFounder === "danil" ? "Hide profile" : "View profile"}<ChevronRight size={16} /></button>
+                  <div className="founder-card__bio" id="founder-bio-danil">
+                    <p>Founder &amp; Lead Developer with 5 years of commercial software development experience in backend and full-stack development. I build AI products across HRTech, consumer tech, and IoT.</p>
+                    <p>Before technology, I spent five years as a musician in China. Music taught me to think creatively, understand people and create things that connect — the same mindset I now bring to technology: building products that solve real human problems, make everyday life simpler and have a positive impact.</p>
+                    <p>I believe the best technology is not about technology itself. It is about creating something useful, meaningful, and better for the people who use it.</p>
+                    <span className="founder-card__linkedin">LinkedIn →</span>
+                  </div>
+                </div>
               </div>
-              <div className="founder-card__meta"><span>01 / DANIL LOBANOV</span><b>Founder · Developer</b></div>
-              <div className="founder-card__bio">
-                <p>5 years in commercial software development, including backend and full-stack. Founder &amp; Lead Developer, building AI products across HRTech, consumer tech and IoT.</p>
-                <p>From music in China to technology — I’m driven by the same idea: connect people, solve real problems, make life simpler.</p>
-              </div>
-              <span className="founder-card__linkedin">LinkedIn →</span>
             </article>
-            <article className="founder-card founder-card--olga">
+            <article className="founder-card founder-card--olga" data-revealed={revealedFounder === "olga"}>
               <div className="founder-card__image-wrap">
-                <span className="founder-card__tag">FOUNDER / AI &amp; QUALITY</span>
-                <img src="/manus-storage/maybei-founder-olga-approved-2026_06743f21.png" alt="Olga Kruglova, founder of maybei" className="founder-card__image" />
+                <img src="/manus-storage/maybei-founder-olga-blue-conference_1293ef45.png" alt="Olga Kruglova, founder of maybei" className="founder-card__image" />
+                <div className="founder-card__veil">
+                  <div className="founder-card__meta"><span>02 / OLGA KRUGLOVA</span><b>Founder · AI &amp; Quality</b></div>
+                  <button type="button" className="founder-card__reveal" aria-expanded={revealedFounder === "olga"} aria-controls="founder-bio-olga" onClick={() => toggleFounder("olga")}>{revealedFounder === "olga" ? "Hide profile" : "View profile"}<ChevronRight size={16} /></button>
+                  <div className="founder-card__bio" id="founder-bio-olga">
+                    <p>With 15+ years in software quality and international ISO 9001 standards, I bring a systems view to the products we build. As a founder, I see quality not as a final check, but as a way of thinking — helping teams make better decisions, see risk earlier, and build with intention.</p>
+                    <p>What matters most to me is the people behind every product. I want to build things that are genuinely useful — that make someone’s life easier, open new possibilities, or help them become better at what they do.</p>
+                    <p>My dream is to create products with meaning: technology that serves people, not the other way around. And, in my own small way, to leave the world a little better than I found it.</p>
+                    <span className="founder-card__linkedin">LinkedIn →</span>
+                  </div>
+                </div>
               </div>
-              <div className="founder-card__meta"><span>02 / OLGA KRUGLOVA</span><b>Founder · AI &amp; Quality</b></div>
-              <div className="founder-card__bio">
-                <p>15+ years in software quality and international ISO 9001 standards. Founder building AI products focused on people, ethics and social impact.</p>
-                <p>I believe technology matters most when it solves meaningful problems and creates a better everyday life.</p>
-              </div>
-              <span className="founder-card__linkedin">LinkedIn →</span>
             </article>
           </div>
           <div className="founder__footer"><div className="founder__note"><Sparkles size={18} /><span>Different backgrounds.<br />Same belief: Technology should serve people.</span></div><Link className="text-link" href="/careers">Meet the way we work <ChevronRight size={17} /></Link></div>
@@ -230,7 +245,7 @@ export default function Home() {
       <footer className="site-footer">
         <img className="site-footer__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" />
         <p>© 2026 maybei. Make it better.</p>
-        <a href="mailto:hello@maybei.com">hello@maybei.com</a>
+        <div className="site-footer__links"><Link href="/contact">Contact us</Link><Link href="/privacy-cookies">Privacy</Link><Link href="/terms">Terms</Link></div>
       </footer>
     </div>
   );

@@ -608,3 +608,15 @@
 
 ## Online Playwright report CI correction
 - [x] Ensure the online Playwright report workflow runs after successful CI instead of being skipped on the current pull-request flow.
+
+## Header active-page orientation
+- [x] Add a restrained lime active state for the current public page in the shared header, including RTL verification.
+
+## Careers active-state visibility correction
+- [x] Verify the published Careers header and make the current-page state visibly distinct in production.
+
+## Unified navigation highlighting
+- [x] Highlight the active Home section (Idea, Method or Founder) on scroll while retaining active-page markers on internal routes.
+
+## GitHub sync — unified navigation update
+- [x] Push the latest active-page and active-section navigation updates to the existing GitHub pull request.

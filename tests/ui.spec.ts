@@ -74,6 +74,15 @@ test.describe('maybei showcase core journeys', () => {
     await expect.poll(() => page.evaluate(() => window.scrollY)).toBeLessThan(8);
   });
 
+  test('home header highlights the active editorial section on scroll', async ({ page }) => {
+    await page.goto('/?lang=en');
+
+    const method = page.locator('#method');
+    await method.scrollIntoViewIfNeeded();
+    await expect(page.locator('.site-header__nav a[href="/#method"]')).toHaveClass(/is-active/);
+    await expect(page.locator('.site-header__nav a[href="/#method"]')).toHaveAttribute('aria-current', 'location');
+  });
+
   test('header navigation opens careers and brand link returns home', async ({ page }) => {
     await page.goto('/');
 
@@ -83,6 +92,8 @@ test.describe('maybei showcase core journeys', () => {
     await page.getByRole('link', { name: 'Careers', exact: true }).click();
     await expect(page).toHaveURL(/\/careers$/);
     await expect(page.getByRole('heading', { name: /Build things/i })).toBeVisible();
+    await expect(page.locator('.site-header__current')).toHaveText('Careers');
+    await expect(page.locator('.site-header__current')).toHaveCSS('color', 'rgb(198, 243, 77)');
 
     await page.getByRole('link', { name: 'maybei home' }).click();
     await expect(page).toHaveURL(/\/$/);

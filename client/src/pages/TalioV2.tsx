@@ -310,7 +310,7 @@ export default function TalioV2() {
               </div>
             </div>
             <div className="talio-v2__hero-proof">
-              <img className="talio-v2__hero-people" src="/assets/talio-jobs-community.png" alt="Talio jobs and community interfaces" />
+              <img className="talio-v2__hero-people" src="/assets/talio-built-for-people.png" alt={copy.heroPeopleAlt} />
             </div>
           </div>
         </section>

@@ -300,7 +300,7 @@ export default function TalioV2() {
           <div className="talio-v2__wrap talio-v2__hero-grid">
             <div className="talio-v2__hero-copy">
               <Link className="talio-v2__back" href="/talio"><ArrowLeft size={16} /> {copy.original}</Link>
-              <img className="talio-v2__logo" src="/manus-storage/talio-logo-light_2b15328e.webp" alt="talio" />
+              <img className="talio-v2__logo" src="/assets/talio-logo-light.png" alt="talio" />
               <span className="talio-v2__eyebrow">{copy.edition}</span>
               <h1>{copy.heroBefore} <em>{copy.heroAccent}</em> <span>{copy.heroAfter}</span></h1>
               <p>{copy.heroCopy}</p>
@@ -310,7 +310,7 @@ export default function TalioV2() {
               </div>
             </div>
             <div className="talio-v2__hero-proof">
-              <img className="talio-v2__hero-people" src="/manus-storage/talio-built-for-people_59ee58a8.png" alt={copy.heroPeopleAlt} />
+              <img className="talio-v2__hero-people" src="/assets/talio-built-for-people.png" alt={copy.heroPeopleAlt} />
             </div>
           </div>
         </section>
@@ -410,7 +410,7 @@ export default function TalioV2() {
           </div>
         </section>
       </main>
-      <footer className="talio-v2__footer"><img src="/manus-storage/talio-logo-light_2b15328e.webp" alt="talio" /><span>{copy.footer}</span><Link href="/talio">{copy.original}</Link></footer>
+      <footer className="talio-v2__footer"><img src="/assets/talio-logo-light.png" alt="talio" /><span>{copy.footer}</span><Link href="/talio">{copy.original}</Link></footer>
     </div>
   );
 }

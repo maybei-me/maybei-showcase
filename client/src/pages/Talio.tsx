@@ -6,6 +6,7 @@ import { useState, type FormEvent } from "react";
 import { ArrowLeft, ArrowUpRight, Check, Clock3, MessageCircle, Search, Users } from "lucide-react";
 import { Link } from "wouter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { BrandLockup } from "@/components/LogoMark";
 import "./talio.css";
 
 const flow = [
@@ -71,7 +72,7 @@ export default function Talio() {
         <section className="talio-hero">
           <div className="talio-hero__content">
             <Link className="talio-back" href="/#products"><ArrowLeft size={15} /> Back to maybei projects</Link>
-            <img className="talio-logo" src="/manus-storage/talio-logo-dark_88714583.webp" alt="talio" />
+            <img className="talio-logo" src="/assets/talio-logo-dark.png" alt="talio" />
             <span className="talio-kicker">Human hiring. Intelligent technology.</span>
             <h1>Skills in.<br /><em>Culture fit.</em><br />Hired.</h1>
             <p className="talio-hero__lead">Transparent hiring for everyone — candidates and employers, in one platform.</p>
@@ -83,7 +84,7 @@ export default function Talio() {
           </div>
           <div className="talio-hero__visual">
             <div className="talio-hero__orb" />
-            <img className="talio-hero__people-visual" src="/manus-storage/talio-built-for-people_59ee58a8.png" alt="Talio visual featuring people and the message Built for people, powered by technology" />
+            <img className="talio-hero__people-visual" src="/assets/talio-jobs-community.png" alt="Talio jobs and community interfaces" />
           </div>
         </section>
 
@@ -112,7 +113,7 @@ export default function Talio() {
 
         <section className="talio-evidence">
           <div className="talio-evidence__header"><span className="talio-eyebrow">Real product evidence</span><h2>Designed around<br /><em>the conversation.</em></h2><p>Jobs, community and chat are already taking shape in the product. The interface keeps the human exchange visible while AI handles the noise.</p></div>
-          <div className="talio-evidence__images"><img src="/manus-storage/talio-jobs-community_e59e2f40.png" alt="Talio jobs and community interfaces" /><img src="/manus-storage/talio-chat_83f67527.png" alt="Talio chat interface with job details" /></div>
+          <div className="talio-evidence__images"><img src="/assets/talio-jobs-community.png" alt="Talio jobs and community interfaces" /><img src="/assets/talio-chat.png" alt="Talio chat interface with job details" /></div>
         </section>
 
         <section className="talio-section talio-features">
@@ -124,7 +125,7 @@ export default function Talio() {
         </section>
 
         <section className="talio-partner-cta">
-          <img src="/manus-storage/talio-logo-light_2b15328e.webp" alt="talio" />
+          <img src="/assets/talio-logo-light.png" alt="talio" />
           <span className="talio-eyebrow">For companies ready to hire differently</span>
           <h2>Be part of the<br /><em>first cohort.</em></h2>
           <p>Talio is onboarding its first candidates and employers now. We are looking for companies willing to shape a more transparent hiring process with us.</p>
@@ -140,7 +141,7 @@ export default function Talio() {
           </form>
         </section>
       </main>
-      <footer className="site-footer talio-footer"><img className="site-footer__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" /><p>© 2026 maybei. Talio — transparent hiring for everyone.</p><div className="site-footer__links"><Link href="/contact">Contact us</Link><Link href="/privacy-cookies">Privacy</Link><Link href="/terms">Terms</Link></div></footer>
+      <footer className="site-footer talio-footer"><BrandLockup className="site-footer__brand" /><p>© 2026 maybei. Talio — transparent hiring for everyone.</p><div className="site-footer__links"><Link href="/contact">Contact us</Link><Link href="/privacy-cookies">Privacy</Link><Link href="/terms">Terms</Link></div></footer>
     </div>
   );
 }

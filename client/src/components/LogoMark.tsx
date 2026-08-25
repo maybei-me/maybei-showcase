@@ -11,7 +11,7 @@ export function LogoMark({ className = "" }: LogoMarkProps) {
     <img
       aria-hidden="true"
       className={className}
-      src="/manus-storage/maybei-mark-m-approved-transparent_2ee15205.png"
+      src="/maybei-favicon-v2.png"
       alt=""
     />
   );
@@ -20,16 +20,22 @@ export function LogoMark({ className = "" }: LogoMarkProps) {
 type BrandLockupProps = {
   inverse?: boolean;
   compact?: boolean;
+  className?: string;
 };
 
-export function BrandLockup({ inverse = true, compact = false }: BrandLockupProps) {
+export function BrandLockup({ inverse = true, compact = false, className = "" }: BrandLockupProps) {
+  const classes = [
+    "brand-lockup",
+    inverse ? "brand-lockup--inverse" : "",
+    compact ? "brand-lockup--compact" : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <div className={`brand-lockup ${inverse ? "brand-lockup--inverse" : ""} ${compact ? "brand-lockup--compact" : ""}`}>
-      <img
-        className="brand-lockup__image"
-        src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp"
-        alt=""
-      />
+    <div className={classes}>
+      <img className="brand-lockup__image" src="/assets/maybei-logo-original.png" alt="maybei" />
     </div>
   );
 }

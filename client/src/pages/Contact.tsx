@@ -2,6 +2,7 @@ import { FormEvent, useState } from "react";
 import { ArrowLeft, ArrowUpRight, Send } from "lucide-react";
 import { Link } from "wouter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { BrandLockup } from "@/components/LogoMark";
 import "./legal.css";
 
 type FormState = "idle" | "sending" | "success" | "error";
@@ -70,7 +71,7 @@ export default function Contact() {
           <p className="contact-form-wrap__note">This form is not for sending passwords, payment information or other sensitive personal data.</p>
         </section>
       </main>
-      <footer className="site-footer legal-footer"><img className="site-footer__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" /><p>© 2026 maybei. Make it better.</p><div><Link href="/privacy-cookies">Privacy &amp; Cookies</Link><Link href="/terms">Terms</Link></div></footer>
+      <footer className="site-footer legal-footer"><BrandLockup className="site-footer__brand" /><p>© 2026 maybei. Make it better.</p><div><Link href="/privacy-cookies">Privacy &amp; Cookies</Link><Link href="/terms">Terms</Link></div></footer>
     </div>
   );
 }

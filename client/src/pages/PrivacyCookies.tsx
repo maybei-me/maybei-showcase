@@ -1,6 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { BrandLockup } from "@/components/LogoMark";
 import "./legal.css";
 
 export default function PrivacyCookies() {
@@ -24,7 +25,7 @@ export default function PrivacyCookies() {
           <section><h2>6. Updates</h2><p>We may update this notice when site practices change. The date at the top of this page identifies the most recent working version.</p></section>
         </article>
       </main>
-      <footer className="site-footer legal-footer"><img className="site-footer__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" /><p>© 2026 maybei. Make it better.</p><div><Link href="/contact">Contact us</Link><Link href="/terms">Terms</Link></div></footer>
+      <footer className="site-footer legal-footer"><BrandLockup className="site-footer__brand" /><p>© 2026 maybei. Make it better.</p><div><Link href="/contact">Contact us</Link><Link href="/terms">Terms</Link></div></footer>
     </div>
   );
 }

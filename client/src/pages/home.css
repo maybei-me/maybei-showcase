@@ -170,7 +170,6 @@ html[data-language="ar"] .home-shell .hero__mark-stage { right: auto; left: max(
 html[data-language="ar"] .home-shell .careers-cta__mark { right: auto; left: 9%; }
 
 .site-footer { display: flex; align-items: center; justify-content: space-between; width: min(100% - 48px, 1380px); min-height: 106px; margin: 0 auto; color: var(--muted); font-size: 12px; }
-.site-footer__brand { display: block; width: clamp(146px, 12vw, 182px); height: auto; }
 .site-footer a:hover { color: var(--lime); }
 
 @media (max-width: 900px) {

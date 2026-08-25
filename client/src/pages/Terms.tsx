@@ -1,6 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { BrandLockup } from "@/components/LogoMark";
 import "./legal.css";
 
 export default function Terms() {
@@ -24,7 +25,7 @@ export default function Terms() {
           <section><h2>6. Changes and applicable law</h2><p>We may revise these Terms when the website or products change. The governing law and venue will be specified when maybei’s legal entity details are finalised. Until then, these working terms are not a substitute for a reviewed legal agreement.</p></section>
         </article>
       </main>
-      <footer className="site-footer legal-footer"><img className="site-footer__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" /><p>© 2026 maybei. Make it better.</p><div><Link href="/privacy-cookies">Privacy &amp; Cookies</Link><Link href="/contact">Contact us</Link></div></footer>
+      <footer className="site-footer legal-footer"><BrandLockup className="site-footer__brand" /><p>© 2026 maybei. Make it better.</p><div><Link href="/privacy-cookies">Privacy &amp; Cookies</Link><Link href="/contact">Contact us</Link></div></footer>
     </div>
   );
 }

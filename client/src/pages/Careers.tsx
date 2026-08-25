@@ -6,7 +6,7 @@ import { FormEvent, useRef, useState } from "react";
 import { ArrowDown, ArrowUpRight, Check, ChevronRight, MoveUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { LogoMark } from "@/components/LogoMark";
+import { BrandLockup, LogoMark } from "@/components/LogoMark";
 import "./careers.css";
 
 const disciplines = [
@@ -217,7 +217,7 @@ export default function Careers() {
         </section>
       </main>
       <footer className="site-footer">
-        <img className="site-footer__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" />
+        <BrandLockup className="site-footer__brand" />
         <p>© 2026 maybei. Make it better.</p>
         <div className="site-footer__links"><Link href="/contact">Contact us</Link><Link href="/privacy-cookies">Privacy</Link><Link href="/terms">Terms</Link></div>
       </footer>

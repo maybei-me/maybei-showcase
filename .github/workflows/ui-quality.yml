@@ -113,37 +113,17 @@ jobs:
     name: Deploy maybei.my
     needs: quality
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, maybei-deploy]
     timeout-minutes: 15
     environment:
       name: production
       url: https://maybei.my
 
     steps:
-      - name: Configure SSH
-        shell: bash
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.MAYBEI_DEPLOY_SSH_KEY }}
-          SSH_KNOWN_HOSTS: ${{ secrets.MAYBEI_DEPLOY_KNOWN_HOSTS }}
-        run: |
-          set -euo pipefail
-          install -d -m 700 "$HOME/.ssh"
-          printf '%s\n' "$SSH_PRIVATE_KEY" > "$HOME/.ssh/maybei_deploy"
-          chmod 600 "$HOME/.ssh/maybei_deploy"
-          printf '%s\n' "$SSH_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
-          chmod 644 "$HOME/.ssh/known_hosts"
-
       - name: Deploy selected commit on server
         shell: bash
-        env:
-          DEPLOY_HOST: ${{ secrets.MAYBEI_DEPLOY_HOST }}
-          DEPLOY_USER: ${{ secrets.MAYBEI_DEPLOY_USER }}
-          DEPLOY_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
-          ssh \
-            -i "$HOME/.ssh/maybei_deploy" \
-            -o BatchMode=yes \
-            -o IdentitiesOnly=yes \
-            "$DEPLOY_USER@$DEPLOY_HOST" \
-            "cd /opt/maybei-showcase && bash ./deploy/maybei/deploy.sh '$DEPLOY_SHA'"
+          cd /opt/maybei-showcase
+          git fetch --prune origin main
+          bash ./deploy/maybei/deploy.sh "${{ github.sha }}"

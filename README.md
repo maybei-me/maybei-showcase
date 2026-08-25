@@ -140,7 +140,7 @@ Create a checkpoint after a tested change. This project is configured to publish
 
 The repository includes `.github/workflows/ui-quality.yml`. GitHub Actions runs `pnpm check`, `pnpm build`, and `pnpm test:ui` on every push, pull request, and manually dispatched run. If the UI suite fails, the workflow uploads the Playwright report and test results as artifacts for seven days.
 
-On every push to `main`, the same workflow also deploys `maybei.my` over SSH. The server keeps its own clone in `/opt/maybei-showcase`, and the deploy step runs `deploy/maybei/deploy.sh` on the exact commit SHA that triggered the workflow. Required GitHub Secrets are `MAYBEI_DEPLOY_HOST`, `MAYBEI_DEPLOY_USER`, `MAYBEI_DEPLOY_SSH_KEY`, and `MAYBEI_DEPLOY_KNOWN_HOSTS`.
+On every push to `main`, the same workflow also deploys `maybei.my` on the self-hosted runner attached to the server. The server keeps its own clone in `/opt/maybei-showcase`, and the deploy step runs `deploy/maybei/deploy.sh` on the exact commit SHA that triggered the workflow. No deploy SSH secrets are needed in GitHub for production.
 
 Before a checkpoint, confirm the following:
 

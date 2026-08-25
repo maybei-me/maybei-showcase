@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { BrandLockup } from "@/components/LogoMark";
 import "./smart-boots.css";
 
 const signals = [
@@ -82,7 +83,7 @@ export default function SmartBoots() {
 
           <div className="smart-boots-hero__evidence">
             <div className="smart-boots-hero__frame-label"><span>LIVE PERFORMANCE SYSTEM</span><b>03 / 04</b></div>
-            <img src="/manus-storage/smart-boots-product-evidence_55cbc20f.png" alt="Smart Boots concept with football boot sensor and English app screens for match performance, heatmaps, training and player progress" />
+            <img src="/assets/smart-boots-product-evidence.png" alt="Smart Boots concept with football boot sensor and English app screens for match performance, heatmaps, training and player progress" />
             <div className="smart-boots-hero__signal smart-boots-hero__signal--one" aria-hidden="true" />
             <div className="smart-boots-hero__signal smart-boots-hero__signal--two" aria-hidden="true" />
           </div>
@@ -162,7 +163,7 @@ export default function SmartBoots() {
           <Link className="smart-boots-button smart-boots-button--outline" href="/">Back to maybei <ArrowUpRight size={17} /></Link>
         </section>
       </main>
-      <footer className="site-footer smart-boots-footer"><img className="site-footer__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" /><p>© 2026 maybei. Smart Boots — AI sports tech.</p><Link href="/">Back to maybei</Link></footer>
+      <footer className="site-footer smart-boots-footer"><BrandLockup className="site-footer__brand" /><p>© 2026 maybei. Smart Boots — AI sports tech.</p><Link href="/">Back to maybei</Link></footer>
     </div>
   );
 }

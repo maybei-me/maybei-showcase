@@ -6,7 +6,6 @@ The project is a public-facing corporate showcase with dedicated pages for the c
 
 | Environment | URL |
 | --- | --- |
-| Live site | `https://maybeishowca-wn86snno.manus.space/` |
 | Local development | `http://localhost:3000` |
 
 ## UI automation — run, scope and failure reports
@@ -122,11 +121,11 @@ The main presentation files are:
 
 ## Visual assets
 
-Do **not** add large media files to `client/public` or `client/src`. Production assets are stored outside the repository during development, uploaded to managed storage, and referenced from the app with `/manus-storage/...` URLs.
+Do **not** add large media files to `client/public` or `client/src`. Production assets are stored outside the repository during development and referenced from the app with managed storage URLs.
 
 1. Keep source assets in `/home/ubuntu/webdev-static-assets/`.
-2. Upload them with `manus-upload-file --webdev <path>`.
-3. Use the returned `/manus-storage/...` path in JSX or CSS.
+2. Upload them through the managed asset pipeline.
+3. Use the returned storage path in JSX or CSS.
 4. Preserve approved mark geometry. Do not redraw or simplify the maybei M or the Talio mark.
 
 ## Brand guardrails
@@ -141,12 +140,14 @@ Create a checkpoint after a tested change. This project is configured to publish
 
 The repository includes `.github/workflows/ui-quality.yml`. GitHub Actions runs `pnpm check`, `pnpm build`, and `pnpm test:ui` on every push, pull request, and manually dispatched run. If the UI suite fails, the workflow uploads the Playwright report and test results as artifacts for seven days.
 
+On every push to `main`, the same workflow also deploys `maybei.my` over SSH. The server keeps its own clone in `/opt/maybei-showcase`, and the deploy step runs `deploy/maybei/deploy.sh` on the exact commit SHA that triggered the workflow. Required GitHub Secrets are `MAYBEI_DEPLOY_HOST`, `MAYBEI_DEPLOY_USER`, `MAYBEI_DEPLOY_SSH_KEY`, and `MAYBEI_DEPLOY_KNOWN_HOSTS`.
+
 Before a checkpoint, confirm the following:
 
 - `pnpm check` passes.
 - `pnpm build` passes.
 - Desktop and 375 px mobile layouts have been reviewed.
-- All asset references resolve from `/manus-storage/`.
+- All asset references resolve from the managed storage layer.
 - No customer reviews, ratings, or testimonials are fabricated.
 
 ## Content updates

@@ -16,7 +16,7 @@ import {
   Users,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
-import { LogoMark } from "@/components/LogoMark";
+import { BrandLockup, LogoMark } from "@/components/LogoMark";
 import "./home.css";
 
 const products = [
@@ -201,7 +201,7 @@ export default function Home() {
           <div className="founder__pair">
             <article className="founder-card founder-card--danil" data-revealed={revealedFounder === "danil"}>
               <div className="founder-card__image-wrap">
-                <img src="/manus-storage/maybei-founder-danil_6952f69e.jpg" alt="Danil Lobanov, founder and lead developer of maybei" className="founder-card__image" />
+                <img src="/assets/founder-danil.png" alt="Danil Lobanov, founder and lead developer of maybei" className="founder-card__image" />
                 <div className="founder-card__veil">
                   <div className="founder-card__meta"><span>01 / DANIL LOBANOV</span><b>Founder · Developer</b></div>
                   <button type="button" className="founder-card__reveal" aria-expanded={revealedFounder === "danil"} aria-controls="founder-bio-danil" onClick={() => toggleFounder("danil")}>{revealedFounder === "danil" ? "Hide profile" : "View profile"}<ChevronRight size={16} /></button>
@@ -216,7 +216,7 @@ export default function Home() {
             </article>
             <article className="founder-card founder-card--olga" data-revealed={revealedFounder === "olga"}>
               <div className="founder-card__image-wrap">
-                <img src="/manus-storage/maybei-founder-olga-blue-conference_1293ef45.png" alt="Olga Kruglova, founder of maybei" className="founder-card__image" />
+                <img src="/assets/founder-olga.png" alt="Olga Kruglova, founder of maybei" className="founder-card__image" />
                 <div className="founder-card__veil">
                   <div className="founder-card__meta"><span>02 / OLGA KRUGLOVA</span><b>Founder · AI &amp; Quality</b></div>
                   <button type="button" className="founder-card__reveal" aria-expanded={revealedFounder === "olga"} aria-controls="founder-bio-olga" onClick={() => toggleFounder("olga")}>{revealedFounder === "olga" ? "Hide profile" : "View profile"}<ChevronRight size={16} /></button>
@@ -243,7 +243,7 @@ export default function Home() {
         </section>
       </main>
       <footer className="site-footer">
-        <img className="site-footer__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" />
+        <BrandLockup className="site-footer__brand" />
         <p>© 2026 maybei. Make it better.</p>
         <div className="site-footer__links"><Link href="/contact">Contact us</Link><Link href="/privacy-cookies">Privacy</Link><Link href="/terms">Terms</Link></div>
       </footer>

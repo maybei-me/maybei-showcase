@@ -2,6 +2,7 @@ import { type PointerEvent, useEffect, useState } from "react";
 import { ArrowRight, ArrowUpRight, Check, Compass, GraduationCap, Lightbulb, Maximize2, Users, WandSparkles, X } from "lucide-react";
 import { Link } from "wouter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { BrandLockup } from "@/components/LogoMark";
 import "./majlis.css";
 
 const audiencePaths = [
@@ -43,17 +44,17 @@ const networkSteps = [
 
 const expandableScreens = {
   ai: {
-    src: "/manus-storage/majlis-02-ai_d39943d6.png",
+    src: "/assets/majlis-ai.png",
     alt: "English Majlis AI screens showing interests selection, AI scan, results, assistant and daily brief",
     label: "AI screens",
   },
   network: {
-    src: "/manus-storage/majlis-04-network_a8d1f989.png",
+    src: "/assets/majlis-network.png",
     alt: "English Majlis network screens showing match feed, match details, profile, chat and AI summary",
     label: "Network screens",
   },
   community: {
-    src: "/manus-storage/majlis-07-community_9e7e7178.png",
+    src: "/assets/majlis-community.png",
     alt: "English Majlis community screens showing world map, communities and calendar",
     label: "Community screens",
   },
@@ -108,7 +109,7 @@ export default function Majlis() {
             </div>
           </div>
           <div className="majlis-hero__visual majlis-hero__visual--cover" onPointerMove={handleCoverPointerMove} onPointerLeave={() => setCoverOffset({ x: 0, y: 0 })}>
-            <img style={{ transform: `translate3d(${coverOffset.x}px, ${coverOffset.y}px, 0)` }} src="/manus-storage/majlis-ai-head-cover_c78de273.png" alt="Majlis AI Network for Human Potential cover with a glowing connected human head" />
+            <img style={{ transform: `translate3d(${coverOffset.x}px, ${coverOffset.y}px, 0)` }} src="/assets/majlis-cover.png" alt="Majlis AI Network for Human Potential cover with a glowing connected human head" />
           </div>
         </section>
 
@@ -175,7 +176,7 @@ export default function Majlis() {
 
         <section className="majlis-trust-section" aria-labelledby="trust-title">
           <div className="majlis-trust-section__copy"><p className="majlis-eyebrow">Trust is a product decision.</p><h2 id="trust-title">Human potential needs room to grow safely.</h2><p>Majlis is designed around professional goals, skills, projects and consent. It is not built to turn private life into a feed or make people perform a version of themselves.</p><div className="majlis-trust-list"><span><Check size={16} /> Clear profile controls</span><span><Check size={16} /> Professional context</span><span><Check size={16} /> Human-led connections</span></div></div>
-          <div className="majlis-trust-section__visual"><img src="/manus-storage/majlis-dashboard_0059cfcb.png" alt="English Majlis profile dashboard showing trust level, active project and privacy controls" /><div><WandSparkles size={18} /><span>AI should make the next step clearer — not make the person smaller.</span></div></div>
+          <div className="majlis-trust-section__visual"><img src="/assets/majlis-dashboard.png" alt="English Majlis profile dashboard showing trust level, active project and privacy controls" /><div><WandSparkles size={18} /><span>AI should make the next step clearer — not make the person smaller.</span></div></div>
         </section>
 
         <section className="majlis-closing" aria-labelledby="closing-title">
@@ -185,7 +186,7 @@ export default function Majlis() {
           <a className="majlis-button" href="#paths">Start with your potential <ArrowRight size={17} /></a>
         </section>
       </main>
-      <footer className="site-footer majlis-footer"><img className="site-footer__brand" src="/manus-storage/maybei-logo-lockup-no-tagline-approved-cropped_d2852528.webp" alt="maybei" /><p>© 2026 maybei. Majlis — an AI network for human potential.</p><div className="site-footer__links"><Link href="/contact">Contact us</Link><Link href="/privacy-cookies">Privacy</Link><Link href="/terms">Terms</Link></div></footer>
+      <footer className="site-footer majlis-footer"><BrandLockup className="site-footer__brand" /><p>© 2026 maybei. Majlis — an AI network for human potential.</p><div className="site-footer__links"><Link href="/contact">Contact us</Link><Link href="/privacy-cookies">Privacy</Link><Link href="/terms">Terms</Link></div></footer>
       {activeScreenData && (
         <div className="majlis-lightbox" role="dialog" aria-modal="true" aria-label={`${activeScreenData.label} expanded preview`}>
           <button className="majlis-lightbox__backdrop" type="button" aria-label="Close expanded preview" onClick={() => setActiveScreen(null)} />

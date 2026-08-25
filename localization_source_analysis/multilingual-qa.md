@@ -74,7 +74,7 @@ The Russian development verification confirms the restored workflow uses `Interv
 
 The parallel `/talio-v2` route was built from the attached *Talio — AI Should Open Doors* presentation. It preserves Talio’s cream, deep-green and lime product system, adds an English/Russian/Arabic local content model, and keeps the original `/talio` page accessible in both directions. Development verification passed with TypeScript, 8 server unit tests, 21 Playwright UI tests, a production build, and desktop/mobile visual review of both Talio routes.
 
-After initial route propagation, the published Russian route `https://maybeishowca-wn86snno.manus.space/talio-v2?lang=ru` was verified live. It renders the presentation edition label, the Russian "AI должен открывать двери" thesis and multiple links back to the original `/talio` product page.
+After initial route propagation, the published Russian route for Talio v2 was verified live. It renders the presentation edition label, the Russian "AI должен открывать двери" thesis and multiple links back to the original `/talio` product page.
 
 ## Talio v2 user-first visual and localisation recheck
 

@@ -92,8 +92,8 @@ test.describe('maybei showcase core journeys', () => {
     await page.getByRole('link', { name: 'Careers', exact: true }).click();
     await expect(page).toHaveURL(/\/careers$/);
     await expect(page.getByRole('heading', { name: /Build things/i })).toBeVisible();
-    await expect(page.locator('.site-header__current')).toHaveText('Careers');
-    await expect(page.locator('.site-header__current')).toHaveCSS('color', 'rgb(198, 243, 77)');
+    await expect(page.locator('.site-header__nav .site-header__current')).toHaveText('Careers');
+    await expect(page.locator('.site-header__nav .site-header__current')).toHaveCSS('color', 'rgb(198, 243, 77)');
 
     await page.getByRole('link', { name: 'maybei home' }).click();
     await expect(page).toHaveURL(/\/$/);
@@ -293,7 +293,7 @@ test.describe('maybei showcase core journeys', () => {
     }
     await olga.getByRole('button', { name: /View profile/i }).click();
     await expect(olga).toHaveAttribute('data-revealed', 'true');
-    await expect(olga.getByAltText('Olga Kruglova, founder of maybei')).toHaveAttribute('src', /maybei-founder-olga-blue-conference/);
+    await expect(olga.getByAltText('Olga Kruglova, founder of maybei')).toHaveAttribute('src', /founder-olga-conference-light-original-v7/);
     await expect(olga.getByText(/With 15\+ years in software quality/i)).toBeVisible();
     await expect(olga.getByText(/quality not as a final check, but as a way of thinking/i)).toBeVisible();
     await expect(olga.getByText(/people behind every product/i)).toBeVisible();

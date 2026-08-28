@@ -216,7 +216,7 @@ export default function Home() {
             </article>
             <article className="founder-card founder-card--olga" data-revealed={revealedFounder === "olga"}>
               <div className="founder-card__image-wrap">
-                <img src="/assets/founder-olga-conference-light-original-v7.png" alt="Olga Kruglova, founder of maybei" className="founder-card__image" />
+                <img src="/assets/founder-olga-original-blue-filter.png" alt="Olga Kruglova, founder of maybei" className="founder-card__image" />
                 <div className="founder-card__veil">
                   <div className="founder-card__meta"><span>02 / OLGA KRUGLOVA</span><b>Founder · AI &amp; Quality</b></div>
                   <button type="button" className="founder-card__reveal" aria-expanded={revealedFounder === "olga"} aria-controls="founder-bio-olga" onClick={() => toggleFounder("olga")}>{revealedFounder === "olga" ? "Hide profile" : "View profile"}<ChevronRight size={16} /></button>

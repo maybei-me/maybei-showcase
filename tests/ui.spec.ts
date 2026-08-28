@@ -293,7 +293,7 @@ test.describe('maybei showcase core journeys', () => {
     }
     await olga.getByRole('button', { name: /View profile/i }).click();
     await expect(olga).toHaveAttribute('data-revealed', 'true');
-    await expect(olga.getByAltText('Olga Kruglova, founder of maybei')).toHaveAttribute('src', /founder-olga-conference-light-original-v7/);
+    await expect(olga.getByAltText('Olga Kruglova, founder of maybei')).toHaveAttribute('src', /founder-olga-original-blue-filter/);
     await expect(olga.getByText(/With 15\+ years in software quality/i)).toBeVisible();
     await expect(olga.getByText(/quality not as a final check, but as a way of thinking/i)).toBeVisible();
     await expect(olga.getByText(/people behind every product/i)).toBeVisible();

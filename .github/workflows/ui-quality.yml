@@ -113,17 +113,22 @@ jobs:
     name: Deploy maybei.my
     needs: quality
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-    runs-on: [self-hosted, linux, maybei-deploy]
-    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
     environment:
       name: production
       url: https://maybei.my
 
     steps:
       - name: Deploy selected commit on server
-        shell: bash
-        run: |
-          set -euo pipefail
-          cd /opt/maybei-showcase
-          git fetch --prune origin main
-          bash ./deploy/maybei/deploy.sh "${{ github.sha }}"
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.MAYBEI_DEPLOY_HOST }}
+          username: ${{ secrets.MAYBEI_DEPLOY_USER }}
+          key: ${{ secrets.MAYBEI_DEPLOY_SSH_KEY }}
+          fingerprint: ${{ secrets.MAYBEI_DEPLOY_SSH_FINGERPRINT }}
+          script_stop: true
+          command_timeout: 20m
+          script: |
+            set -Eeuo pipefail
+            bash /opt/maybei-showcase/deploy/maybei/deploy.sh "${{ github.sha }}"

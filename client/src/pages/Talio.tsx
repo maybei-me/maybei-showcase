@@ -77,7 +77,7 @@ export default function Talio() {
             <h1>Skills in.<br /><em>Culture fit.</em><br />Hired.</h1>
             <p className="talio-hero__lead">Transparent hiring for everyone — candidates and employers, in one platform.</p>
             <div className="talio-hero__actions">
-              <a className="talio-button talio-button--dark" href="https://talio.tech" target="_blank" rel="noreferrer">Join the Talio pilot <ArrowUpRight size={17} /></a>
+              <a className="talio-button talio-button--dark" href="https://talio.my" target="_blank" rel="noreferrer">Join the Talio pilot <ArrowUpRight size={17} /></a>
               <a className="talio-text-link" href="#product">See how it works <ArrowUpRight size={16} /></a>
               <Link className="talio-text-link" href="/talio-v2">View presentation edition <ArrowUpRight size={16} /></Link>
             </div>

@@ -29,6 +29,8 @@ services:
       NODE_ENV: production
       PORT: 3000
       DATABASE_URL: mysql://maybei:${MYSQL_PASSWORD}@maybei-db:3306/maybei
+    ports:
+      - "127.0.0.1:3000:3000"
     depends_on:
       db:
         condition: service_healthy

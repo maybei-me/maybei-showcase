@@ -1,6 +1,6 @@
 /**
  * Midnight Signal Matrix: every logo usage comes from the provided approved
- * square M or horizontal lockup asset; the M geometry is never redrawn in code.
+ * M or horizontal lockup asset; the logo geometry is never redrawn in code.
  */
 type LogoMarkProps = {
   className?: string;
@@ -11,7 +11,7 @@ export function LogoMark({ className = "" }: LogoMarkProps) {
     <img
       aria-hidden="true"
       className={className}
-      src="/maybei-favicon-v2.png"
+      src="/assets/maybei-mark-night-pulse.png"
       alt=""
     />
   );
@@ -35,7 +35,7 @@ export function BrandLockup({ inverse = true, compact = false, className = "" }:
 
   return (
     <div className={classes}>
-      <img className="brand-lockup__image" src="/assets/maybei-logo-original.png" alt="maybei" />
+      <img className="brand-lockup__image" src="/assets/maybei-lockup-night-pulse.png" alt="maybei" />
     </div>
   );
 }

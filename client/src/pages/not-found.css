@@ -7,7 +7,7 @@
 .not-found-shell__content h1 span { color: transparent; background: linear-gradient(98deg, var(--blue), var(--violet)); background-clip: text; -webkit-background-clip: text; }
 .not-found-shell__content p { max-width: 370px; margin: 0 0 32px; color: var(--mist); font-size: 16px; line-height: 1.6; }
 .not-found-shell__mark { position: absolute; right: 12%; top: 44%; display: grid; width: min(30vw, 350px); place-items: center; }
-.not-found-shell__mark svg:first-child { width: 100%; height: auto; filter: drop-shadow(0 25px 36px rgba(82,99,255,.3)); }
-.not-found-shell__mark svg:last-child { position: absolute; right: 1%; top: -4%; color: var(--lime); }
+.not-found-shell__mark img { width: 100%; height: auto; filter: drop-shadow(0 25px 36px rgba(82,99,255,.3)); }
+.not-found-shell__mark svg { position: absolute; right: 1%; top: -4%; color: var(--lime); }
 .not-found-shell__signal { position: relative; z-index: 1; align-self: end; justify-self: end; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .17em; }
 @media (max-width: 650px) { .not-found-shell__mark { right: -20%; top: 17%; width: 70vw; opacity: .32; } .not-found-shell__signal { justify-self: start; } }

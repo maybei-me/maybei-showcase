@@ -188,11 +188,12 @@ test.describe("maybei showcase core journeys", () => {
     await expect(
       page.getByRole("heading", { name: /Open roles/i })
     ).toBeVisible();
-    await expect(page.locator(".site-header__current")).toHaveText("Careers");
-    await expect(page.locator(".site-header__current")).toHaveCSS(
-      "color",
-      "rgb(198, 243, 77)"
-    );
+    await expect(
+      page.locator(".site-header__nav .site-header__current")
+    ).toHaveText("Careers");
+    await expect(
+      page.locator(".site-header__nav .site-header__current")
+    ).toHaveCSS("color", "rgb(198, 243, 77)");
 
     await page.getByRole("link", { name: "maybei home" }).click();
     await expect(page).toHaveURL(/\/$/);

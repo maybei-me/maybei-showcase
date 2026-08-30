@@ -113,7 +113,7 @@ jobs:
     name: Deploy maybei.my
     needs: quality
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, maybei-deploy]
     timeout-minutes: 30
     environment:
       name: production
@@ -127,7 +127,6 @@ jobs:
           username: ${{ secrets.MAYBEI_DEPLOY_USER }}
           key: ${{ secrets.MAYBEI_DEPLOY_SSH_KEY }}
           fingerprint: ${{ secrets.MAYBEI_DEPLOY_SSH_FINGERPRINT }}
-          script_stop: true
           command_timeout: 20m
           script: |
             set -Eeuo pipefail

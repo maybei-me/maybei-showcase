@@ -591,7 +591,7 @@ test.describe("maybei showcase core journeys", () => {
           image.naturalHeight,
         ])
       )
-      .toEqual([1280, 853]);
+      .toEqual([1536, 1024]);
     await expect(danil.locator(".founder-card__bio > p")).toHaveCount(3);
     await danil.getByRole("button", { name: /View profile/i }).click();
     await expect(danil).toHaveAttribute("data-revealed", "true");
